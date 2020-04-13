@@ -130,34 +130,25 @@ if (strlen($_SESSION['login']) == 0) {
             <input type="file" class="form-control" id="postimage" name="post_image" required>
         </div>
         <button type="submit" name="add">Save and Post</button>
-        <button type="button" name="discard" id="myBtn">Discard</button>
+        <button type="submit" name="discard" id="myBtn">Discard</button>
         <!-- The Modal -->
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content" id="option">
                 <h3>are you sure?!</h3>
-                <button name="yes" id="yes">YES</button>
-                <button name="no" id="no">NO</button>
+                <button type="submit" name="yes" id="yes">YES</button>
+                <button type="submit" name="no" id="no">NO</button>
 
             </div>
 
         </div>
     </form>
     <script>
-        // Get the modal
         var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
         var btnyes = document.getElementById("yes");
         var btnno = document.getElementById("no");
-        var cont = document.getElementById("option");
-
-        // Get the <span> element that closes the modal
-
-
-        // When the user clicks the button, open the modal 
         btn.onclick = function() {
             modal.style.display = "block";
         }
@@ -171,9 +162,6 @@ if (strlen($_SESSION['login']) == 0) {
             modal.style.display = "none";
 
         }
-
-
-        // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
