@@ -7,29 +7,29 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     // Fetch data from database on the basis of username/email and password
-    $sql = mysqli_query($conn, "SELECT AdminUserName,AdminPassword FROM tbladmin WHERE AdminUserName='".$username."' and AdminPassword='".$password."' ");
-    if(mysqli_fetch_assoc($sql))
-    {
-        $_SESSION['login']=$username;
-        echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-    } else{
-        echo "<script>alert('Wrong user name or Password');</script>";
+     $sql = mysqli_query($conn, "SELECT AdminUserName,AdminPassword FROM tbladmin ");
+    // if(mysqli_fetch_assoc($sql))
+    // {
+    //     $_SESSION['login']=$username;
+    //     echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+    // } else{
+    //     echo "<script>alert('Wrong user name or Password');</script>";
+    // }
+    $res = mysqli_fetch_array($sql);
+    if ($res > 0) {
+        $hashpassword = $res['AdminPassword']; // Hashed password fething from database
+        //verifying Password
+        if (password_verify($password, $hashpassword) && $username==$res['AdminUserName']) {
+            $_SESSION['login'] = $_POST['username'];
+            echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+        } else {
+            echo "<script>alert('Wrong User Name or Password');</script>";
+        } 
     }
-    // $num = mysqli_fetch_array($sql);
-    // if ($num > 0) {
-    //     $hashpassword = $num['AdminPassword']; // Hashed password fething from database
-    //     //verifying Password
-    //     if (password_verify($password, $hashpassword)) {
-    //         $_SESSION['login'] = $_POST['username'];
-    //         echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-    //     } else {
-    //         echo "<script>alert('Wrong Password');</script>";
-    //     } 
-    // }
     //if username or email not found in database
-    // else {
-    //     echo "<script>alert('User not registered with us');</script>";
-    // }
+    else {
+        echo "<script>alert('User not registered with us');</script>";
+    }
 }
 ?>
 <!DOCTYPE html>
