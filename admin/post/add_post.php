@@ -129,21 +129,22 @@ if (strlen($_SESSION['login']) == 0) {
         <div>
             <input type="file" class="form-control" id="postimage" name="post_image" required>
         </div>
-        <button type="submit" name="add">Save and Post</button>
-        <button type="submit" name="discard" id="myBtn">Discard</button>
+        <button  name="add">Save and Post</button>
+
+    </form>
+    <button  name="" id="myBtn">Discard</button>
         <!-- The Modal -->
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content" id="option">
                 <h3>are you sure?!</h3>
-                <button type="submit" name="yes" id="yes">YES</button>
-                <button type="submit" name="no" id="no">NO</button>
+                <button  id="yes">YES</button>
+                <button id="no">NO</button>
 
             </div>
 
         </div>
-    </form>
     <script>
         var modal = document.getElementById("myModal");
         var btn = document.getElementById("myBtn");
