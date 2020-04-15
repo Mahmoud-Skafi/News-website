@@ -7,7 +7,8 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     // Fetch data from database on the basis of username/email and password
-     $sql = mysqli_query($conn, "SELECT AdminUserName,AdminPassword FROM tbladmin ");
+    $sql = mysqli_query($conn, "SELECT AdminUserName,AdminPassword,Roles FROM tbladmin ");
+
     // if(mysqli_fetch_assoc($sql))
     // {
     //     $_SESSION['login']=$username;
@@ -16,15 +17,23 @@ if (isset($_POST['login'])) {
     //     echo "<script>alert('Wrong user name or Password');</script>";
     // }
     $res = mysqli_fetch_array($sql);
+
     if ($res > 0) {
+
         $hashpassword = $res['AdminPassword']; // Hashed password fething from database
         //verifying Password
-        if (password_verify($password, $hashpassword) && $username==$res['AdminUserName']) {
+        if (password_verify($password, $hashpassword) && $username == $res['AdminUserName'] ) {
             $_SESSION['login'] = $_POST['username'];
-            echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+            if ($res['Roles'] == "admin") {
+                echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+            } else {
+                if ($res['Roles']=="madps") {
+                    echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+                }
+            }
         } else {
             echo "<script>alert('Wrong User Name or Password');</script>";
-        } 
+        }
     }
     //if username or email not found in database
     else {

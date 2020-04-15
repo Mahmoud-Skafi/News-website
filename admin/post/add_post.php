@@ -24,10 +24,11 @@ if (strlen($_SESSION['login']) == 0) {
             move_uploaded_file($_FILES["post_image"]["tmp_name"], "../postimages/" . $imgnewfile);
 
             $status = 1;
-            $query = mysqli_query($conn, "insert into tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile')");
+            $query = mysqli_query($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile')");
             if ($query) {
                 $msg = "Post successfully added ";
                 echo $msg;
+                header("location:./post_manager.php");
             } else {
                 $error = "Something went wrong . Please try again.";
                 echo $error;

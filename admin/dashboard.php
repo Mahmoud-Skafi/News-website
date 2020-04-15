@@ -24,11 +24,11 @@ if (isset($_SESSION['login'])) {
                 <a href="./Authors.php">Authors Section</a>
             </div>
             <div class="card-1">
-                 <a href="./post/post.php">Articles Section</a>
-                 <!-- add,delete,edit,category -->
+                <a href="./post/post_manager.php">Articles Section</a>
+                <!-- add,delete,edit,category -->
             </div>
             <div class="card-1">
-                 <a href="./News_Section.php"> News Section </a>
+                <a href="./News_Section.php"> News Section </a>
             </div>
         </div>
     </body>
