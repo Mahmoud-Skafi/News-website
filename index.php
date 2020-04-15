@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="php/login.php" method="post">
-        <button  name="Login">login</button>    
+
+        <button  name="login" ><a href="./admin/login.php">login</a></button>    
         <button  name="Logout">logout</button>    
-    </form>
+  
 </body>
 </html>

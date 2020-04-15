@@ -21,7 +21,7 @@ if (strlen($_SESSION['login']) == 0) {
             // Code for move image into directory
             move_uploaded_file($_FILES["postimage"]["tmp_name"], "../postimages/" . $imgnewfile);
             $postid = intval($_GET['pid']);
-            $query = mysqli_query($conn, "update tblposts set PostImage='$imgnewfile' where id='$postid'");
+            $query = mysqli_query($conn, "UPDATE tblposts set PostImage='$imgnewfile' where id='$postid'");
             if ($query) {
                 $msg = "Post Feature Image updated ";
             } else {
