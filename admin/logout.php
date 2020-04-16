@@ -1,7 +1,8 @@
 <?php
+require_once('./config/dbcon.php');
+
 session_start();
-require_once('./config/connect.php');
-$_SESSION['login']=="";
+$_SESSION=="";
 session_unset();
 session_destroy();
 

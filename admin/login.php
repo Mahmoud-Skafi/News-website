@@ -1,43 +1,34 @@
 <?php
 session_start();
-require_once('./config/connect.php');
+// require_once('./config/connection.php');
+require_once('./config/dbcon.php');
+
+
 if (isset($_POST['login'])) {
 
-    // Getting username/ email and password
     $username = $_POST['username'];
     $password = $_POST['password'];
-    // Fetch data from database on the basis of username/email and password
-    $sql = mysqli_query($conn, "SELECT AdminUserName,AdminPassword,Roles FROM tbladmin ");
 
-    // if(mysqli_fetch_assoc($sql))
-    // {
-    //     $_SESSION['login']=$username;
-    //     echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-    // } else{
-    //     echo "<script>alert('Wrong user name or Password');</script>";
-    // }
-    $res = mysqli_fetch_array($sql);
+    $sql = $conDb->doSelectQuery($conn, "SELECT AdminUserName,AdminPassword,Roles FROM tbladmin  WHERE AdminUserName='" . $username . "' LIMIT 1");
+    if ($sql['status'] == 1) {
 
-    if ($res > 0) {
+        if ($sql['rows'] == 1) {
 
-        $hashpassword = $res['AdminPassword']; // Hashed password fething from database
-        //verifying Password
-        if (password_verify($password, $hashpassword) && $username == $res['AdminUserName'] ) {
-            $_SESSION['login'] = $_POST['username'];
-            if ($res['Roles'] == "admin") {
-                echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-            } else {
-                if ($res['Roles']=="madps") {
+
+            if (password_verify($password, $sql['data'][0]['AdminPassword'])) {
+                $_SESSION['username'] = $username;
+                if ($sql['data'][0]['Roles'] == 'mad') {
+
+                    $_SESSION['roles'] = $sql['data'][0]['Roles'];
+                    echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+                } else if ($sql['data'][0]['Roles'] == 'Admin') {
+
+                    $_SESSION['roles'] = $sql['data'][0]['Roles'];
                     echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
                 }
-            }
-        } else {
-            echo "<script>alert('Wrong User Name or Password');</script>";
+            } else
+                echo "<script>alert('Wrong user name or Password');</script>";
         }
-    }
-    //if username or email not found in database
-    else {
-        echo "<script>alert('User not registered with us');</script>";
     }
 }
 ?>

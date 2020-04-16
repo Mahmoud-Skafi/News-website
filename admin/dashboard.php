@@ -1,8 +1,19 @@
 <?php
+require_once('./config/dbcon.php');
+require_once('./config/permissions.php');
+
+
+
 session_start();
-if (isset($_SESSION['login'])) {
-    if (isset($_POST['Logout'])) {
-        include 'logout.php';
+
+$pagename = basename($_SERVER['PHP_SELF']);
+$role = $_SESSION['roles'];
+
+if (checkPermision($pagename, $role)) {
+    if (isset($_SESSION['username'])) {
+        if (isset($_POST['Logout'])) {
+            include 'logout.php';
+        }
     }
 ?>
     <!DOCTYPE html>
@@ -11,7 +22,6 @@ if (isset($_SESSION['login'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
     </head>
 
     <body>
