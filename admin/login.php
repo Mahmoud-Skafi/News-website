@@ -8,24 +8,22 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    $sql = $conDb->doSelectQuery($conn, "SELECT AdminUserName,AdminPassword,Roles FROM tbladmin  WHERE AdminUserName='" . $username . "' LIMIT 1");
+    $sql = $conDb->doSelectQuery($conn, "  SELECT tblusers.*,tbpermisstions.*
+                                        FROM tblusers 
+                                        LEFT JOIN tbpermisstions 
+                                        ON tblusers.role_id=tbpermisstions.role_id
+                                        AND tblusers.user_name='" . $username . "'
+                                        AND tblusers.Is_Active='1'
+                                        ");
     if ($sql['status'] == 1) {
 
         if ($sql['rows'] == 1) {
 
 
-            if (password_verify($password, $sql['data'][0]['AdminPassword'])) {
+            if (password_verify($password, $sql['data'][0]['user_password'])) {
                 $_SESSION['username'] = $username;
-                if ($sql['data'][0]['Roles'] == 'mad') {
-
-                    $_SESSION['roles'] = $sql['data'][0]['Roles'];
-                    echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-                } else if ($sql['data'][0]['Roles'] == 'Admin') {
-
-                    $_SESSION['roles'] = $sql['data'][0]['Roles'];
-                    echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-                }
+                echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+                $_SESSION['roles'] = $sql['data'][0]['type'];
             } else
                 echo "<script>alert('Wrong user name or Password');</script>";
         }

@@ -2,13 +2,15 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+// require_once('./dbcon.php');
 $permissions = [
-    "dashboard.php" => ['Admin', 'Authors'],
-    "post_manager.php" => ['Admin'],
-    "change_image.php" => ['Admin'],
-    "add_post.php" =>['Admin'],
-    "edit_post.php" =>['Admin'],
+    "dashboard.php" => ['admin', 'author'],
+    "post_manager.php" => ['admin', 'author'],
+    "change_image.php" => ['admin', 'author'],
+    "add_post.php" => ['admin', 'author'],
+    "edit_post.php" => ['admin', 'author'],
 ];
+
 
 /**
  * checkPermision function
