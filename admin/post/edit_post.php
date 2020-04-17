@@ -27,7 +27,13 @@ if (checkPermision($pagename, $role)) {
         }
 
         $postid = intval($_GET['pid']);
-        $query = $conDb->doSelectQuery($conn, "SELECT tblposts.id as postid,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid,tblsubcategory.SubCategoryId as subcatid,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.id='$postid' and tblposts.Is_Active=1 ");
+        $query = $conDb->doSelectQuery($conn, "SELECT tblposts.id as postid,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid,tblsubcategory.SubCategoryId as subcatid,tblsubcategory.Subcategory as subcategory from tblposts 
+                                                left join tblcategory 
+                                                on tblcategory.id=tblposts.CategoryId 
+                                                left join tblsubcategory 
+                                                on tblsubcategory.SubCategoryId=tblposts.SubCategoryId 
+                                                where tblposts.id='$postid' 
+                                                and tblposts.Is_Active=1 ");
         $row = $query['data'][0];
         if ($query['rows'] == 1) {
 ?>
