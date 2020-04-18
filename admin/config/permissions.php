@@ -9,6 +9,8 @@ $permissions = [
     "change_image.php" => ['admin', 'author'],
     "add_post.php" => ['admin', 'author'],
     "edit_post.php" => ['admin', 'author'],
+    "category_manager.php" => ['admin', 'author'],
+    "edit_category.php" => ['admin', 'author'],
 ];
 
 
