@@ -30,9 +30,10 @@ if (checkPermision($pagename, $role)) {
         </head>
 
         <body>
-            <form method="POST" action="add_category.php">
-                <button >add cat</button>
-            </form>
+            <!-- <form method="POST" action="add_category.php">
+                <button>add cat</button>
+            </form> -->
+            <button data-role="addcat">ADD CAT</button>
             <table class="table">
                 <thead>
                     <tr>
@@ -150,6 +151,35 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </form>
+            </div>
+            <form id="cat-add-id">
+                <div class="modal fade" id="AddModle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div>
+                                <label for="">catname</label>
+                                <input type="text" id="catnames">
+                                <label for="">catdes</label>
+                                <input type="text" id="catdess">
+
+                                <!-- <input type="time"> -->
+                            </div>
+                            <div class="modal-footer">
+                                <form id="">
+                                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button id="addcat" type="submit" class="btn btn-primary">submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             </div>
             <script>
 

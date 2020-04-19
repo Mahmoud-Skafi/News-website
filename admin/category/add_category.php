@@ -7,22 +7,23 @@ error_reporting(0);
 $pagename = basename($_SERVER['PHP_SELF']);
 $role = $_SESSION['roles'];
 
-if (checkPermision($pagename, $role)) {
-    if (isset($_SESSION['username'])) {
-        if (isset($_POST['addcat'])) {
-            $catname = $_POST['catname'];
-            $catdes = $_POST['catdes'];
-            $upload = date("Y/m/d");
-            $status = 1;
+$catname = $_POST['catname'];
+$catdes = $_POST['catdes'];
+$upload = date("Y/m/d");
+$status = 1;
 
-            $sql = $conDb->doSelectQuery($conn, "INSERT INTO tblcategory( CategoryName, Description, PostingDate, UpdationDate, Is_Active) 
-                                                VALUES ('$catname','$catdes','$upload','$upload','$status')");
-        }
-    } else {
-        header('location:../login.php');
-    }
-} ?>
-<!DOCTYPE html>
+$sql = $conDb->doSelectQuery($conn, "INSERT INTO tblcategory( CategoryName, Description, PostingDate, UpdationDate, Is_Active) 
+                                    VALUES ('$catname','$catdes','$upload','$upload','$status')");
+// if (checkPermision($pagename, $role)) {
+//     if (isset($_SESSION['username'])) {
+//         if (isset($_POST['catname']) && isset($_POST['catdes'])) {
+//         }
+//     } else {
+//         header('location:../login.php');
+//     }
+// } 
+?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -43,4 +44,4 @@ if (checkPermision($pagename, $role)) {
     </form>
 </body>
 
-</html>
+</html> -->

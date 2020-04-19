@@ -1,3 +1,8 @@
+
+
+/**
+ * Edit Category
+ */
 $(document).ready(function () {
     $(document).on('click', 'a[data-role=editcat]', function () {
         var id = $(this).data('id');
@@ -42,6 +47,10 @@ $(document).ready(function () {
             return false;
         });
     });
+
+    /**
+     * Delete Category
+     */
     $(document).on('click', 'a[data-role=deletecat]', function () {
         var id = $(this).data('id');
         var catactive = $('#' + id).children('td[data-target=catactive]').text().trim();
@@ -64,7 +73,7 @@ $(document).ready(function () {
                         catid: catid,
                     },
                     success: function (res) {
-                        
+
                         $('#DeleteModal').modal('toggle');
                         window.location.reload();
                     }
@@ -72,6 +81,36 @@ $(document).ready(function () {
             }
             return false;
         });
+    });
+
+    /**
+     * Add Post
+     */
+    $(document).on('click','button[data-role=addcat]', function () {
+        // var id = $(this).data('id');
+        console.log("adadad");
+        $('#AddModle').modal('toggle');
+        $('#addcat').click(function () {
+            
+            var catname = $('#catnames').val();
+            var catdes = $('#catdess').val();
+            if (1) {
+                console.log("addcat");
+                $.ajax({
+                    type:'post',
+                    url:'add_category.php',
+                    data:{
+                        catname:catname,
+                        catdes:catdes
+                    },
+                    success:function(res){
+                        alert(res);
+                    }
+                });
+            }
+            return false;
+        });
+
     });
 
     /**
