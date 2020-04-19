@@ -1,24 +1,22 @@
 $(document).ready(function () {
-    $(document).on('click', 'a[data-role=edit]', function () {
+    $(document).on('click', 'a[data-role=editcat]', function () {
         var id = $(this).data('id');
         var catname = $('#' + id).children('td[data-target=catname]').text().trim();
         var catdes = $('#' + id).children('td[data-target=catdes]').text().trim();
         var catactive = $('#' + id).children('td[data-target=catactive]').text().trim();
         $('#catname').val(catname);
-        var k = $('#catname').val(catname);
-        // console.log(k);
         $('#catdes').val(catdes);
         $('#catactive').val(catactive);
         $('#catid').val(id);
-        console.log( $('#catid').val());
+
         $('#exampleModal').modal('toggle');
         $('#kk').click(function () {
             console.log("ok");
             var catname = $('#catname').val();
             var catdes = $('#catdes').val();
             var catactive = $('#catactive').val();
-            var catid= $('#catid').val();
-            console.log(catname, catdes, catactive);
+            var catid = $('#catid').val();
+
             if (catname && catdes && catactive) {
                 console.log('kkkk');
                 $.ajax({
@@ -44,6 +42,67 @@ $(document).ready(function () {
             return false;
         });
     });
+    $(document).on('click', 'a[data-role=deletecat]', function () {
+        var id = $(this).data('id');
+        var catactive = $('#' + id).children('td[data-target=catactive]').text().trim();
+        console.log(id, catactive);
+        $('#catid').val(id);
+        $('#isactive').val(catactive);
+        $('#DeleteModal').modal('toggle');
 
+
+        $('#deletecat').click(function () {
+            console.log("skafi");
+            var catactive = $('#isactive').val();
+            var catid = $('#catid').val();
+            if (catid && catactive == 1) {
+                console.log(catid);
+                $.ajax({
+                    type: 'post',
+                    url: 'delete_category.php',
+                    data: {
+                        catid: catid,
+                    },
+                    success: function (res) {
+                        
+                        $('#DeleteModal').modal('toggle');
+                        window.location.reload();
+                    }
+                });
+            }
+            return false;
+        });
+    });
+
+    /**
+     * Delete Post
+     */
+    $(document).on('click', 'a[data-role=delete]', function () {
+        var id = $(this).data('id');
+        var isactive = $('#' + id).children('td[data-target=isactive]').text().trim();
+        $('#postid').val(id);
+        $('#isactive').val(isactive);
+        $('#exampleModal').modal('toggle');
+
+        $('#deletepost').click(function () {
+            var postid = $('#postid').val();
+            var isactive = $('#isactive').val();
+            if (postid && isactive == 1) {
+                console.log(postid);
+                $.ajax({
+                    type: 'post',
+                    url: 'view_post.php',
+                    data: {
+                        postid: postid
+                    },
+                    success: function (res) {
+                        $('#' + id).children('td[data-target=isactive]').text(isactive);
+                        $('#exampleModal').modal('toggle');
+                    }
+                });
+            }
+            return false;
+        });
+    });
 
 });

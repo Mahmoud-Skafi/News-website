@@ -12,7 +12,7 @@ if (checkPermision($pagename, $role)) {
     } else {
         $sql = $conDb->doSelectQuery($conn, "SELECT id, CategoryName, Description, PostingDate, UpdationDate, Is_Active 
                                             FROM tblcategory 
-                                            WHERE 1 
+                                            WHERE Is_Active=1
         ");
 ?>
         <!DOCTYPE html>
@@ -30,6 +30,9 @@ if (checkPermision($pagename, $role)) {
         </head>
 
         <body>
+            <form method="POST" action="add_category.php">
+                <button >add cat</button>
+            </form>
             <table class="table">
                 <thead>
                     <tr>
@@ -63,7 +66,8 @@ if (checkPermision($pagename, $role)) {
                                     <?php echo $row['PostingDate']; ?>
                                 </td>
                                 <td data-target="">
-                                    <a href="#" data-role="edit" data-id=<?php echo $row['id'] ?>> =edit</a>
+                                    <a href="#" data-role="editcat" data-id=<?php echo $row['id'] ?>> =edit</a>
+                                    <a href="#" data-role="deletecat" data-id=<?php echo $row['id'] ?>> =edit</a>
                                 </td>
                                 <td><a href="edit_category.php?pid=<?php echo htmlentities($row['id']); ?>">edit<i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
                                     &nbsp;<a href="post_manager.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')">delete<i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
@@ -80,7 +84,7 @@ if (checkPermision($pagename, $role)) {
                 </tbody>
             </table>
 
-            <!-- Modal -->
+            <!-- EDIT Modal -->
             <div>
                 <form id="cat-edit-id">
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,6 +116,34 @@ if (checkPermision($pagename, $role)) {
                                     <form id="">
                                         <button class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button id="kk" type="submit" class="btn btn-primary">submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form id="cat-delete-id">
+                    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div>
+
+                                    <input type="hidden" id="catid">
+                                    <input type="hidden" id="isactive">
+                                    <!-- <input type="time"> -->
+                                </div>
+                                <div class="modal-footer">
+                                    <form id="">
+                                        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button id="deletecat" type="submit" class="btn btn-primary">submit</button>
                                     </form>
                                 </div>
                             </div>

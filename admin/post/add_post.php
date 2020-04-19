@@ -29,7 +29,7 @@ if (checkPermision($pagename, $role)) {
                 move_uploaded_file($_FILES["post_image"]["tmp_name"], "../postimages/" . $imgnewfile);
 
                 $status = 1;
-                $query = mysqli_query($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile')");
+                $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile')");
                 if ($query) {
                     $msg = "Post successfully added ";
                     echo $msg;
@@ -115,14 +115,14 @@ if (checkPermision($pagename, $role)) {
             <!-- Category -->
             <div class="">
                 <label for="">Category</label>
-                <select name="category" id="category" onChange="getSubCat(this.value);" required>
+                <select name="category" id="category"  required>
                     <option value="">Select Category </option>
                     <?php
                     // Feching active categories
-                    $ret = mysqli_query($conn, "select id,CategoryName from  tblcategory where Is_Active=1");
-                    while ($result = mysqli_fetch_array($ret)) {
+                    $ret =$conDb->doSelectQuery($conn, "SELECT id,CategoryName from  tblcategory where Is_Active=1");
+                    foreach ($ret['data'] as $result) {
                     ?>
-                        <option value="<?php echo htmlentities($result['id']); ?>"><?php echo htmlentities($result['CategoryName']); ?></option>
+                        <option value="<?php echo $result['id']; ?>"><?php echo $result['CategoryName']; ?></option>
                     <?php } ?>
 
                 </select>
