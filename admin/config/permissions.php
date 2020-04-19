@@ -11,6 +11,7 @@ $permissions = [
     "edit_post.php" => ['admin', 'author'],
     "category_manager.php" => ['admin', 'author'],
     "edit_category.php" => ['admin', 'author'],
+    "add_category.php" => ['admin']
 ];
 
 
