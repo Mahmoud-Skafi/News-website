@@ -2,8 +2,6 @@
 session_start();
 // require_once('./config/connection.php');
 require_once('./config/dbcon.php');
-
-
 if (isset($_POST['login'])) {
 
     $username = $_POST['username'];

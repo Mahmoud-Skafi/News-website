@@ -70,8 +70,9 @@ if (checkPermision($pagename, $role)) {
                                     <a href="#" data-role="editcat" data-id=<?php echo $row['id'] ?>> =edit</a>
                                     <a href="#" data-role="deletecat" data-id=<?php echo $row['id'] ?>> =edit</a>
                                 </td>
-                                <td><a href="edit_category.php?pid=<?php echo htmlentities($row['id']); ?>">edit<i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
-                                    &nbsp;<a href="post_manager.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')">delete<i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                <!-- <td><a href="edit_category.php?pid=<?php echo htmlentities($row['id']); ?>">edit<i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
+                                    &nbsp;<a href="post_manager.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')">delete<i class="fa fa-trash-o" style="color: #f05050"></i></a> 
+                                    </td> -->
                             </tr>
 
 
@@ -167,8 +168,6 @@ if (checkPermision($pagename, $role)) {
                                 <input type="text" id="catnames">
                                 <label for="">catdes</label>
                                 <input type="text" id="catdess">
-
-                                <!-- <input type="time"> -->
                             </div>
                             <div class="modal-footer">
                                 <form id="">

@@ -75,7 +75,7 @@ $(document).ready(function () {
                     success: function (res) {
 
                         $('#DeleteModal').modal('toggle');
-                        window.location.reload();
+                        // window.location.reload();
                     }
                 });
             }
@@ -104,7 +104,7 @@ $(document).ready(function () {
                         catdes:catdes
                     },
                     success:function(res){
-                        alert(res);
+                        // alert(res);
                     }
                 });
             }
@@ -135,8 +135,8 @@ $(document).ready(function () {
                         postid: postid
                     },
                     success: function (res) {
-                        $('#' + id).children('td[data-target=isactive]').text(isactive);
                         $('#exampleModal').modal('toggle');
+                        window.location.reload();
                     }
                 });
             }
