@@ -57,7 +57,13 @@ if (checkPermision($pagename, $role)) {
                 <td>@mdo</td>
             </tr> -->
                         <?php
-                        $res = $conDb->doSelectQuery($conn, "SELECT id, PostTitle, PostingDate, Is_Active, PostUrl FROM tblposts WHERE Is_Active=1");
+                        if ($_SESSION['roles'] == 'admin') {
+                            $res = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='yes'  ");
+                        }
+                        else  if($_SESSION['roles'] == 'author'){
+                            $res = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='no' OR Approved='yes'");
+                        }
+
                         ?>
                         <?php
                         if ($res['rows'] > 0) {
@@ -73,14 +79,14 @@ if (checkPermision($pagename, $role)) {
                                     <td>
                                         <?php echo $row['PostingDate']; ?>
                                     </td>
-                                    <td data-target="isactive" >
+                                    <td data-target="isactive">
                                         <?php echo $row['Is_Active']; ?>
                                     </td>
                                     <td>
                                         <?php echo $row['PostUrl']; ?>
                                     </td>
                                     <td>
-                                        <a href="#" data-role="delete" data-id=<?php echo $row['id'] ?>>delete</a>
+                                        <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>delete</a>
                                     </td>
                                     <td><a href="edit_post.php?pid=<?php echo htmlentities($row['id']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
                                         &nbsp;<a href="post_manager.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
@@ -91,9 +97,6 @@ if (checkPermision($pagename, $role)) {
                     </tbody>
                 </table>
                 <div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                    </button>
                     <form id="cat-edit-id">
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">

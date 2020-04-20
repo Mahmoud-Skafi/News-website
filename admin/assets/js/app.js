@@ -75,7 +75,7 @@ $(document).ready(function () {
                     success: function (res) {
 
                         $('#DeleteModal').modal('toggle');
-                        // window.location.reload();
+                        window.location.reload();
                     }
                 });
             }
@@ -86,24 +86,26 @@ $(document).ready(function () {
     /**
      * Add Post
      */
-    $(document).on('click','button[data-role=addcat]', function () {
+    $(document).on('click', 'button[data-role=addcat]', function () {
         // var id = $(this).data('id');
         console.log("adadad");
         $('#AddModle').modal('toggle');
         $('#addcat').click(function () {
-            
+
             var catname = $('#catnames').val();
             var catdes = $('#catdess').val();
             if (1) {
                 console.log("addcat");
                 $.ajax({
-                    type:'post',
-                    url:'add_category.php',
-                    data:{
-                        catname:catname,
-                        catdes:catdes
+                    type: 'post',
+                    url: 'add_category.php',
+                    data: {
+                        catname: catname,
+                        catdes: catdes
                     },
-                    success:function(res){
+                    success: function (res) {
+                        $('#AddModle').modal('toggle');
+                        window.location.reload();
                         // alert(res);
                     }
                 });
@@ -116,7 +118,7 @@ $(document).ready(function () {
     /**
      * Delete Post
      */
-    $(document).on('click', 'a[data-role=delete]', function () {
+    $(document).on('click', 'a[data-role=deletepost]', function () {
         var id = $(this).data('id');
         var isactive = $('#' + id).children('td[data-target=isactive]').text().trim();
         $('#postid').val(id);
@@ -143,5 +145,37 @@ $(document).ready(function () {
             return false;
         });
     });
+    /**
+     * Accepted Post
+     */
+    $(document).on('click', 'a[data-role=accepted]', function () {
 
+        var id = $(this).data('id');
+        var isaccpted = $('#' + id).children('td[data-target=accept]').text().trim();
+        $('#postida').val(id);
+        $('#isaccpted').val(isaccpted);
+        $('#AcceptedModle').modal('toggle');
+
+    });
+    $('#acceptpost').click(function () {
+        console.log("ok");
+        var postid = $('#postida').val().trim();
+        var isaccpted = $('#isaccpted').val().trim();
+
+        if (postid && isaccpted == 'no') {
+            console.log(postid, isaccpted);
+            $.ajax({
+                type: 'post',
+                url: 'accept_post.php',
+                data: {
+                    postid: postid,
+
+                },
+                success: function (res) {
+                    alert(res);
+                }
+            });
+        }
+        return false;
+    });
 });

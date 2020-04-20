@@ -33,7 +33,17 @@ if (checkPermision($pagename, $role)) {
             <!-- <form method="POST" action="add_category.php">
                 <button>add cat</button>
             </form> -->
-            <button data-role="addcat">ADD CAT</button>
+            <!-- <?php
+                $pagename = basename($_SERVER['PHP_SELF']);
+                $role = $_SESSION['roles'];
+
+                if (checkPermision($pagename, $role)) {
+                    ?>
+                   
+                    <?php
+                }
+            ?> -->
+             <button data-role="addcat">ADD CAT</button>
             <table class="table">
                 <thead>
                     <tr>

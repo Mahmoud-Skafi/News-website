@@ -2,6 +2,8 @@
 session_start();
 // require_once('./config/connection.php');
 require_once('./config/dbcon.php');
+
+
 if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
@@ -10,7 +12,7 @@ if (isset($_POST['login'])) {
                                         FROM tblusers 
                                         LEFT JOIN tbpermisstions 
                                         ON tblusers.role_id=tbpermisstions.role_id
-                                        AND tblusers.user_name='" . $username . "'
+                                        WHERE tblusers.user_name='" . $username . "'
                                         AND tblusers.Is_Active='1'
                                         ");
     if ($sql['status'] == 1) {
@@ -25,6 +27,9 @@ if (isset($_POST['login'])) {
             } else
                 echo "<script>alert('Wrong user name or Password');</script>";
         }
+    }
+    else{
+         echo "<script>alert('Wrong user name or Password');</script>";
     }
 }
 ?>
