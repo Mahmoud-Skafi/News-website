@@ -11,6 +11,7 @@ if (checkPermision($pagename, $role)) {
         header('location:login.php');
     } else {
         if (isset($_POST['add'])) {
+
             // echo "<script>alert('Wrong User Name or Password');</script>";
             $postTitile = $_POST['post_title'];
             $CatId = $_POST['category'];
@@ -20,16 +21,20 @@ if (checkPermision($pagename, $role)) {
             $imgfile = $_FILES["post_image"]["name"];
             $extension = substr($imgfile, strlen($imgfile) - 4, strlen($imgfile));
             $allowed_extensions = array(".jpg", ".png", ".gif");
+            $status = 1;
+            $aproved = 'yes';
             if (!in_array($extension, $allowed_extensions)) {
                 echo "<script>alert('Invalid format. Only jpg / png /gif format allowed');</script>";
             } else {
                 //rename the image file
                 $imgnewfile = md5($imgfile) . $extension;
                 // Code for move image into directory**
+                if ($role == 'author') {
+                    $aproved = 'no';
+                    $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
+                }
                 move_uploaded_file($_FILES["post_image"]["tmp_name"], "../postimages/" . $imgnewfile);
-
-                $status = 1;
-                $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile')");
+                $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
                 if ($query) {
                     $msg = "Post successfully added ";
                     echo $msg;
@@ -115,11 +120,11 @@ if (checkPermision($pagename, $role)) {
             <!-- Category -->
             <div class="">
                 <label for="">Category</label>
-                <select name="category" id="category"  required>
+                <select name="category" id="category" required>
                     <option value="">Select Category </option>
                     <?php
                     // Feching active categories
-                    $ret =$conDb->doSelectQuery($conn, "SELECT id,CategoryName from  tblcategory where Is_Active=1");
+                    $ret = $conDb->doSelectQuery($conn, "SELECT id,CategoryName from  tblcategory where Is_Active=1");
                     foreach ($ret['data'] as $result) {
                     ?>
                         <option value="<?php echo $result['id']; ?>"><?php echo $result['CategoryName']; ?></option>

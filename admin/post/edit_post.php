@@ -57,13 +57,14 @@ if (checkPermision($pagename, $role)) {
                 <br>
 
                 <br>
-                <textarea class="summernote" name="postdescription" required><?php echo htmlentities($row['PostDetails']); ?></textarea>
+                <textarea name="postdescription" required><?php echo htmlentities($row['PostDetails']); ?></textarea>
                 <br>
                 <img src="../postimages/<?php echo htmlentities($row['PostImage']); ?>" width="300" />
                 <br>
                 <a href="change_image.php?pid=<?php echo htmlentities($row['postid']); ?>">Update Image</a>
                 <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
                 <br>
+               
             </form>
 <?php }
     }
