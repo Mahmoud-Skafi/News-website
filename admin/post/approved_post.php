@@ -70,7 +70,7 @@ if (checkPermision($pagename, $role)) {
                                             <a href="#" data-role="accepted" data-id=<?php echo $row['id'] ?>>accept</a>
 
                                         </td>
-                                        <td data-target="accept">
+                                        <td data-target="accept" style="display: none">
                                             <?php echo $row['Approved'] ?>
                                         </td>
 

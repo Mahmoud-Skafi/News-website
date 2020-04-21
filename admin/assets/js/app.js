@@ -39,7 +39,7 @@ $(document).ready(function () {
                         $('#' + id).children('td[data-target=catdes]').text(catdes);
                         $('#' + id).children('td[data-target=catactive]').text(catactive);
                         $('#exampleModal').modal('toggle');
-                        // alert(res);
+
                     }
                 });
             }
@@ -106,7 +106,6 @@ $(document).ready(function () {
                     success: function (res) {
                         $('#AddModle').modal('toggle');
                         window.location.reload();
-                        // alert(res);
                     }
                 });
             }
@@ -172,7 +171,7 @@ $(document).ready(function () {
 
                 },
                 success: function (res) {
-                    alert(res);
+                    window.location.reload();
                 }
             });
         }
