@@ -64,7 +64,7 @@ if (checkPermision($pagename, $role)) {
                 <a href="change_image.php?pid=<?php echo htmlentities($row['postid']); ?>">Update Image</a>
                 <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
                 <br>
-               
+
             </form>
 <?php }
     }

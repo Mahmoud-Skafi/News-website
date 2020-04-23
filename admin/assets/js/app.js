@@ -157,7 +157,7 @@ $(document).ready(function () {
 
     });
     $('#acceptpost').click(function () {
-        console.log("ok");
+       
         var postid = $('#postida').val().trim();
         var isaccpted = $('#isaccpted').val().trim();
 
@@ -176,5 +176,31 @@ $(document).ready(function () {
             });
         }
         return false;
+    });
+
+    /**
+     * Disactivate accounts
+     */
+    $(document).on('click','a[data-role=disactivate]',function(){
+        var userid = $(this).data('id');
+        $('#userid').val(userid);
+        $('#accountmodle').modal('toggle');
+
+        $('#Disactivate').click(function(){
+            var userid = $('#userid').val().trim();
+            if(userid){
+                $.ajax({
+                    type:'post',
+                    url:'accounts_logic.php',
+                    data:{
+                        userid:userid
+                    },
+                    success:function(res){
+                        alert("its ok");
+                    }
+
+                });
+            }
+        });
     });
 });
