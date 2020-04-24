@@ -1,7 +1,7 @@
 <?php
 
-require_once('./config/dbcon.php');
-include('./config/permissions.php');
+require_once('../config/dbcon.php');
+include('../config/permissions.php');
 session_start();
 error_reporting(0);
 $pagename = basename($_SERVER['PHP_SELF']);
