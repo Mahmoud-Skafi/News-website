@@ -15,7 +15,9 @@ $permissions = [
     "approved_post.php"=>['admin'],
     "manage_accounts.php" =>['admin'],
     "accounts_logic.php"=>['admin'],
-    "add_users.php"=>['admin']
+    "add_users.php"=>['admin'],
+    "account_activat.php"=>['admin'],
+    "activat.php"=>['admin']
 ];
 
 
