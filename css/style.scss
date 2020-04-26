@@ -1,4 +1,4 @@
-@import "globals.scss";
+// @import "variables.scss";
 * {
   margin: 0;
   padding: 0;
@@ -884,7 +884,7 @@ select option:checked {
   }
   &:hover .dropdow-menu {
     display: block !important;
-    transition: all .5s ease-out !important;
+    transition: all 0.5s ease-out !important;
   }
   > .dropdow-menu {
     position: absolute;
@@ -903,7 +903,7 @@ select option:checked {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.2rem;
-    transition: all .5s ease-out !important;
+    transition: all 0.5s ease-out !important;
     > .dropdown-items {
       display: inline-block;
       width: 100%;
@@ -921,16 +921,16 @@ select option:checked {
       > a {
         text-decoration: none !important;
         color: $default-clr !important;
-        >svg {
+        > svg {
           margin-right: 8px;
           vertical-align: middle;
           width: 20px;
           height: 20px;
           color: #495057;
         }
-        &::hover{
-        background-color: rgba(238, 238, 238, 0.308) !important;
-        color: $dark-clr !important;
+        &::hover {
+          background-color: rgba(238, 238, 238, 0.308) !important;
+          color: $dark-clr !important;
         }
       }
       &:hover {
@@ -1576,10 +1576,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
                 &:first-child {
                   width: 1px;
                 }
-                >.checkbox-v1
-                {
-                  >label
-                  {
+                > .checkbox-v1 {
+                  > label {
                     padding-bottom: 10px;
                   }
                 }
