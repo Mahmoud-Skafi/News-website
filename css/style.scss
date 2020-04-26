@@ -1,367 +1,325 @@
-// @import "variables.scss";
+@import "var.scss";
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: montserrat;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
 }
 
 h2 {
-  margin: 0 !important;
+    margin: 0 !important;
 }
 
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 .center-me {
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .goflex {
-  display: flex;
+    display: flex;
 }
 
 .justifyContentA {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
 .justifyContentC {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .justifyContentS {
-  display: flex;
-  justify-content: start;
+    display: flex;
+    justify-content: start;
 }
 
 .justifyContentE {
-  display: flex;
-  justify-content: end;
+    display: flex;
+    justify-content: end;
 }
 
 .alignItemC {
-  display: flex;
-  align-content: center;
+    display: flex;
+    align-content: center;
 }
 
 .secondary-bc {
-  background-color: $secondary-clr;
+    background-color: $secondary-clr;
 }
 
 .primary-bc {
-  background-color: $primary-clr;
+    background-color: $primary-clr;
 }
 
 .default-bc {
-  background-color: $default-clr;
+    background-color: $default-clr;
 }
 
 .vs-btn-container {
 }
 
 @keyframes dropdownAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .vs-btn {
-  border-radius: 6px;
-  box-shadow: $global-shadow;
-  border: none;
-  padding: 15px 30px;
-  min-width: 74.609px;
-  outline: none;
-  background: white;
-  cursor: pointer;
-  &.primary.outline {
-    border: 2px solid darken($primary-clr, 5%);
+    border-radius: 6px;
+    box-shadow: $global-shadow;
+    border: none;
+    padding: 15px 30px;
+    min-width: 74.609px;
+    outline: none;
     background: white;
-    color: black;
-    border-radius: 0px;
-  }
-  &.capital {
-    text-transform: uppercase;
-  }
-  &:hover {
-    background-color: darken(white, 2%);
-  }
-  &.primary {
-    background: $primary-clr;
-    border-bottom: 2px solid darken($primary-clr, 5%);
-    color: white;
-  }
-  &.primary:hover {
-    background: darken($primary-clr, 5%);
-    border-bottom: 2px solid darken($primary-clr, 5%);
-    color: white;
-  }
-  &.secondary {
-    background: $secondary-clr;
-    border-bottom: 2px solid darken($secondary-clr, 5%);
-    color: white;
-  }
-  &.secondary:hover {
-    background: darken($secondary-clr, 5%);
-    border-bottom: 2px solid darken($secondary-clr, 5%);
-    color: white;
-  }
-  border-radius: 6px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
-  border: none;
-  padding: 15px 30px;
-  min-width: 74.609px;
-  outline: none;
-  background: white;
-  cursor: pointer;
-  &.capital {
-    text-transform: uppercase;
-  }
-  &:hover {
-    background-color: darken(white, 2%);
-  }
-  &.primary {
-    background: $primary-clr;
-    border-bottom: 2px solid darken($primary-clr, 5%);
-    color: white;
-  }
-  &.primary:hover {
-    background: darken($primary-clr, 5%);
-    border-bottom: 2px solid darken($primary-clr, 5%);
-    color: white;
-  }
-  &.secondary {
-    background: $secondary-clr;
-    border-bottom: 2px solid darken($secondary-clr, 5%);
-    color: white;
-  }
-  &.secondary:hover {
-    background: darken($secondary-clr, 5%);
-    border-bottom: 2px solid darken($secondary-clr, 5%);
-    color: white;
-  }
-  &.success {
-    background: $success-clr;
-    border-bottom: 2px solid darken($success-clr, 5%);
-    color: white;
-  }
-  &.success:hover {
-    background: darken($success-clr, 5%);
-    border-bottom: 2px solid darken($success-clr, 5%);
-    color: white;
-  }
-  &.danger {
-    background: $danger-clr;
-    border-bottom: 2px solid darken($danger-clr, 5%);
-    color: white;
-  }
-  &.danger:hover {
-    background: darken($danger-clr, 5%);
-    border-bottom: 2px solid darken($danger-clr, 5%);
-    color: white;
-  }
-  &.warning {
-    background: $warning-clr;
-    border-bottom: 2px solid darken($warning-clr, 5%);
-    color: white;
-  }
-  &.warning:hover {
-    background: darken($warning-clr, 10%);
-    border-bottom: 2px solid darken($warning-clr, 10%);
-    color: white;
-  }
-  &.file {
-    background: $file-clr;
-    border-bottom: 2px solid darken($file-clr, 5%);
-    color: white;
-  }
-  &.file:hover {
-    background: darken($file-clr, 10%);
-    border-bottom: 2px solid darken($file-clr, 10%);
-    color: white;
-  }
-  &:disabled {
-    background-color: $disabled-clr;
-    border-bottom: 2px solid darken($disabled-clr, 5%);
-    color: #8a8a8a;
-  }
-  &:disabled:hover {
-    background-color: $disabled-clr;
-    border-bottom: 2px solid darken($disabled-clr, 5%);
-    color: #8a8a8a;
-  }
-  &.icon-upload:before {
-    @extend .fontawesome-content;
-    content: "\f574";
-  }
-  &.icon-link:before {
-    @extend .fontawesome-content;
-    content: "\f0c1";
-  }
-  &.icon-view:before {
-    @extend .fontawesome-content;
-    content: "\f06e";
-  }
-  &.icon-delete:before {
-    @extend .fontawesome-content;
-    content: "\f2ed";
-  }
-  &.icon-check:before {
-    @extend .fontawesome-content;
-    content: "\f00c";
-  }
+    cursor: pointer;
+    &.primary.outline {
+        border: 2px solid darken($primary-clr, 5%);
+        background: white;
+        color: black;
+        border-radius: 0px;
+    }
+    &.capital {
+        text-transform: uppercase;
+    }
+    &:hover {
+        background-color: darken(white, 2%);
+    }
+    &.primary {
+        background: $primary-clr;
+        border-bottom: 2px solid darken($primary-clr, 5%);
+        color: white;
+    }
+    &.primary:hover {
+        background: darken($primary-clr, 5%);
+        border-bottom: 2px solid darken($primary-clr, 5%);
+        color: white;
+    }
+    &.secondary {
+        background: $secondary-clr;
+        border-bottom: 2px solid darken($secondary-clr, 5%);
+        color: white;
+    }
+    &.secondary:hover {
+        background: darken($secondary-clr, 5%);
+        border-bottom: 2px solid darken($secondary-clr, 5%);
+        color: white;
+    }
+    border-radius: 6px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    padding: 15px 30px;
+    min-width: 74.609px;
+    outline: none;
+    background: white;
+    cursor: pointer;
+    &.capital {
+        text-transform: uppercase;
+    }
+    &:hover {
+        background-color: darken(white, 2%);
+    }
+    &.primary {
+        background: $primary-clr;
+        border-bottom: 2px solid darken($primary-clr, 5%);
+        color: white;
+    }
+    &.primary:hover {
+        background: darken($primary-clr, 5%);
+        border-bottom: 2px solid darken($primary-clr, 5%);
+        color: white;
+    }
+    &.secondary {
+        background: $secondary-clr;
+        border-bottom: 2px solid darken($secondary-clr, 5%);
+        color: white;
+    }
+    &.secondary:hover {
+        background: darken($secondary-clr, 5%);
+        border-bottom: 2px solid darken($secondary-clr, 5%);
+        color: white;
+    }
+    &.success {
+        background: $success-clr;
+        border-bottom: 2px solid darken($success-clr, 5%);
+        color: white;
+    }
+    &.success:hover {
+        background: darken($success-clr, 5%);
+        border-bottom: 2px solid darken($success-clr, 5%);
+        color: white;
+    }
+    &.danger {
+        background: $danger-clr;
+        border-bottom: 2px solid darken($danger-clr, 5%);
+        color: white;
+    }
+    &.danger:hover {
+        background: darken($danger-clr, 5%);
+        border-bottom: 2px solid darken($danger-clr, 5%);
+        color: white;
+    }
+    &.warning {
+        background: $warning-clr;
+        border-bottom: 2px solid darken($warning-clr, 5%);
+        color: white;
+    }
+    &.warning:hover {
+        background: darken($warning-clr, 10%);
+        border-bottom: 2px solid darken($warning-clr, 10%);
+        color: white;
+    }
+    &.file {
+        background: $file-clr;
+        border-bottom: 2px solid darken($file-clr, 5%);
+        color: white;
+    }
+    &.file:hover {
+        background: darken($file-clr, 10%);
+        border-bottom: 2px solid darken($file-clr, 10%);
+        color: white;
+    }
+    &:disabled {
+        background-color: $disabled-clr;
+        border-bottom: 2px solid darken($disabled-clr, 5%);
+        color: #8a8a8a;
+    }
+    &:disabled:hover {
+        background-color: $disabled-clr;
+        border-bottom: 2px solid darken($disabled-clr, 5%);
+        color: #8a8a8a;
+    }
+    &.icon-upload:before {
+        @extend .fontawesome-content;
+        content: "\f574";
+    }
+    &.icon-link:before {
+        @extend .fontawesome-content;
+        content: "\f0c1";
+    }
+    &.icon-view:before {
+        @extend .fontawesome-content;
+        content: "\f06e";
+    }
+    &.icon-delete:before {
+        @extend .fontawesome-content;
+        content: "\f2ed";
+    }
+    &.icon-check:before {
+        @extend .fontawesome-content;
+        content: "\f00c";
+    }
 }
 
 .fontawesome-content {
-  font-family: "Font Awesome 5 Pro";
+    font-family: "Font Awesome 5 Pro";
 }
 
 .flex-container {
-  display: flex;
-  &.space-evenly {
-    justify-content: space-evenly;
-  }
-  &.justify-start {
-    align-items: flex-start;
-  }
+    display: flex;
+    &.space-evenly {
+        justify-content: space-evenly;
+    }
+    &.justify-start {
+        align-items: flex-start;
+    }
 }
 
 .vs-alert {
-  // @extend .flex-container;
-  border-radius: 6px;
-  padding: 20px;
-  display: flex;
-  .body {
+    // @extend .flex-container;
+    border-radius: 6px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .header {
-      font-size: 18px;
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .header {
+            font-size: 18px;
+        }
+        .message {
+            font-size: 14px;
+        }
     }
-    .message {
-      font-size: 14px;
+    &.danger {
+        background: $danger-clr;
+        color: white;
     }
-  }
-  &.danger {
-    background: $danger-clr;
-    color: white;
-  }
-  &.success {
-    background: $success-clr;
-    color: white;
-  }
-  &.warning {
-    background: $warning-clr;
-    color: white;
-  }
-  &.info {
-    background: $primary-clr;
-    color: white;
-  }
-  &.info:before {
-    @extend .alert-icon;
-    content: "\f06a";
-  }
-  &.success:before {
-    @extend .alert-icon;
-    content: "\f058";
-  }
-  &.danger:before {
-    @extend .alert-icon;
-    content: "\f06a";
-  }
-  &.warning:before {
-    @extend .alert-icon;
-    content: "\f071";
-  }
+    &.success {
+        background: $success-clr;
+        color: white;
+    }
+    &.warning {
+        background: $warning-clr;
+        color: white;
+    }
+    &.info {
+        background: $primary-clr;
+        color: white;
+    }
+    &.info:before {
+        @extend .alert-icon;
+        content: "\f06a";
+    }
+    &.success:before {
+        @extend .alert-icon;
+        content: "\f058";
+    }
+    &.danger:before {
+        @extend .alert-icon;
+        content: "\f06a";
+    }
+    &.warning:before {
+        @extend .alert-icon;
+        content: "\f071";
+    }
 }
 
 .alert-icon {
-  @extend .fontawesome-content;
-  font-size: 30px;
-  font-weight: 300;
-  margin-right: 10px;
-  color: white;
-  display: flex;
-  align-items: center;
+    @extend .fontawesome-content;
+    font-size: 30px;
+    font-weight: 300;
+    margin-right: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 
 .vs-list-dropdown {
-  .vs-list-dropdown-button {
-    position: relative;
-  }
-  .vs-list-dropdown-button:hover {
-    ~ .vs-list {
-      display: flex;
+    .vs-list-dropdown-button {
+        position: relative;
     }
-  }
-  .vs-list {
-    display: none;
-    position: absolute;
-  }
-  .vs-list:hover {
-    display: flex;
-  }
+    .vs-list-dropdown-button:hover {
+        ~ .vs-list {
+            display: flex;
+        }
+    }
+    .vs-list {
+        display: none;
+        position: absolute;
+    }
+    .vs-list:hover {
+        display: flex;
+    }
 }
 
 .vs-list {
-  border-radius: 6px;
-  box-shadow: $global-shadow;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  flex-direction: column;
-  list-style: none;
-  z-index: 9999;
-  text-align: center;
-  > li {
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-  }
-  > li:hover {
-    background-color: $hover-gray;
-    cursor: pointer;
-    width: 100%;
-  }
-  &.login {
-    border: 1px solid $global-border-clr;
-    > li {
-      padding: 10px;
-      text-align: left;
-    }
-    .vs-list-dropdown-button {
-      position: relative;
-    }
-    .vs-list-dropdown-button:hover {
-      ~ .vs-list {
-        display: flex;
-      }
-    }
-    .vs-list {
-      display: none;
-      position: absolute;
-    }
-    .vs-list:hover {
-      display: flex;
-    }
-  }
-  .vs-list {
     border-radius: 6px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: $global-shadow;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -370,1359 +328,1401 @@ body {
     z-index: 9999;
     text-align: center;
     > li {
-      width: 100%;
-      padding: 20px;
-      background-color: white;
+        width: 100%;
+        padding: 20px;
+        background-color: white;
     }
     > li:hover {
-      background-color: $hover-gray;
-      cursor: pointer;
-      width: 100%;
+        background-color: $hover-gray;
+        cursor: pointer;
+        width: 100%;
     }
     &.login {
-      border: 1px solid rgba(0, 0, 0, 0.35);
-      > li {
-        padding: 10px;
-        text-align: left;
-      }
+        border: 1px solid $global-border-clr;
+        > li {
+            padding: 10px;
+            text-align: left;
+        }
+        .vs-list-dropdown-button {
+            position: relative;
+        }
+        .vs-list-dropdown-button:hover {
+            ~ .vs-list {
+                display: flex;
+            }
+        }
+        .vs-list {
+            display: none;
+            position: absolute;
+        }
+        .vs-list:hover {
+            display: flex;
+        }
     }
-  }
+    .vs-list {
+        border-radius: 6px;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        list-style: none;
+        z-index: 9999;
+        text-align: center;
+        > li {
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+        }
+        > li:hover {
+            background-color: $hover-gray;
+            cursor: pointer;
+            width: 100%;
+        }
+        &.login {
+            border: 1px solid rgba(0, 0, 0, 0.35);
+            > li {
+                padding: 10px;
+                text-align: left;
+            }
+        }
+    }
 }
 
 .has-icon {
-  > * {
-    padding-right: 5px;
     > * {
-      padding-right: 5px;
+        padding-right: 5px;
+        > * {
+            padding-right: 5px;
+        }
+        > i {
+            font-size: 18px;
+        }
     }
-    > i {
-      font-size: 18px;
-    }
-  }
 }
 
 .bottom-border {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 .vs-searchbar {
-  padding: 13px 36px;
+    padding: 13px 36px;
 }
 
 .vs-fabs {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  .vs-fab {
-    border-radius: 100%;
-    box-shadow: 0px 0px 6px rgba(68, 59, 59, 0.16);
-    border: none;
-    width: 51px;
-    height: 51px;
-    outline: none;
-    background-color: white;
-    color: white;
-    cursor: pointer;
-    &.danger-fab {
-      background-color: $danger-clr;
-      box-shadow: 0px 0px 15px $danger-clr;
-      &:hover {
-        background: darken($danger-clr, 5%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .vs-fab {
+        border-radius: 100%;
+        box-shadow: 0px 0px 6px rgba(68, 59, 59, 0.16);
+        border: none;
+        width: 51px;
+        height: 51px;
+        outline: none;
+        background-color: white;
         color: white;
-      }
-      &.icon-delete:before {
-        @extend .fontawesome-content;
-        content: "\f2ed";
-        font-size: 25px;
-        font-weight: 400;
-      }
+        cursor: pointer;
+        &.danger-fab {
+            background-color: $danger-clr;
+            box-shadow: 0px 0px 15px $danger-clr;
+            &:hover {
+                background: darken($danger-clr, 5%);
+                color: white;
+            }
+            &.icon-delete:before {
+                @extend .fontawesome-content;
+                content: "\f2ed";
+                font-size: 25px;
+                font-weight: 400;
+            }
+        }
+        &.add-fab {
+            background-color: $success-clr;
+            box-shadow: 0px 0px 15px $success-clr;
+            &:hover {
+                background: darken($success-clr, 5%);
+                color: white;
+            }
+            &.icon-add:before {
+                @extend .fontawesome-content;
+                content: "\f067";
+                font-size: 30px;
+                font-weight: 400;
+            }
+        }
+        &.arrow-fab {
+            background-color: $warning-clr;
+            &:hover {
+                background: darken($warning-clr, 5%);
+                color: white;
+            }
+            &.icon-arrow:before {
+                @extend .fontawesome-content;
+                content: "\f077";
+                font-size: 25px;
+                font-weight: 1000;
+            }
+        }
+        &.edit-fab {
+            background-color: $primary-clr;
+            &:hover {
+                background: darken($primary-clr, 5%);
+                color: white;
+            }
+            &.icon-edit:before {
+                @extend .fontawesome-content;
+                content: "\f304";
+                font-size: 25px;
+                font-weight: 1000;
+            }
+        }
+        &.chat-fab {
+            background-color: $view-clr;
+            &:hover {
+                background: darken($view-clr, 5%);
+                color: white;
+            }
+            &.icon-chat:before {
+                @extend .fontawesome-content;
+                content: "\f075";
+                font-size: 30px;
+                font-weight: 500;
+            }
+        }
     }
-    &.add-fab {
-      background-color: $success-clr;
-      box-shadow: 0px 0px 15px $success-clr;
-      &:hover {
-        background: darken($success-clr, 5%);
-        color: white;
-      }
-      &.icon-add:before {
-        @extend .fontawesome-content;
-        content: "\f067";
-        font-size: 30px;
-        font-weight: 400;
-      }
-    }
-    &.arrow-fab {
-      background-color: $warning-clr;
-      &:hover {
-        background: darken($warning-clr, 5%);
-        color: white;
-      }
-      &.icon-arrow:before {
-        @extend .fontawesome-content;
-        content: "\f077";
-        font-size: 25px;
-        font-weight: 1000;
-      }
-    }
-    &.edit-fab {
-      background-color: $primary-clr;
-      &:hover {
-        background: darken($primary-clr, 5%);
-        color: white;
-      }
-      &.icon-edit:before {
-        @extend .fontawesome-content;
-        content: "\f304";
-        font-size: 25px;
-        font-weight: 1000;
-      }
-    }
-    &.chat-fab {
-      background-color: $view-clr;
-      &:hover {
-        background: darken($view-clr, 5%);
-        color: white;
-      }
-      &.icon-chat:before {
-        @extend .fontawesome-content;
-        content: "\f075";
-        font-size: 30px;
-        font-weight: 500;
-      }
-    }
-  }
 }
 
 .bottom-border {
-  border-bottom: 1px solid $global-border-clr;
+    border-bottom: 1px solid $global-border-clr;
 }
 
 .vs-searchbar {
-  position: relative;
-  z-index: 15;
-  border: none;
-  height: 100%;
-  outline: none;
-  width: 100%;
-  padding: 0px 6px;
+    position: relative;
+    z-index: 15;
+    border: none;
+    height: 100%;
+    outline: none;
+    width: 100%;
+    padding: 0px 6px;
 }
 
 .vs-searchbar-container {
-  display: flex;
-  position: relative;
-  align-items: center;
-  height: 48px;
-  .icon {
-    flex-basis: 20px;
-    font-size: 20px;
-    color: #656565;
-    padding-left: 13px;
-    padding-right: 5px;
-  }
-  border: 1px solid $global-border-clr;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 48px;
+    .icon {
+        flex-basis: 20px;
+        font-size: 20px;
+        color: #656565;
+        padding-left: 13px;
+        padding-right: 5px;
+    }
+    border: 1px solid $global-border-clr;
 }
 
 .vs-input-container {
-  display: flex;
-  position: relative;
-  z-index: 20;
-  height: 45px;
-  .title {
-    order: 3;
-    font-size: 14px;
-    position: absolute;
-    left: 5px;
-    width: auto;
-    color: $color-placeholder;
-    transition: 0.3s;
-    z-index: -1;
-    letter-spacing: 0.5px;
-    top: 20px;
-  }
-  .vs-input {
-    order: 2;
-    height: 100%;
-    border: 0;
-    padding: 15px 0 0px 5px;
-    width: 100%;
-    background-color: transparent;
-    outline: none;
-    border-bottom: 2px solid $color-placeholder;
-    &:focus ~ .title,
-    &:not(:placeholder-shown) ~ .title {
-      font-size: 12px;
-      color: #3399ff;
-      transition: 0.3s;
-      top: 5px;
-      left: 5px;
-      width: auto;
-      z-index: 2;
-      display: inline-block;
-      padding: 0 4px;
-    }
-    &:focus {
-      border-bottom: 2px solid $primary-clr;
-    }
-    &:not(:placeholder-shown) {
-      border-bottom: 2px solid $primary-clr;
-      ~ .icon:before {
-        background: $primary-clr;
-        color: white;
-      }
-    }
-    &:required:not(:placeholder-shown):invalid {
-      border-bottom: 2px solid red !important;
-    }
-    &:required:valid {
-      border-bottom: 2px solid $success-clr !important;
-    }
-  }
-  &.filled {
-    background-color: $fill-background;
-  }
-  &.outline {
-    .vs-input {
-      border: 2px solid $color-placeholder;
-      &:focus {
-        border: 2px solid $primary-clr;
-      }
-      &:focus ~ .title,
-      &:not(:placeholder-shown) ~ .title {
-        font-size: 9px;
-        color: #3399ff;
-        transition: 0.3s;
-        top: -6px;
+    display: flex;
+    position: relative;
+    z-index: 20;
+    height: 45px;
+    .title {
+        order: 3;
+        font-size: 14px;
+        position: absolute;
         left: 5px;
         width: auto;
-        background: white;
-        z-index: 2;
-        display: inline-block;
-        padding: 0 4px;
-      }
-      &:not(:placeholder-shown):required:invalid {
-        border: 2px solid red !important;
-      }
-      &:required:valid {
-        border: 2px solid $success-clr !important;
-      }
+        color: $color-placeholder;
+        transition: 0.3s;
+        z-index: -1;
+        letter-spacing: 0.5px;
+        top: 20px;
     }
-  }
-  input:required ~ .required::before,
-  select:required ~ .required ::before {
+    .vs-input {
+        order: 2;
+        height: 100%;
+        border: 0;
+        padding: 15px 0 0px 5px;
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+        border-bottom: 2px solid $color-placeholder;
+        &:focus ~ .title,
+        &:not(:placeholder-shown) ~ .title {
+            font-size: 12px;
+            color: #3399ff;
+            transition: 0.3s;
+            top: 5px;
+            left: 5px;
+            width: auto;
+            z-index: 2;
+            display: inline-block;
+            padding: 0 4px;
+        }
+        &:focus {
+            border-bottom: 2px solid $primary-clr;
+        }
+        &:not(:placeholder-shown) {
+            border-bottom: 2px solid $primary-clr;
+            ~ .icon:before {
+                background: $primary-clr;
+                color: white;
+            }
+        }
+        &:required:not(:placeholder-shown):invalid {
+            border-bottom: 2px solid red !important;
+        }
+        &:required:valid {
+            border-bottom: 2px solid $success-clr !important;
+        }
+    }
+    &.filled {
+        background-color: $fill-background;
+    }
+    &.outline {
+        .vs-input {
+            border: 2px solid $color-placeholder;
+            &:focus {
+                border: 2px solid $primary-clr;
+            }
+            &:focus ~ .title,
+            &:not(:placeholder-shown) ~ .title {
+                font-size: 9px;
+                color: #3399ff;
+                transition: 0.3s;
+                top: -6px;
+                left: 5px;
+                width: auto;
+                background: white;
+                z-index: 2;
+                display: inline-block;
+                padding: 0 4px;
+            }
+            &:not(:placeholder-shown):required:invalid {
+                border: 2px solid red !important;
+            }
+            &:required:valid {
+                border: 2px solid $success-clr !important;
+            }
+        }
+    }
+    input:required ~ .required::before,
+    select:required ~ .required ::before {
+        content: "*";
+        color: red;
+        position: absolute;
+        top: 5px;
+        left: 90%;
+    }
+}
+
+.vs-checkbox-container {
+    position: relative;
+    display: inline-block;
+    input[type="checkbox"] {
+        display: none;
+    }
+    label {
+        display: inline-block;
+        padding: 3px 0px 0 2em;
+        cursor: pointer;
+    }
+    &:required:valid {
+        border-bottom: 2px solid $success-clr !important;
+    }
+}
+
+input:required ~ .required::before,
+select:required ~ .required ::before {
     content: "*";
     color: red;
     position: absolute;
     top: 5px;
     left: 90%;
-  }
-}
-
-.vs-checkbox-container {
-  position: relative;
-  display: inline-block;
-  input[type="checkbox"] {
-    display: none;
-  }
-  label {
-    display: inline-block;
-    padding: 3px 0px 0 2em;
-    cursor: pointer;
-  }
-  &:required:valid {
-    border-bottom: 2px solid $success-clr !important;
-  }
-}
-
-input:required ~ .required::before,
-select:required ~ .required ::before {
-  content: "*";
-  color: red;
-  position: absolute;
-  top: 5px;
-  left: 90%;
 }
 
 select option:checked {
-  background: $primary-clr;
-  color: white;
+    background: $primary-clr;
+    color: white;
 }
 
 .vs-date-container {
-  display: flex;
-  position: relative;
-  z-index: 20;
-  height: 50px;
-  cursor: pointer;
-  .vss-input {
+    display: flex;
+    position: relative;
+    z-index: 20;
+    height: 50px;
     cursor: pointer;
-  }
-  input[type="time"] + .icon::before {
-    content: "\f017" !important;
-  }
-  .icon {
-    order: 1;
-    &.icon::before {
-      content: "\f073";
-      @extend .fontawesome-content;
-      width: 65px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: $disabled-clr;
-      height: 100%;
-      border-radius: 10px 0px 0px 0px;
-      font-weight: 400;
-      font-size: 24px;
-      cursor: pointer;
+    .vss-input {
+        cursor: pointer;
     }
-  }
-  .vss-input {
-    order: 2;
-    height: 100%;
-    border: 0;
-    padding: 15px 0 0px 5px;
-    width: 100%;
-    border-bottom: 2px solid $color-placeholder;
-    background-color: transparent;
-    outline: none;
-    width: 150px;
-    font-size: 14px;
-    input {
-      font-size: 14px;
+    input[type="time"] + .icon::before {
+        content: "\f017" !important;
     }
-  }
-  .title {
-    order: 3;
-    font-size: 16px;
-    position: absolute;
-    left: 80px;
-    width: auto;
-    transition: 0.3s;
-    z-index: -1;
-    letter-spacing: 0.5px;
-    top: 5px;
-    color: $border-input-clr;
-  }
-  &.primary .vss-input:not(:placeholder-shown) {
-    border-bottom: 2px solid $primary-clr;
-  }
-  &.secondary .vss-input:not(:placeholder-shown) {
-    border-bottom: 2px solid $secondary-clr;
-  }
-  &.primary .vss-input:not(:placeholder-shown) ~ .icon:before {
-    background: $primary-clr;
-    color: white;
-  }
-  &.secondary .vss-input:not(:placeholder-shown) ~ .icon:before {
-    background: $secondary-clr;
-    color: white;
-  }
-  .vss-input:required:valid + .icon:before {
-    background: $success-clr;
-    color: white;
-  }
-  .vss-input:required:invalid + .icon:before {
-    background: $invalid-clr;
-    color: white;
-  }
-  .vss-input:not(:placeholder-shown):required:invalid {
-    border-bottom: 2px solid $invalid-clr;
-  }
-  .vss-input:not(:placeholder-shown):required:valid {
-    border-bottom: 2px solid $success-clr;
-  }
+    .icon {
+        order: 1;
+        &.icon::before {
+            content: "\f073";
+            @extend .fontawesome-content;
+            width: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $disabled-clr;
+            height: 100%;
+            border-radius: 10px 0px 0px 0px;
+            font-weight: 400;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+    .vss-input {
+        order: 2;
+        height: 100%;
+        border: 0;
+        padding: 15px 0 0px 5px;
+        width: 100%;
+        border-bottom: 2px solid $color-placeholder;
+        background-color: transparent;
+        outline: none;
+        width: 150px;
+        font-size: 14px;
+        input {
+            font-size: 14px;
+        }
+    }
+    .title {
+        order: 3;
+        font-size: 16px;
+        position: absolute;
+        left: 80px;
+        width: auto;
+        transition: 0.3s;
+        z-index: -1;
+        letter-spacing: 0.5px;
+        top: 5px;
+        color: $border-input-clr;
+    }
+    &.primary .vss-input:not(:placeholder-shown) {
+        border-bottom: 2px solid $primary-clr;
+    }
+    &.secondary .vss-input:not(:placeholder-shown) {
+        border-bottom: 2px solid $secondary-clr;
+    }
+    &.primary .vss-input:not(:placeholder-shown) ~ .icon:before {
+        background: $primary-clr;
+        color: white;
+    }
+    &.secondary .vss-input:not(:placeholder-shown) ~ .icon:before {
+        background: $secondary-clr;
+        color: white;
+    }
+    .vss-input:required:valid + .icon:before {
+        background: $success-clr;
+        color: white;
+    }
+    .vss-input:required:invalid + .icon:before {
+        background: $invalid-clr;
+        color: white;
+    }
+    .vss-input:not(:placeholder-shown):required:invalid {
+        border-bottom: 2px solid $invalid-clr;
+    }
+    .vss-input:not(:placeholder-shown):required:valid {
+        border-bottom: 2px solid $success-clr;
+    }
 }
 
 //RADIOBox
 .radio-v1 {
-  .vs-radio:checked,
-  .vs-radio:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-  .vs-radio:checked + label,
-  .vs-radio:not(:checked) + label {
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
-    font-family: montserratSb;
-    display: inline-block;
-    color: #000;
-  }
-  .vs-radio:checked + label:before,
-  .vs-radio:not(:checked) + label:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    border: 2px solid $disabled-clr;
-    border-radius: 100%;
-    background: #fff;
-  }
-  .vs-radio:checked + label:after,
-  .vs-radio:not(:checked) + label:after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    background-color: $primary-clr;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 100%;
-    transition: all 0.2s ease;
-  }
-  .primary-radio:checked + label:after,
-  .primary-radio:not(:checked) + label:after {
-    background-color: $primary-clr;
-  }
-  .secondary-radio:checked + label:after,
-  .secondary-radio:not(:checked) + label:after {
-    background-color: $secondary-clr;
-  }
-  .disable-radio:checked + label:after,
-  .disable-radio:not(:checked) + label:after {
-    background-color: $default-clr;
-  }
-  .vs-radio:not(:checked) + label:after {
-    opacity: 0;
-    transform: scale(0);
-  }
-  .vs-radio:checked + label:after {
-    opacity: 1;
-    transform: scale(1);
-  }
+    .vs-radio:checked,
+    .vs-radio:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    .vs-radio:checked + label,
+    .vs-radio:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        font-family: montserratSb;
+        display: inline-block;
+        color: #000;
+    }
+    .vs-radio:checked + label:before,
+    .vs-radio:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid $disabled-clr;
+        border-radius: 100%;
+        background: #fff;
+    }
+    .vs-radio:checked + label:after,
+    .vs-radio:not(:checked) + label:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: $primary-clr;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        border-radius: 100%;
+        transition: all 0.2s ease;
+    }
+    .primary-radio:checked + label:after,
+    .primary-radio:not(:checked) + label:after {
+        background-color: $primary-clr;
+    }
+    .secondary-radio:checked + label:after,
+    .secondary-radio:not(:checked) + label:after {
+        background-color: $secondary-clr;
+    }
+    .disable-radio:checked + label:after,
+    .disable-radio:not(:checked) + label:after {
+        background-color: $default-clr;
+    }
+    .vs-radio:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+    }
+    .vs-radio:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .checkbox-v1 {
-  .vs-checkbox:checked,
-  .vs-checkbox:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-  .vs-checkbox:checked + label,
-  .vs-checkbox:not(:checked) + label {
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
-    font-family: montserratSb;
-    display: inline-block;
-    color: #000;
-  }
-  .vs-checkbox:checked + label:before,
-  .vs-checkbox:not(:checked) + label:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    border: 2px solid $disabled-clr;
-    background: #fff;
-  }
-  .vs-checkbox:checked + label:after,
-  .vs-checkbox:not(:checked) + label:after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    background-color: $danger-clr;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    transition: all 0.2s ease;
-  }
-  .primary-checkbox:checked + label:after,
-  .primary-checkbox:not(:checked) + label:after {
-    background-color: $danger-clr;
-  }
-  .secondary-checkbox:checked + label:after,
-  .secondary-checkbox:not(:checked) + label:after {
-    background-color: $secondary-clr;
-  }
-  .disable-checkbox:checked + label:after,
-  .disable-checkbox:not(:checked) + label:after {
-    background-color: $default-clr;
-  }
-  .vs-checkbox:not(:checked) + label:after {
-    opacity: 0;
-    transform: scale(0);
-  }
-  .vs-checkbox:checked + label:after {
-    opacity: 1;
-    transform: scale(1);
-  }
+    .vs-checkbox:checked,
+    .vs-checkbox:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    .vs-checkbox:checked + label,
+    .vs-checkbox:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        font-family: montserratSb;
+        display: inline-block;
+        color: #000;
+    }
+    .vs-checkbox:checked + label:before,
+    .vs-checkbox:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid $disabled-clr;
+        background: #fff;
+    }
+    .vs-checkbox:checked + label:after,
+    .vs-checkbox:not(:checked) + label:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: $danger-clr;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        transition: all 0.2s ease;
+    }
+    .primary-checkbox:checked + label:after,
+    .primary-checkbox:not(:checked) + label:after {
+        background-color: $danger-clr;
+    }
+    .secondary-checkbox:checked + label:after,
+    .secondary-checkbox:not(:checked) + label:after {
+        background-color: $secondary-clr;
+    }
+    .disable-checkbox:checked + label:after,
+    .disable-checkbox:not(:checked) + label:after {
+        background-color: $default-clr;
+    }
+    .vs-checkbox:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+    }
+    .vs-checkbox:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .goflex {
-  display: flex;
+    display: flex;
 }
 
 .justifyContent {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .vs-dropdown {
-  position: relative;
-  background-color: $white-clr;
-  box-shadow: $global-shadow;
-  padding: 15px 15px;
-  border-radius: 5px;
-  font-size: 13px;
-  text-align: center;
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    //background-color: coral;
-    top: 20px;
-    left: 0px;
-  }
-  &:hover .dropdow-menu {
-    display: block !important;
-    transition: all 0.5s ease-out !important;
-  }
-  > .dropdow-menu {
-    position: absolute;
-    top: 110%;
-    left: 0;
-    z-index: 100;
-    display: none !important;
-    min-width: 160px;
-    padding: 8px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    color: #495057;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.2rem;
-    transition: all 0.5s ease-out !important;
-    > .dropdown-items {
-      display: inline-block;
-      width: 100%;
-      padding: 6px 24px;
-      color: $default-clr;
-      text-align: inherit;
-      white-space: nowrap;
-      background-color: transparent;
-      border: 0;
-      font-family: montserrat;
-      font-size: 14px;
-      color: #656565;
-      vertical-align: middle;
-      transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-      > a {
-        text-decoration: none !important;
-        color: $default-clr !important;
-        > svg {
-          margin-right: 8px;
-          vertical-align: middle;
-          width: 20px;
-          height: 20px;
-          color: #495057;
-        }
-        &::hover {
-          background-color: rgba(238, 238, 238, 0.308) !important;
-          color: $dark-clr !important;
-        }
-      }
-      &:hover {
-        background-color: rgba(238, 238, 238, 0.308) !important;
-        color: $dark-clr !important;
-      }
-      &:hover svg {
-        color: $dark-clr;
-      }
+    position: relative;
+    background-color: $white-clr;
+    box-shadow: $global-shadow;
+    padding: 15px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        //background-color: coral;
+        top: 20px;
+        left: 0px;
     }
-    > .dropdown-divider {
-      height: 0;
-      margin: 8px 0;
-      overflow: hidden;
-      border-top: 1px solid #e9ecef;
+    &:hover .dropdow-menu {
+        display: block !important;
+        transition: all 0.5s ease-out !important;
     }
-  }
+    > .dropdow-menu {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        z-index: 100;
+        display: none !important;
+        min-width: 160px;
+        padding: 8px 0;
+        margin: 2px 0 0;
+        font-size: 14px;
+        color: #495057;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.2rem;
+        transition: all 0.5s ease-out !important;
+        > .dropdown-items {
+            display: inline-block;
+            width: 100%;
+            padding: 6px 24px;
+            color: $default-clr;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            font-family: montserrat;
+            font-size: 14px;
+            color: #656565;
+            vertical-align: middle;
+            transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            > a {
+                text-decoration: none !important;
+                color: $default-clr !important;
+                > svg {
+                    margin-right: 8px;
+                    vertical-align: middle;
+                    width: 20px;
+                    height: 20px;
+                    color: #495057;
+                }
+                &::hover {
+                    background-color: rgba(238, 238, 238, 0.308) !important;
+                    color: $dark-clr !important;
+                }
+            }
+            &:hover {
+                background-color: rgba(238, 238, 238, 0.308) !important;
+                color: $dark-clr !important;
+            }
+            &:hover svg {
+                color: $dark-clr;
+            }
+        }
+        > .dropdown-divider {
+            height: 0;
+            margin: 8px 0;
+            overflow: hidden;
+            border-top: 1px solid #e9ecef;
+        }
+    }
 }
 
 .vs-container {
-  display: inline-block;
-  .vs-progress {
-    .center {
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-      left: 53%;
-      transform: translate(-50%, -50%);
-      font-weight: 600;
-      font-size: 30px;
-      > .precentage-icon {
-        font-size: 10px;
-      }
+    display: inline-block;
+    .vs-progress {
+        .center {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 53%;
+            transform: translate(-50%, -50%);
+            font-weight: 600;
+            font-size: 30px;
+            > .precentage-icon {
+                font-size: 10px;
+            }
+        }
+        > div {
+            display: inline-block;
+            position: relative;
+        }
+        > div > svg {
+            position: relative;
+            width: 150px;
+            > .rail {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                stroke: $disabled-clr;
+                stroke-width: 18px;
+                stroke-linecap: round;
+                fill: none;
+                transform: translate(5px, 5px);
+            }
+            > .the-progress {
+                @extend .rail;
+                stroke-width: 15px;
+                &.stroke-25 {
+                    stroke: $primary-clr;
+                    stroke-dasharray: 360;
+                    stroke-dashoffset: 300; //25%
+                }
+                &.stroke-50 {
+                    stroke: $warning-clr;
+                    stroke-dasharray: 360;
+                    stroke-dashoffset: 207; //50%
+                }
+                &.stroke-75 {
+                    stroke: $danger-clr;
+                    stroke-dasharray: 360;
+                    stroke-dashoffset: 137; //75%
+                }
+                &.stroke-100 {
+                    stroke: $success-clr;
+                    stroke-dasharray: 360;
+                    stroke-dashoffset: 0; //100%
+                }
+            }
+        }
     }
-    > div {
-      display: inline-block;
-      position: relative;
-    }
-    > div > svg {
-      position: relative;
-      width: 150px;
-      > .rail {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        stroke: $disabled-clr;
-        stroke-width: 18px;
-        stroke-linecap: round;
-        fill: none;
-        transform: translate(5px, 5px);
-      }
-      > .the-progress {
-        @extend .rail;
-        stroke-width: 15px;
-        &.stroke-25 {
-          stroke: $primary-clr;
-          stroke-dasharray: 360;
-          stroke-dashoffset: 300; //25%
-        }
-        &.stroke-50 {
-          stroke: $warning-clr;
-          stroke-dasharray: 360;
-          stroke-dashoffset: 207; //50%
-        }
-        &.stroke-75 {
-          stroke: $danger-clr;
-          stroke-dasharray: 360;
-          stroke-dashoffset: 137; //75%
-        }
-        &.stroke-100 {
-          stroke: $success-clr;
-          stroke-dasharray: 360;
-          stroke-dashoffset: 0; //100%
-        }
-      }
-    }
-  }
 }
 
 .date-picker {
-  $height: 40px;
-  $width: 140px;
-  $color-white: #fff;
-  width: $width;
-  max-height: $height;
-  background: $fill-background;
-  position: relative;
-  display: flex;
-  .calendar .ui-datepicker-inline {
-    width: 200px;
-  }
-  .calendar {
-    position: absolute;
-    z-index: 1001;
-    width: 100%;
-    background: #fff;
-    border-radius: 0px;
-    opacity: 0;
-    display: none;
-    top: $height;
-    transition: opacity 0.3s ease-in-out;
-    .ui-datepicker-header {
-      height: 100%;
-      line-height: 50px;
-      color: white;
-      margin-bottom: 10px;
+    $height: 40px;
+    $width: 140px;
+    $color-white: #fff;
+    width: $width;
+    max-height: $height;
+    background: $fill-background;
+    position: relative;
+    display: flex;
+    .calendar .ui-datepicker-inline {
+        width: 200px;
     }
-  }
-  .title {
-    position: absolute;
-    top: -1px;
-    left: 50px;
-    font-size: 13px;
-    color: $color-placeholder;
-  }
-  .open {
-    display: block;
-    opacity: 100% !important;
-    transition: opacity 0.3s ease-in-out;
-  }
-  &.primary {
-    border-bottom: 2px solid $primary-clr;
-    .vss-input {
-      button {
-        outline: none;
-        cursor: pointer;
+    .calendar {
+        position: absolute;
+        z-index: 1001;
+        width: 100%;
+        background: #fff;
+        border-radius: 0px;
+        opacity: 0;
+        display: none;
+        top: $height;
+        transition: opacity 0.3s ease-in-out;
+        .ui-datepicker-header {
+            height: 100%;
+            line-height: 50px;
+            color: white;
+            margin-bottom: 10px;
+        }
+    }
+    .title {
+        position: absolute;
+        top: -1px;
+        left: 50px;
+        font-size: 13px;
+        color: $color-placeholder;
+    }
+    .open {
+        display: block;
+        opacity: 100% !important;
+        transition: opacity 0.3s ease-in-out;
+    }
+    &.primary {
+        border-bottom: 2px solid $primary-clr;
+        .vss-input {
+            button {
+                outline: none;
+                cursor: pointer;
+                background: $primary-clr;
+            }
+        }
+    }
+    &.secondary {
+        border-bottom: 2px solid $secondary-clr;
+        .vss-input {
+            button {
+                cursor: pointer;
+                background: $secondary-clr;
+            }
+        }
+    }
+    &.primary .calendar .ui-datepicker-header {
         background: $primary-clr;
-      }
     }
-  }
-  &.secondary {
-    border-bottom: 2px solid $secondary-clr;
-    .vss-input {
-      button {
-        cursor: pointer;
+    &.secondary .calendar .ui-datepicker-header {
         background: $secondary-clr;
-      }
     }
-  }
-  &.primary .calendar .ui-datepicker-header {
-    background: $primary-clr;
-  }
-  &.secondary .calendar .ui-datepicker-header {
-    background: $secondary-clr;
-  }
-  transition: all 0.3s 0s ease-in-out;
-  .vss-input {
-    cursor: pointer;
-    .date {
-      border: none;
-      outline: none;
-      background: transparent;
-      text-align: center;
-      width: 65%;
-      font-size: 11px;
+    transition: all 0.3s 0s ease-in-out;
+    .vss-input {
+        cursor: pointer;
+        .date {
+            border: none;
+            outline: none;
+            background: transparent;
+            text-align: center;
+            width: 65%;
+            font-size: 11px;
+        }
     }
-  }
-  .result,
-  button {
-    display: inline-block;
-    vertical-align: baseline;
-  }
-  .result {
-    width: calc(100% - #{$height});
-    height: $height;
-    line-height: $height;
-    font-size: 16px;
-    padding: 0 10px;
-    color: grey;
-    box-sizing: border-box;
-  }
-  button {
-    width: $height;
-    height: $height;
-    color: white;
-    line-height: $height;
-    border: 0;
-    font-size: 18px;
-    padding: 0;
-    cursor: pointer;
-  }
-  &:focus {
-    outline: 0;
-  }
+    .result,
+    button {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+    .result {
+        width: calc(100% - #{$height});
+        height: $height;
+        line-height: $height;
+        font-size: 16px;
+        padding: 0 10px;
+        color: grey;
+        box-sizing: border-box;
+    }
+    button {
+        width: $height;
+        height: $height;
+        color: white;
+        line-height: $height;
+        border: 0;
+        font-size: 18px;
+        padding: 0;
+        cursor: pointer;
+    }
+    &:focus {
+        outline: 0;
+    }
 }
 
 .ui-datepicker {
-  width: 260px;
-  display: none;
-  background: white;
-  position: relative;
-  overflow: hidden;
-  -webkit-transition: all 0.3s 0s ease-in-out;
-  transition: all 0.3s 0s ease-in-out;
+    width: 260px;
+    display: none;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.3s 0s ease-in-out;
+    transition: all 0.3s 0s ease-in-out;
 }
 
 .ui-datepicker-inline {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .ui-datepicker-prev,
 .ui-datepicker-next {
-  width: 20px;
-  height: 20px;
-  text-indent: 9999px;
-  border: 2px solid white;
-  border-radius: 100%;
-  cursor: pointer;
-  overflow: hidden;
-  margin-top: 12px;
+    width: 20px;
+    height: 20px;
+    text-indent: 9999px;
+    border: 2px solid white;
+    border-radius: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 12px;
 }
 
 .ui-datepicker-prev {
-  float: left;
-  margin-left: 12px;
-  &:after {
-    transform: rotate(45deg);
-    margin: -45px 0px 0px 6px;
-  }
+    float: left;
+    margin-left: 12px;
+    &:after {
+        transform: rotate(45deg);
+        margin: -45px 0px 0px 6px;
+    }
 }
 
 .ui-datepicker-next {
-  float: right;
-  margin-right: 12px;
-  &:after {
-    transform: rotate(-135deg);
-    margin: -45px 0px 0px 4px;
-  }
+    float: right;
+    margin-right: 12px;
+    &:after {
+        transform: rotate(-135deg);
+        margin: -45px 0px 0px 4px;
+    }
 }
 
 .ui-datepicker-prev:after,
 .ui-datepicker-next:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-left: 2px solid white;
-  border-bottom: 2px solid white;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 .ui-datepicker-prev:active,
 .ui-datepicker-next:active,
 .ui-datepicker-prev:active:after,
 .ui-datepicker-next:active:after {
-  border-color: $hover-gray;
+    border-color: $hover-gray;
 }
 
 .ui-datepicker-title {
-  text-align: center;
+    text-align: center;
 }
 
 .ui-datepicker-calendar {
-  width: 100%;
-  text-align: center;
-  thead {
-    tr {
-      th {
-        span {
-          display: block;
-          width: 100%;
-          color: #607d8b;
-          margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    thead {
+        tr {
+            th {
+                span {
+                    display: block;
+                    width: 100%;
+                    color: #607d8b;
+                    margin-bottom: 5px;
+                }
+                font-size: 13px;
+            }
         }
-        font-size: 13px;
-      }
     }
-  }
 }
 
 .ui-state-default {
-  display: block;
-  text-decoration: none;
-  color: $calender-font-color;
-  line-height: 40px;
-  font-size: 12px;
-  &:hover {
-    background: rgba(0, 0, 0, 0.02);
-  }
+    display: block;
+    text-decoration: none;
+    color: $calender-font-color;
+    line-height: 40px;
+    font-size: 12px;
+    &:hover {
+        background: rgba(0, 0, 0, 0.02);
+    }
 }
 
 .ui-state-highlight {
-  color: $primary-clr;
+    color: $primary-clr;
 }
 
 .ui-state-active {
-  color: $primary-clr;
-  background-color: rgba(131, 146, 167, 0.12);
-  font-weight: 600;
+    color: $primary-clr;
+    background-color: rgba(131, 146, 167, 0.12);
+    font-weight: 600;
 }
 
 .ui-datepicker-unselectable .ui-state-default {
-  color: $calender-font-color;
-  border: 2px solid transparent;
+    color: $calender-font-color;
+    border: 2px solid transparent;
 }
 
 // Hide date arrows
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
+    display: none;
+    -webkit-appearance: none;
 }
 
 .filter-toggle {
-  position: relative;
-  width: 120px;
-  margin: 10px;
-  button {
-    width: 100%;
-    height: 40px;
-    padding: 0;
-  }
+    position: relative;
+    width: 120px;
+    margin: 10px;
+    button {
+        width: 100%;
+        height: 40px;
+        padding: 0;
+    }
 }
 
 .padding-10 {
-  padding: 10px 0px;
+    padding: 10px 0px;
 }
 
 .vs-search-filter {
-  width: 320px;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  display: none;
-  z-index: 200;
-  box-shadow: $global-shadow;
-  padding: 20px 10px 20px 10px;
-  background: $white-clr;
-  .vs-row {
-    padding: 5px 0px;
-    .vs-btn {
-      border-radius: 5px;
+    width: 320px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: none;
+    z-index: 200;
+    box-shadow: $global-shadow;
+    padding: 20px 10px 20px 10px;
+    background: $white-clr;
+    .vs-row {
+        padding: 5px 0px;
+        .vs-btn {
+            border-radius: 5px;
+        }
     }
-  }
-  div .date-picker {
-    display: inline-block;
-  }
-  .dash {
-    display: inline-block;
-  }
-  .titles {
-    div {
-      font-size: 13px;
-      flex-basis: 50%;
-      padding-left: 10px;
+    div .date-picker {
+        display: inline-block;
     }
-  }
+    .dash {
+        display: inline-block;
+    }
+    .titles {
+        div {
+            font-size: 13px;
+            flex-basis: 50%;
+            padding-left: 10px;
+        }
+    }
 }
 
 .vs-row {
-  width: 100%;
+    width: 100%;
 }
 
 .width-100 {
-  width: 100%;
+    width: 100%;
 }
 
 .vs-switch {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 65px;
-  height: 38px;
-  position: relative;
-  .the-switch {
-    visibility: hidden;
-    pointer-events: none;
-    opacity: 0;
-    height: 0;
-    width: 0;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-  }
-  .the-switch + .ios-switch {
-    display: block;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
-    border-radius: 100px;
-    height: 38px;
-    width: 65px;
-    margin: 0;
-    padding: 0;
-    left: 0;
+    top: 0;
+    bottom: 0;
     right: 0;
-    position: absolute;
-    cursor: pointer;
-    background-color: $default-clr;
-    transition: all 300ms cubic-bezier(0.4, 0.5, 0, 1) 150ms;
-  }
-  .the-switch + .default-switch {
-    @extend .ios-switch;
-    height: 25px !important;
-    background-color: lighten($default-clr, 10%);
-  }
-  .the-switch + .ios-switch::before {
-    content: "";
-    height: 34px;
-    top: 2px;
-    left: 2px;
-    width: 34px;
-    background: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), 0 3px 1px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 100px;
-    transition: all 600ms cubic-bezier(0.4, 0.5, 0, 1);
-    transform: translate(0px);
-    position: absolute;
-  }
-  .the-switch + .default-switch::before {
-    // @extend .ios-switch: : before;
-    top: -5px;
-    left: -1px;
-    background-color: lighten($white-clr, 0%);
-  }
-  .the-switch:checked + .ios-switch {
-    box-shadow: inset 0 0 0 20px $primary-clr;
-    transition: all 300ms cubic-bezier(0.4, 0.5, 0, 1);
-  }
-  .the-switch:checked + .default-switch {
-    box-shadow: inset 0 0 0 20px lighten($primary-clr, 0%);
-    transition: all 300ms cubic-bezier(0.4, 0.5, 0, 1);
-  }
-  .the-switch:checked + .ios-switch::before {
-    transform: translate(27px);
-  }
-  .the-switch:checked + .default-switch::before {
-    transform: translate(35px);
-  }
+    left: 0;
+    width: 65px;
+    height: 38px;
+    position: relative;
+    .the-switch {
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .the-switch + .ios-switch {
+        display: block;
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+        border-radius: 100px;
+        height: 38px;
+        width: 65px;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        cursor: pointer;
+        background-color: $default-clr;
+        transition: all 300ms cubic-bezier(0.4, 0.5, 0, 1) 150ms;
+    }
+    .the-switch + .default-switch {
+        @extend .ios-switch;
+        height: 25px !important;
+        background-color: lighten($default-clr, 10%);
+    }
+    .the-switch + .ios-switch::before {
+        content: "";
+        height: 34px;
+        top: 2px;
+        left: 2px;
+        width: 34px;
+        background: white;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), 0 3px 1px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 100px;
+        transition: all 600ms cubic-bezier(0.4, 0.5, 0, 1);
+        transform: translate(0px);
+        position: absolute;
+    }
+    .the-switch + .default-switch::before {
+        // @extend .ios-switch: : before;
+        top: -5px;
+        left: -1px;
+        background-color: lighten($white-clr, 0%);
+    }
+    .the-switch:checked + .ios-switch {
+        box-shadow: inset 0 0 0 20px $primary-clr;
+        transition: all 300ms cubic-bezier(0.4, 0.5, 0, 1);
+    }
+    .the-switch:checked + .default-switch {
+        box-shadow: inset 0 0 0 20px lighten($primary-clr, 0%);
+        transition: all 300ms cubic-bezier(0.4, 0.5, 0, 1);
+    }
+    .the-switch:checked + .ios-switch::before {
+        transform: translate(27px);
+    }
+    .the-switch:checked + .default-switch::before {
+        transform: translate(35px);
+    }
 }
 
 .show {
-  display: block;
+    display: block;
 }
 
 .vs-table-container {
-  width: 100%;
-  display: block;
-  max-width: 100%;
-  > .vs-table-div {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
-    background-color: #fff;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    > .vs-table-data {
-      display: flex;
-      flex-direction: column;
-      padding: 0 25px;
-      border-radius: 4px;
-      > .vs-table-block {
-        display: block;
-        margin-bottom: 25px;
-        > .vs-table-pages {
-          margin: 0;
-          padding: 25px;
-          // background-color: $danger-clr;
-          // padding-bottom: 0;
-          display: flex;
-          justify-content: flex-end;
-          flex-wrap: wrap;
-          position: relative;
-          > .vs-table-pages-info {
-            position: absolute;
-            left: 0;
-            top: 36%;
-            .vs-table-pages-details {
-              color: $default-clr;
-              font-size: 16px;
-              font-weight: 400;
-            }
-          }
-          > .vs-table-pages-ul {
-            margin: 0;
-            padding: 0;
-            margin-right: -30px;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    > .vs-table-div {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+        background-color: #fff;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        > .vs-table-data {
             display: flex;
-            > li {
-              padding: 0;
-              margin-right: 5px;
-              display: inline-block;
-              > .vs-table-pages-ul-arows {
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 30px;
-                min-width: 30px;
-                padding: 8px;
-                border-radius: 3px;
-                position: relative;
-                font-size: 16px;
-                line-height: 16px;
-                font-weight: 500;
-                color: #93a2dd;
-                background-color: #f0f3ff;
-                transition: all 0.3s;
-                position: relative;
-                &::before {
-                  @extend .fontawesome-content;
-                  position: absolute;
-                }
-                &.previuse {
-                  &:hover {
-                    background-color: $secondary-clr;
-                    color: $white-clr;
-                  }
-                  &::before {
-                    content: "\f104";
-                  }
-                }
-                &.next {
-                  &:hover {
-                    background-color: $secondary-clr;
-                    color: $white-clr;
-                  }
-                  &::before {
-                    content: "\f105";
-                  }
-                }
-                &.vs-table-number {
-                  background-color: transparent;
-                  color: $default-clr;
-                  text-decoration: none;
-                  &::before {
-                    content: "";
-                  }
-                  &:hover {
-                    background-color: $secondary-clr;
-                    color: $white-clr;
-                  }
-                }
-              }
-            }
-          }
-        }
-        > .vs-datatable {
-          display: block;
-          border-radius: 4px;
-          width: 100%;
-          overflow: hidden;
-          > .vs-datatable-head {
-            visibility: visible;
-            display: block;
-            position: relative;
-            padding: 10px 0;
-            > .vs-datatable-row {
-              display: table;
-              left: 0px;
-              table-layout: initial;
-              width: 100%;
-              // border-bottom: 1px solid red;
-              > th {
-                cursor: pointer;
-                padding: 5px;
-                vertical-align: middle;
-                font-size: 14px;
-                text-align: inherit;
-                .fix {
-                  &::after {
-                    content: "" !important;
-                  }
-                }
-                > span {
-                  width: 90px;
-                  font-weight: 500;
-                  vertical-align: middle;
-                  display: block;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  color: $dark-clr;
-                  font-family: montserratSb;
-                  cursor: pointer;
-                  position: relative;
-                  &:first-child::after {
-                    @extend .fontawesome-content;
-                    content: "\f362";
-                    position: absolute;
-                    top: 0px;
-                    color: $disabled-clr;
-                    transform: rotate(90deg);
-                  }
-                  > .vs-table-checkbox {
-                    width: 0px !important;
-                    left: 0px;
-                    top: 2px;
-                    padding: 0;
+            flex-direction: column;
+            padding: 0 25px;
+            border-radius: 4px;
+            > .vs-table-block {
+                display: block;
+                margin-bottom: 25px;
+                > .vs-table-pages {
                     margin: 0;
-                    width: 18px;
-                    height: 18px;
-                    display: inline-block;
+                    padding: 25px;
+                    // background-color: $danger-clr;
+                    // padding-bottom: 0;
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-wrap: wrap;
                     position: relative;
-                    padding-left: 30px;
-                    text-align: left;
-                    cursor: pointer;
-                    font-size: 15px;
-                    transition: all 0.3s ease;
-                    > input {
-                      position: absolute;
-                      overflow: visible;
-                      z-index: -1;
-                      opacity: 0;
-                      padding: 0px;
+                    > .vs-table-pages-info {
+                        position: absolute;
+                        left: 0;
+                        top: 36%;
+                        .vs-table-pages-details {
+                            color: $default-clr;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
                     }
-                    > span {
-                      border: 1px solid $default-clr !important;
-                      border-radius: 3px;
-                      position: absolute;
-                      top: 1px;
-                      left: 0;
-                      height: 18px;
-                      width: 18px;
+                    > .vs-table-pages-ul {
+                        margin: 0;
+                        padding: 0;
+                        margin-right: -30px;
+                        display: flex;
+                        > li {
+                            padding: 0;
+                            margin-right: 5px;
+                            display: inline-block;
+                            > .vs-table-pages-ul-arows {
+                                cursor: pointer;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 30px;
+                                min-width: 30px;
+                                padding: 8px;
+                                border-radius: 3px;
+                                position: relative;
+                                font-size: 16px;
+                                line-height: 16px;
+                                font-weight: 500;
+                                color: #93a2dd;
+                                background-color: #f0f3ff;
+                                transition: all 0.3s;
+                                position: relative;
+                                &::before {
+                                    @extend .fontawesome-content;
+                                    position: absolute;
+                                }
+                                &.previuse {
+                                    &:hover {
+                                        background-color: $secondary-clr;
+                                        color: $white-clr;
+                                    }
+                                    &::before {
+                                        content: "\f104";
+                                    }
+                                }
+                                &.next {
+                                    &:hover {
+                                        background-color: $secondary-clr;
+                                        color: $white-clr;
+                                    }
+                                    &::before {
+                                        content: "\f105";
+                                    }
+                                }
+                                &.vs-table-number {
+                                    background-color: transparent;
+                                    color: $default-clr;
+                                    text-decoration: none;
+                                    &::before {
+                                        content: "";
+                                    }
+                                    &:hover {
+                                        background-color: $secondary-clr;
+                                        color: $white-clr;
+                                    }
+                                }
+                            }
+                        }
                     }
-                  }
                 }
-              }
+                > .vs-datatable {
+                    display: block;
+                    border-radius: 4px;
+                    width: 100%;
+                    overflow: hidden;
+                    > .vs-datatable-head {
+                        visibility: visible;
+                        display: block;
+                        position: relative;
+                        padding: 10px 0;
+                        > .vs-datatable-row {
+                            display: table;
+                            left: 0px;
+                            table-layout: initial;
+                            width: 100%;
+                            // border-bottom: 1px solid red;
+                            > th {
+                                cursor: pointer;
+                                padding: 5px;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                text-align: inherit;
+                                .fix {
+                                    &::after {
+                                        content: "" !important;
+                                    }
+                                }
+                                > span {
+                                    width: 90px;
+                                    font-weight: 500;
+                                    vertical-align: middle;
+                                    display: block;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    color: $dark-clr;
+                                    font-family: montserratSb;
+                                    cursor: pointer;
+                                    position: relative;
+                                    &:first-child::after {
+                                        @extend .fontawesome-content;
+                                        content: "\f362";
+                                        position: absolute;
+                                        top: 0px;
+                                        color: $disabled-clr;
+                                        transform: rotate(90deg);
+                                    }
+                                    > .vs-table-checkbox {
+                                        width: 0px !important;
+                                        left: 0px;
+                                        top: 2px;
+                                        padding: 0;
+                                        margin: 0;
+                                        width: 18px;
+                                        height: 18px;
+                                        display: inline-block;
+                                        position: relative;
+                                        padding-left: 30px;
+                                        text-align: left;
+                                        cursor: pointer;
+                                        font-size: 15px;
+                                        transition: all 0.3s ease;
+                                        > input {
+                                            position: absolute;
+                                            overflow: visible;
+                                            z-index: -1;
+                                            opacity: 0;
+                                            padding: 0px;
+                                        }
+                                        > span {
+                                            border: 1px solid $default-clr !important;
+                                            border-radius: 3px;
+                                            position: absolute;
+                                            top: 1px;
+                                            left: 0;
+                                            height: 18px;
+                                            width: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    > .vs-datatable-body {
+                        visibility: visible;
+                        display: block !important;
+                        position: relative;
+                        > tr {
+                            display: table;
+                            table-layout: initial;
+                            width: 100%;
+                            border-bottom: 1px solid $table-border;
+                            padding: 5px 0;
+                            &.default-table {
+                                background-color: #d8d8d869;
+                            }
+                            > td {
+                                width: 110px;
+                                word-break: break-all;
+                                vertical-align: middle;
+                                padding: 5px;
+                                font-size: 14px;
+                                // position: relative;
+                                &:first-child {
+                                    width: 1px;
+                                }
+                                > .checkbox-v1 {
+                                    > label {
+                                        padding-bottom: 10px;
+                                    }
+                                }
+                                > span {
+                                    padding: initial;
+                                    color: $dark-clr;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    > .table-but {
+                                        // padding: 8px !important;
+                                        width: 30px;
+                                        height: 30px;
+                                        max-width: 50px;
+                                        background-color: $view-clr;
+                                        border-radius: 40px;
+                                        text-decoration: none;
+                                        color: $white-clr;
+                                        // position: absolute;
+                                        // top: 0px;
+                                        // left: 0px;
+                                        position: relative;
+                                        transition: all 0.3s ease-out;
+                                        &:hover {
+                                            width: 40px;
+                                            background-color: darken($view-clr, 10%);
+                                        }
+                                        &::after {
+                                            @extend .fontawesome-content;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%);
+                                            content: "\f06e";
+                                            font-size: 18px !important;
+                                        }
+                                        > label {
+                                            display: none;
+                                        }
+                                        &.vs-icon-edit {
+                                            background-color: $primary-clr;
+                                            &:hover {
+                                                background-color: darken($primary-clr, 10%);
+                                            }
+                                            &::after {
+                                                @extend .fontawesome-content;
+                                                content: "\f304";
+                                                transform: translate(-50%, -50%);
+                                                font-size: 20;
+                                                font-weight: 600;
+                                            }
+                                        }
+                                        &.vs-icon-delete {
+                                            background-color: $danger-clr;
+                                            &:hover {
+                                                background-color: darken($danger-clr, 10%);
+                                            }
+                                            &::after {
+                                                @extend .fontawesome-content;
+                                                content: "\f2ed";
+                                                transform: translate(-50%, -50%);
+                                                font-size: 20;
+                                                font-weight: 400;
+                                            }
+                                        }
+                                    }
+                                    > .vs-statue {
+                                        border-radius: 6px;
+                                        padding: 4px 8px;
+                                        &.vs-done {
+                                            color: $white-clr;
+                                            background-color: $success-clr;
+                                        }
+                                        &.vs-cancelled {
+                                            color: $white-clr;
+                                            background-color: $danger-clr;
+                                        }
+                                    }
+                                    > .vs-table-checkbox {
+                                        top: 2px;
+                                        left: 0px;
+                                        padding: 0;
+                                        margin: 0;
+                                        width: 18px;
+                                        height: 18px;
+                                        display: inline-block;
+                                        position: relative;
+                                        padding-left: 30px;
+                                        text-align: left;
+                                        cursor: pointer;
+                                        font-size: 16px;
+                                        transition: all 0.3s ease;
+                                        > input {
+                                            position: absolute;
+                                            overflow: visible;
+                                            z-index: -1;
+                                            opacity: 0;
+                                            padding: 0px;
+                                        }
+                                        > span {
+                                            border: 1px solid $default-clr !important;
+                                            border-radius: 3px;
+                                            position: absolute;
+                                            top: 1px;
+                                            left: 0;
+                                            height: 18px;
+                                            width: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          }
-          > .vs-datatable-body {
-            visibility: visible;
-            display: block !important;
-            position: relative;
-            > tr {
-              display: table;
-              table-layout: initial;
-              width: 100%;
-              border-bottom: 1px solid $table-border;
-              padding: 5px 0;
-              &.default-table {
-                background-color: #d8d8d869;
-              }
-              > td {
-                width: 110px;
-                word-break: break-all;
-                vertical-align: middle;
-                padding: 5px;
-                font-size: 14px;
-                // position: relative;
-                &:first-child {
-                  width: 1px;
-                }
-                > .checkbox-v1 {
-                  > label {
-                    padding-bottom: 10px;
-                  }
-                }
-                > span {
-                  padding: initial;
-                  color: $dark-clr;
-                  display: flex;
-                  justify-content: space-between;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  > .table-but {
-                    // padding: 8px !important;
-                    width: 30px;
-                    height: 30px;
-                    max-width: 50px;
-                    background-color: $view-clr;
-                    border-radius: 40px;
-                    text-decoration: none;
-                    color: $white-clr;
-                    // position: absolute;
-                    // top: 0px;
-                    // left: 0px;
-                    position: relative;
-                    transition: all 0.3s ease-out;
-                    &:hover {
-                      width: 40px;
-                      background-color: darken($view-clr, 10%);
-                    }
-                    &::after {
-                      @extend .fontawesome-content;
-                      position: absolute;
-                      top: 50%;
-                      left: 50%;
-                      transform: translate(-50%, -50%);
-                      content: "\f06e";
-                      font-size: 18px !important;
-                    }
-                    > label {
-                      display: none;
-                    }
-                    &.vs-icon-edit {
-                      background-color: $primary-clr;
-                      &:hover {
-                        background-color: darken($primary-clr, 10%);
-                      }
-                      &::after {
-                        @extend .fontawesome-content;
-                        content: "\f304";
-                        transform: translate(-50%, -50%);
-                        font-size: 20;
-                        font-weight: 600;
-                      }
-                    }
-                    &.vs-icon-delete {
-                      background-color: $danger-clr;
-                      &:hover {
-                        background-color: darken($danger-clr, 10%);
-                      }
-                      &::after {
-                        @extend .fontawesome-content;
-                        content: "\f2ed";
-                        transform: translate(-50%, -50%);
-                        font-size: 20;
-                        font-weight: 400;
-                      }
-                    }
-                  }
-                  > .vs-statue {
-                    border-radius: 6px;
-                    padding: 4px 8px;
-                    &.vs-done {
-                      color: $white-clr;
-                      background-color: $success-clr;
-                    }
-                    &.vs-cancelled {
-                      color: $white-clr;
-                      background-color: $danger-clr;
-                    }
-                  }
-                  > .vs-table-checkbox {
-                    top: 2px;
-                    left: 0px;
-                    padding: 0;
-                    margin: 0;
-                    width: 18px;
-                    height: 18px;
-                    display: inline-block;
-                    position: relative;
-                    padding-left: 30px;
-                    text-align: left;
-                    cursor: pointer;
-                    font-size: 16px;
-                    transition: all 0.3s ease;
-                    > input {
-                      position: absolute;
-                      overflow: visible;
-                      z-index: -1;
-                      opacity: 0;
-                      padding: 0px;
-                    }
-                    > span {
-                      border: 1px solid $default-clr !important;
-                      border-radius: 3px;
-                      position: absolute;
-                      top: 1px;
-                      left: 0;
-                      height: 18px;
-                      width: 18px;
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
-      }
     }
-  }
 }
 
 .div_header {
-  width: 100% !important;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 65px;
-  box-shadow: $global-shadow;
+    width: 100% !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 65px;
+    box-shadow: $global-shadow;
 }
 .vs-select {
-  padding: 5px;
-  width: 100%;
-  height: 50px;
-  font-size: 17px;
-  &.filled {
-    background: $fill-background;
-  }
-  option {
+    padding: 5px;
+    width: 100%;
+    height: 50px;
     font-size: 17px;
-    background: $white-clr;
-  }
-  outline: none;
-  border: none;
-  border-bottom: 2px solid $primary-clr;
+    &.filled {
+        background: $fill-background;
+    }
+    option {
+        font-size: 17px;
+        background: $white-clr;
+    }
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $primary-clr;
 
-  &:required:valid {
-    border-bottom: 2px solid $success-clr;
-  }
+    &:required:valid {
+        border-bottom: 2px solid $success-clr;
+    }
 }

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+   <!-- SCRIPT -->
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../assets/js/app.js"></script>
+
+
+    <title>design</title>
+</head>
+<body>
+    
+    <div class="vs-checkbox-container ">
+        <input id="check" type="checkbox" />
+        <label for="check">test</label>
+    </div>
+
+    <div class="vs-checkbox-container">
+        <input id="check" type="checkbox" />
+        <label for="check">test</label>
+    </div>
+    <div style="padding: 10px;">
+        <select required class="vs-select filled">
+                <option value="test">test</option>
+                <option value="test">Yes</option>
+            </select>
+    </div>
+
+    <div class="vs-searchbar-container">
+        <div class="vs-searchbar-container">
+            <i class="fal fa-search icon"></i>
+            <input type="text" class="vs-searchbar" placeholder="Search for project" />
+        </div>
+    </div>
+    <div class="center-me">
+        <div style="position: relative;">
+            <div class="filter-toggle">
+                <button class="vs-btn primary ">
+                    <i class="fal fa-calendar-alt"></i>
+                    Any Date
+                    <i class="far fa-chevron-up"></i>
+                </button>
+            </div>
+            <div class="vs-search-filter">
+                <form>
+                    <div class="vs-row flex-container justify-start space-evenly titles">
+                        <div> From</div>
+                        <div>To</div>
+                    </div>
+                    <div class="vs-row">
+                        <div class="date-picker primary">
+                            <span class="title">Date</span>
+                            <div class="vss-input">
+                                <button><i class="fa fa-calendar"></i></button>
+                                <input required class="date" type="date" id="Startdate">
+                            </div>
+                            <div class="calendar"></div>
+                        </div>
+                        <div class="dash">
+                            <h2>-</h2>
+                        </div>
+                        <div class="date-picker primary">
+
+                            <span class="title">Date</span>
+                            <div class="vss-input">
+                                <button><i class="fa fa-calendar"></i></button>
+                                <input required class="date" type="date" id="Startdate">
+                            </div>
+                            <div class="calendar"></div>
+                        </div>
+                </form>
+                </div>
+
+                <div class="vs-row">
+                    <button class="width-100 padding-10 vs-btn primary capital outline">Today</button>
+                </div>
+                <div class="vs-row">
+                    <button class="width-100 padding-10 vs-btn primary capital outline">Yesterday</button>
+                </div>
+                <div class="vs-row">
+                    <button class="width-100 padding-10 vs-btn primary capital outline">Last Month</button>
+                </div>
+                <div class="vs-row">
+                    <button class="width-100 padding-10 vs-btn primary capital outline">Last Year</button>
+                </div>
+            </div>
+        </div>
+        <div><button class="vs-btn capital">default</button></div>
+        <div><button class="vs-btn primary capital">primary</button></div>
+        <div><button class="vs-btn secondary capital">Secondary</button></div>
+        <div><button class="vs-btn secondary capital" disabled>disabled</button></div>
+        <div><button class="vs-btn danger capital">Danger</button></div>
+        <div><button class="vs-btn warning capital">View</button></div>
+        <div><button class="vs-btn file capital">Upload</button></div>
+        <div><button class="vs-btn warning capital icon-view">View</button></div>
+        <div><button class="vs-btn danger capital icon-delete">DELETE</button></div>
+        <div><button class="vs-btn success capital icon-check">Accepted</button></div>
+        <div><button class="vs-btn primary capital icon-link">Link</button></div>
+        <div><button class="vs-btn file capital icon-upload">Upload</button></div>
+
+        <div class="vs-alert danger">
+            <div class="body">
+                <div class="header">
+                    This is an error message!
+                </div>
+                <div class="message">
+                    Invalid Input Invalid Input Invalid Input Invalid Input Invalid Input Invalid Input
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BUTTONS -->
+        <div class="center-me">
+            <div><button class="vs-btn capital">default</button></div>
+            <div><button class="vs-btn primary capital">primary</button></div>
+            <div>
+                <button class="vs-btn secondary capital">Secondary</button>
+            </div>
+            <div>
+                <button class="vs-btn secondary capital" disabled>
+                disabled
+            </button>
+            </div>
+            <div><button class="vs-btn danger capital">Danger</button></div>
+            <div><button class="vs-btn warning capital">View</button></div>
+            <div><button class="vs-btn file capital">Upload</button></div>
+            <div>
+                <button class="vs-btn warning capital icon-view">View</button>
+            </div>
+            <div>
+                <button class="vs-btn danger capital icon-delete">
+                DELETE
+            </button>
+            </div>
+            <div>
+                <button class="vs-btn success capital icon-check">
+                Accepted
+            </button>
+            </div>
+            <div>
+                <button class="vs-btn primary capital icon-link">Link</button>
+            </div>
+            <div>
+                <button class="vs-btn file capital icon-upload">Upload</button>
+            </div>
+        </div>
+        <!-- ENDBUTTONS -->
+
+        <!-- FAB-BUTTONS -->
+        <div class="vs-fabs">
+            <div><button class="vs-fab danger-fab icon-delete "></button></div>
+            <div><button class="vs-fab add-fab icon-add "></button></div>
+            <div><button class="vs-fab arrow-fab icon-arrow "></button></div>
+            <div><button class="vs-fab edit-fab icon-edit "></button></div>
+            <div><button class="vs-fab chat-fab icon-chat "></button></div>
+        </div>
+        <!-- ENDFAB_BUTTONS -->
+
+        <!-- RODIOBOX -->
+        <div class="radio-v1">
+            <input type="checkbox" class="vs-radio primary-radio" id="test1" name="radio-group" />
+            <label for="test1">PRIMARY</label>
+            <input type="radio" class="vs-radio secondary-radio" id="test2" name="radio-group" />
+            <label for="test2">SECONDARY</label>
+            <input type="radio" class="vs-radio disable-radio" id="test3" name="radio-group" checked />
+            <label for="test3">DEFAULT</label>
+            <input type="radio" class="vs-radio secondary-radio" id="test4" />
+            <label for="">DISABLED</label>
+        </div>
+        <!-- ENDRADIOBOX -->
+        <!-- Checkbox -->
+        <div class="checkbox-v1">
+            <input type="checkbox" class="vs-checkbox primary-checkbox" id="test11" name="checkbox-group" />
+            <label for="test11">PRIMARY</label>
+            <input type="checkbox" class="vs-checkbox secondary-checkbox" id="test22" name="checkbox-group" />
+            <label for="test22">SECONDARY</label>
+            <input type="checkbox" class="vs-checkbox disable-checkbox" id="test33" name="checkbox-group" checked />
+            <label for="test33">DEFAULT</label>
+            <input type="checkbox" class="vs-checkbox secondary-checkbox" id="test44" />
+            <label for="test44">DISABLED</label>
+        </div>
+   <!-- End checkbox -->
+
+        <!-- SEARCHBAR -->
+        <div class="center-me">
+            <div style="display: inline-block;">
+                <div class="vs-searchbar-container">
+                    <i class="fal fa-search icon"></i>
+                    <input type="text" class="vs-searchbar" placeholder="Search for project" />
+                </div>
+            </div>
+            <!-- EDNSEARCHBAR -->
+
+            <!-- INPUT -->
+            <div class="vs-input-container  filled">
+
+                <select style="width: 200px;" type="email" class="vs-input" placeholder=" ">
+                <option value="">Select</option>
+                <option value="test">test</option>
+                <option value="test">test</option>
+            </select>
+            </div>
+            <!-- ENDINPUT -->
+
+            <!-- DROPDOWN -->
+            <div class="vs-list-dropdown ">
+                <button style="width: 100%;border-radius:none;" class="vs-btn capital default vs-list-dropdown-button">
+                Menu
+            </button>
+                <ul class="vs-list login">
+                    <li class="has-icon">
+                        <i data-feather="user"></i>
+                        <span>Profile</span>
+                    </li>
+                    <li class="has-icon bottom-border">
+                        <i data-feather="pie-chart"></i>
+                        <span> Analytics</span>
+                    </li>
+                    <li>
+                        <span>Settings & Privacy</span>
+                    </li>
+                    <li>
+                        <span>Help</span>
+                    </li>
+                    <li>
+                        <span>
+                        Sign out
+                    </span>
+                    </li>
+                </ul>
+            </div>
+            <!-- ENDDROPDOWN -->
+
+            <!-- DROP-DOWN-V2 -->
+            <div class="vs-dropdown show">
+                MENU
+                <div class="dropdow-menu show">
+                    <button type="button" class="dropdown-items">
+                    <i data-feather="user"></i>Profile
+                </button>
+                    <button type="button" class="dropdown-items">
+                    <i data-feather="pie-chart"></i>Analytics
+                </button>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-items">Settings & Privacy</button>
+                    <button type="button" class="dropdown-items">Help</button>
+                    <button type="button" class="dropdown-items">Sign out</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="vs-dropdown show">
+                MENU
+                <div class="dropdow-menu show">
+                    <button type="button" class="dropdown-items">List Item</button>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-items">List Item</button>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-items">List Item</button>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-items">List Item</button>
+                </div>
+            </div>
+            <!-- END-DROPDOWN-V2 -->
+
+
+
+            <div class="vs-alert danger">
+                <div class="body">
+                    <div class="header">
+                        This is an error message!
+                    </div>
+                    <div class="message ">
+                        invalid input
+                    </div>
+                </div>
+            </div>
+            <div class="vs-alert success ">
+                <div class="body ">
+                    <div class="header ">
+                        This is a success message!
+                    </div>
+                    <div class="message ">
+                        Done !
+                    </div>
+                </div>
+            </div>
+
+            <div class="vs-alert warning ">
+                <div class="body ">
+                    <div class="header ">
+                        This is a warning message!
+                    </div>
+                    <div class="message ">
+                        Your input not saved
+                    </div>
+                </div>
+            </div>
+
+            <div class="vs-alert info ">
+                <div class="body ">
+                    <div class="header ">
+                        This is an information message!
+                    </div>
+                </div>
+            </div>
+            <!-- END-ALERT-MESSAGES -->
+
+            <br>
+            <br>
+            <br>
+
+            <!-- <ul class="vs-list ">
+            <li>List Item 12</li>
+            <li>List Item 2</li>
+            <li>List Item 2</li>
+        </ul> -->
+
+            <div class="vs-list-dropdown ">
+                <button style="width: 100%;border-radius:none; " class="vs-btn capital default vs-list-dropdown-button ">
+                Hover me
+            </button>
+                <ul class="vs-list ">
+                    <li>List Item 12</li>
+                    <li>List Item 2</li>
+                    <li>List Item 2</li>
+                </ul>
+            </div>
+
+            <div class="vs-list-dropdown ">
+                <div class="vs-btn default vs-list-dropdown-button ">
+                    Menu header
+                </div>
+                <ul class="vs-list ">
+                    <li>List Item 12</li>
+                    <li>List Item 2</li>
+                    <li>List Item 2</li>
+                </ul>
+            </div>
+
+
+            <div class="vs-switch">
+                <div>
+                    <label>Test</label>
+                </div>
+                <input type="checkbox" class="the-switch" id="chbx-one">
+                <label for="chbx-one" class="ios-switch"></label>
+            </div>
+            <div class="vs-switch">
+                <input type="checkbox" class="the-switch" id="chbx-two">
+                <label for="chbx-two" class="default-switch">asdasd</label>
+            </div>
+            <!-- TEMP -->
+            <!-- <div class="vs-input-containers input-effect">
+            <input type="EMAI"class="vs-inputs effect-18 "   placeholder=" " required />
+            <label class="titles">name</label>
+            <span class="requireds"></span>
+        </div> -->
+            <!-- END-TEMP -->
+
+            <!-- PLEASE-REDESIGN_IT -->
+            <div class="vs-input-container ">
+                <input type="EMAIL " class="vs-input " placeholder=" " required />
+                <label class="title ">EMAIL</label>
+                <span class="required"></span>
+            </div>
+            <div class="vs-input-container filled ">
+                <input type="EMAIL" class="vs-input " placeholder=" " />
+                <label class="title">email</label>
+                <span class="required"></span>
+            </div>
+            <div class="vs-input-container outline ">
+                <input type="email " class="vs-input " placeholder=" " />
+                <label class="title ">Outline</label>
+                <span class="required "></span>
+            </div>
+
+            <div class="vs-date-container primary ">
+                <input class="vss-input" placeholder=" " type="time " />
+                <span class="icon "></span>
+                <label class="title ">test</label>
+            </div>
+
+            <!-- PROGRESS -->
+
+            <div class="vs-container">
+                <div class="vs-progress ">
+                    <div class="progres-circle ">
+                        <svg class="progress ">
+                    <circle
+                        class="rail "
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                    <circle
+                        class="the-progress stroke-25"
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                </svg>
+                        <span class="center precentage ">
+                    <span class="value ">25</span>
+                        <span class="precentage-icon ">%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="vs-container   ">
+                <div class="vs-progress ">
+                    <div class="progres-circle ">
+                        <svg class="progress ">
+                    <circle
+                        class="rail "
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                    <circle
+                        class="the-progress stroke-50"
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                </svg>
+                        <span class="center precentage ">
+                    <span class="value ">50</span>
+                        <span class="precentage-icon ">%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="vs-container   ">
+                <div class="vs-progress ">
+                    <div class="progres-circle ">
+                        <svg class="progress ">
+                    <circle
+                        class="rail "
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                    <circle
+                        class="the-progress stroke-75"
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                </svg>
+                        <span class="center precentage ">
+                    <span class="value ">75</span>
+                        <span class="precentage-icon ">%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="vs-container   ">
+                <div class="vs-progress ">
+                    <div class="progres-circle ">
+                        <svg class="progress ">
+                    <circle
+                        class="rail "
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                    <circle
+                        class="the-progress stroke-100"
+                        r="50 "
+                        cx="70 "
+                        cy="70 "
+                    ></circle>
+                </svg>
+                        <span class="center precentage ">
+                    <span class="value ">100</span>
+                        <span class="precentage-icon ">%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END-PROGRESS -->
+        <div class="date-picker primary">
+            <span class="title">Date</span>
+            <div class="vss-input">
+                <button><i class="fa fa-calendar"></i></button>
+                <input required class="date" type="date" id="Startdate">
+            </div>
+            <div class="calendar"></div>
+        </div>
+
+        <div class="date-picker secondary">
+            <span class="title">Date</span>
+            <div class="vss-input">
+                <button><i class="fa fa-calendar"></i></button>
+                <input required class="date" type="date" id="Startdate">
+            </div>
+            <div class="calendar"></div>
+        </div>
+        <!-- END -->
+
+        <div class="vs-checkbox-container ">
+            <input id="check " type="checkbox " />
+            <label for="check ">test</label>
+        </div>
+        <div class="vs-date-container secondary">
+            <input class="input" disabled>
+            <button class="icon"></button>
+            <label class="title">datetime</label>
+            <span class="datapicker" style="width: 100%;"></span>
+        </div>
+    </div>
+    <div class="vs-checkbox-container">
+        <input id="check" type="checkbox">
+        <label for="check">test</label>
+        <div class="vs-container goflex justifyContent">
+            <div class="vs-progress">
+                <div class="progres-circle">
+                    <svg class="progress">
+                        <circle class="rail" r="50" cx="70" cy="70"></circle>
+                        <circle class="the-progress" r="50" cx="70" cy="70"></circle>
+
+                    </svg>
+                    <span class="center precentage">
+                        <span class="value">50</span>
+                    <span class="precentage-icon">%</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vs-table vs-table-container">
+        <div class="vs-table-div">
+            <div class="vs-table-data">
+                <!-- Start -->
+                <div class="vs-table-block">
+                    <table class="vs-datatable">
+                        <thead class="vs-datatable-head">
+                            <tr class="vs-datatable-row">
+                                <th style="left: 0px;">
+                                    <span style="width: 20px;" class="fix">
+                                        <label for="" class="vs-table-checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                    </label>
+                                    </span>
+                                </th>
+                                <th><span>Name</span></th>
+                                <th><span>Start Date</span></th>
+                                <th><span>End Date</span></th>
+                                <th><span>Statue</span></th>
+                                <th><span>customers</span></th>
+                                <th style="display: flex; justify-content: space-evenly;"><span style="text-align: center; left: -15px;">Action</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="vs-datatable-body">
+                            <tr class="default-table">
+                                <td>
+                                    <span style="width: 20px; height: 25px;">
+                                        <label class="vs-table-checkbox" for="">
+                                            <input type="checkbox">
+                                            <span></span>
+                                    </label>
+                                    </span>
+                                </td>
+                                <td><span>Project Name</span></td>
+                                <td><span>11/1/1999</span></td>
+                                <td><span>11/1/2020</span></td>
+                                <td> <span>
+                                        <span class="vs-statue vs-cancelled">
+                                            Cancelled
+                                        </span>
+                                    </span>
+                                </td>
+                                <td><span>Skafi Team</span></td>
+                                <td> <span>
+                                        <a href="" title="view" class="table-but vs-but vs-icon-view vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="edit" class="table-but vs-but vs-icon-edit vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="delete"
+                                            class="table-but vs-but vs-icon-delete vs-color"><label
+                                                for="">view</label></a>
+
+                                    </span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="width: 20px; height: 25px;">
+                                        <label class="vs-table-checkbox" for="">
+                                            <input type="checkbox">
+                                            <span></span>
+                                    </label>
+                                    </span>
+                                </td>
+                                <td><span>Project Name</span></td>
+                                <td><span>11/1/1999</span></td>
+                                <td><span>11/1/2020</span></td>
+                                <td>
+                                    <span>
+                                        <span class="vs-statue vs-done">
+                                            Done!
+                                        </span>
+                                    </span>
+                                </td>
+                                <td><span>Skafi Team</span></td>
+                                <td>
+                                    <span>
+                                        <a href="" title="view" class="table-but vs-but vs-icon-view vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="edit" class="table-but vs-but vs-icon-edit vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="delete"
+                                            class="table-but vs-but vs-icon-delete vs-color"><label
+                                                for="">view</label></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="vs-table-pages">
+                        <ul class="vs-table-pages-ul">
+                            <li>
+                                <a href="" title="previous" class="vs-table-pages-ul-arows previuse"></a>
+                            </li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">1</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">2</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">3</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">4</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">5</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">6</a></li>
+                            <li>
+                                <a href="" title="previous" class="vs-table-pages-ul-arows next"></a>
+                            </li>
+                        </ul>
+                        <div class="vs-table-pages-info">
+                            <span class="vs-table-pages-details">Showing 11 - 20 of 1000</span>
+                        </div>
+                    </div>
+                    <!-- END -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END-PROGRESS -->
+    <br>
+    <!-- Table -->
+    <div class="vs-table vs-table-container">
+        <div class="vs-table-div">
+            <div class="vs-table-data">
+                <!-- Start -->
+                <div class="vs-table-block">
+                    <table class="vs-datatable">
+                        <thead class="vs-datatable-head">
+                            <tr class="vs-datatable-row">
+                                <th style="left: 0px;">
+                                    <span style="width: 20px;" class="fix">
+                                        <label for="" class="vs-table-checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                    </label>
+                                    </span>
+                                </th>
+                                <th><span>Name</span></th>
+                                <th><span>Start Date</span></th>
+                                <th><span>End Date</span></th>
+                                <th><span>Statue</span></th>
+                                <th><span>customers</span></th>
+                                <th style="display: flex; justify-content: space-evenly;"><span style="text-align: center; left: -15px;">Action</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="vs-datatable-body">
+                            <tr class="default-table">
+                                <td>
+                                    <span style="width: 20px; height: 25px;">
+                                        <label class="vs-table-checkbox" for="">
+                                            <input type="checkbox">
+                                            <span></span>
+                                    </label>
+                                    </span>
+                                </td>
+                                <td><span>Project Name</span></td>
+                                <td><span>11/1/1999</span></td>
+                                <td><span>11/1/2020</span></td>
+                                <td> <span>
+                                        <span class="vs-statue vs-cancelled">
+                                            Cancelled
+                                        </span>
+                                    </span>
+                                </td>
+                                <td><span>Skafi Team</span></td>
+                                <td>
+                                    <span class="justifyContentA">
+                                        <a href="" title="view" class="table-but vs-but vs-icon-view vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="edit" class="table-but vs-but vs-icon-edit vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="delete"
+                                            class="table-but vs-but vs-icon-delete vs-color"><label
+                                                for="">view</label></a>
+
+                                    </span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="width: 20px; height: 25px;">
+                                        <label class="vs-table-checkbox" for="">
+                                            <input type="checkbox">
+                                            <span></span>
+                                    </label>
+                                    </span>
+                                </td>
+                                <td><span>Project Name</span></td>
+                                <td><span>11/1/1999</span></td>
+                                <td><span>11/1/2020</span></td>
+                                <td>
+                                    <span>
+                                        <span class="vs-statue vs-done">
+                                            Done!
+                                        </span>
+                                    </span>
+                                </td>
+                                <td><span>Skafi Team</span></td>
+                                <td>
+                                    <span class="justifyContentA">
+                                        <a href="" title="view" class="table-but vs-but vs-icon-view vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="edit" class="table-but vs-but vs-icon-edit vs-color"><label
+                                                for="">view</label></a>
+                                        <a href="" title="delete"
+                                            class="table-but vs-but vs-icon-delete vs-color"><label
+                                                for="">view</label></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="vs-table-pages">
+                        <ul class="vs-table-pages-ul">
+                            <li>
+                                <a href="" title="previous" class="vs-table-pages-ul-arows previuse"></a>
+                            </li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">1</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">2</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">3</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">4</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">5</a></li>
+                            <li><a href="" class="vs-table-pages-ul-arows vs-table-number">6</a></li>
+                            <li>
+                                <a href="" title="previous" class="vs-table-pages-ul-arows next"></a>
+                            </li>
+                        </ul>
+                        <div class="vs-table-pages-info">
+                            <span class="vs-table-pages-details">Showing 11 - 20 of 1000</span>
+                        </div>
+                    </div>
+                    <!-- END -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons "></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- CRIDIT:MAHMOUD SKAFI 2018 -->
