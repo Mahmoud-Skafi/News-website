@@ -1,0 +1,130 @@
+@font-face {
+  font-family: primaryFont;
+  src: url("../vendor/fonts/Montserrat-Regular.ttf"); }
+@font-face {
+  font-family: montserrat;
+  src: url("../vendor/fonts/Montserrat-Medium.ttf"); }
+@font-face {
+  font-family: montserratSb;
+  src: url("../vendor/fonts/Montserrat-SemiBold.ttf"); }
+* {
+  font-size: 16px;
+  font-family: montserrat; }
+
+p {
+  all: unset; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  all: unset; }
+
+.bg-gradient-primary {
+  background-color: #313131;
+  background-image: none; }
+
+.profile-image {
+  background: url("skafi.jpg");
+  background-size: cover;
+  /* background-position: center; */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px; }
+
+.page-traker {
+  width: 100%; }
+
+.sk-main-dashboard-cards-container {
+  display: grid;
+  grid-gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 0px 2.5em; }
+  .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s ease-in-out; }
+    .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members:hover {
+      transform: scale(1.1); }
+    .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px; }
+      .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header > h1 {
+        font-size: 1rem;
+        color: #110e13;
+        font-family: montserratSb; }
+      .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header > i {
+        padding: 5px;
+        background-color: #ffffff;
+        color: #cfcfcf; }
+        .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header > i:hover {
+          color: #00a8e8;
+          background-color: #eeeeee; }
+      .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header > div {
+        display: grid; }
+        .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header > div > h1 {
+          font-size: 17px; }
+        .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-header > div > p {
+          font-size: 12px; }
+    .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer {
+      display: flex; }
+      .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1; }
+        .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-1 {
+          position: relative;
+          background-color: #ffffff;
+          display: flex; }
+          .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-1 .sk-card-labels {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            z-index: 100; }
+            .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-1 .sk-card-labels > p {
+              margin: 0;
+              color: #484848;
+              font-size: 25px;
+              font-weight: bold; }
+          .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-1 svg {
+            fill: #000000;
+            width: 120px;
+            opacity: 0.7;
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
+          .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-1 img {
+            width: 80px;
+            z-index: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
+        .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-2 {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .sk-main-dashboard-cards-container > .sk-main-dashborad-card-members > .sk-card-contrainer > .sk-card-conrainer-elements > .sk-card-section-2 > div > canvas {
+            transform: scale(0.9); }
+
+.sk-card-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px; }
+  .sk-card-numbers p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 22px;
+    font-weight: bold; }
+
+/*# sourceMappingURL=overwite.css.map */
