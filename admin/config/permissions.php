@@ -17,7 +17,10 @@ $permissions = [
     "accounts_logic.php"=>['admin'],
     "add_users.php"=>['admin'],
     "account_activat.php"=>['admin'],
-    "activat.php"=>['admin']
+    "activat.php"=>['admin'],
+    "navbar.php" =>['admin'],
+    "top.php" =>['admin'],
+    "footer.php" =>['admin']
 ];
 
 

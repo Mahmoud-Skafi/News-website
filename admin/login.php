@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $sql = $conDb->doSelectQuery($conn, "  SELECT tblusers.*,tbpermisstions.*
+    $sql = $conDb->doSelectQuery($conn, "SELECT tblusers.*,tbpermisstions.*
                                         FROM tblusers 
                                         LEFT JOIN tbpermisstions 
                                         ON tblusers.role_id=tbpermisstions.role_id
@@ -27,9 +27,8 @@ if (isset($_POST['login'])) {
             } else
                 echo "<script>alert('Wrong user name or Password');</script>";
         }
-    }
-    else{
-         echo "<script>alert('Wrong user name or Password');</script>";
+    } else {
+        echo "<script>alert('Wrong user name or Password');</script>";
     }
 }
 ?>
