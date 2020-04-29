@@ -84,18 +84,16 @@ $(document).ready(function () {
     });
 
     /**
-     * Add Post
+     * Add Cat
      */
     $(document).on('click', 'button[data-role=addcat]', function () {
-        // var id = $(this).data('id');
-        console.log("adadad");
         $('#AddModle').modal('toggle');
         $('#addcat').click(function () {
 
             var catname = $('#catnames').val();
             var catdes = $('#catdess').val();
             if (1) {
-                console.log("addcat");
+                
                 $.ajax({
                     type: 'post',
                     url: 'add_category.php',
@@ -228,4 +226,5 @@ $(document).ready(function () {
             }
         });
     });
+    
 });

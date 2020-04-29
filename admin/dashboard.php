@@ -130,19 +130,92 @@ if (checkPermision($pagename, $role)) {
                     </div>
                 </div>
             </div>
+
+            <!-- section3 -->
+            <br>
+            <br>
+            <div class="page-traker">
+                <h1 style="font-size: 1.5rem; color:#000;">Accounts</h1>
+            </div>
+            <br>
+            <div class="sk-main-dashboard-cards-container">
+                <div class="sk-main-dashborad-card-members">
+                    <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
+                        <h1>Accounts Manager</h1>
+                        <!-- <i class="fas fa-ellipsis-h"></i> -->
+                    </div>
+                    <div class="sk-card-contrainer">
+                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                            <div class="sk-card-section-1">
+                                <div class="sk-card-labels">
+                                    <p></p>
+                                </div>
+                                <img src="https://image.flaticon.com/icons/svg/1283/1283923.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sk-main-dashborad-card-members">
+                    <div class="sk-card-header " style="justify-content: center">
+                        <h1>Add Account</h1>
+                        <!-- <i class="fas fa-ellipsis-h"></i> -->
+                    </div>
+                    <div class="sk-card-contrainer">
+                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                            <div class="sk-card-section-1">
+                                <div class="sk-card-labels">
+                                    <p></p>
+                                </div>
+                                <img src="https://image.flaticon.com/icons/svg/760/760737.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sk-main-dashborad-card-members">
+                    <div class="sk-card-header " style="justify-content: center">
+                        <h1>Activat Accounts</h1>
+                        <!-- <i class="fas fa-ellipsis-h"></i> -->
+                    </div>
+                    <div class="sk-card-contrainer">
+                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                            <div class="sk-card-section-1">
+                                <div class="sk-card-labels">
+                                    <p></p>
+                                </div>
+                                <img src="https://image.flaticon.com/icons/svg/2654/2654564.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="sk-main-dashborad-card-members">
+                    <div class="sk-card-header " style="justify-content: center">
+                        <h1>Disactivate Accounts</h1>
+                      
+                    </div>
+                    <div class="sk-card-contrainer">
+                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                            <div class="sk-card-section-1">
+                                <div class="sk-card-labels">
+                                    <p></p>
+                                </div>
+                                <img src="https://image.flaticon.com/icons/svg/149/149030.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
 
         <br>
         <br>
         <br>
+
+        <script src="./include/vendor/jquery/jquery.min.js"></script>
+        <script src="./include/vendor/bootstrap/js/bootstrap.js"></script>
+        <script src="./include/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="./assets/js/dashbordCont.js"></script>
+        <script src="./assets/js/app.js"></script>
     </body>
-
-    <script src="./include/vendor/jquery/jquery.min.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <script src="./include/vendor/bootstrap/js/bootstrap.js"></script>
-    <script src="./include/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="./assets/js/dashbordCont.js"></script>
-
     </html>
 <?php
 
