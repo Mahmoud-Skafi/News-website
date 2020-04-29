@@ -1,6 +1,6 @@
 <?php
-include('../config/dbcon.php');
-include('../config/permissions.php');
+include('./config/dbcon.php');
+include('./config/permissions.php');
 session_start();
 error_reporting(0);
 

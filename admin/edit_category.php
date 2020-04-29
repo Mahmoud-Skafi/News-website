@@ -1,6 +1,6 @@
 <?php
-include('../config/dbcon.php');
-include('../config/permissions.php');
+include('./config/dbcon.php');
+include('./config/permissions.php');
 // session_start();
 // if (isset($_POST['catname'])) {
 //     echo "<script>alert('11111')</script>";
