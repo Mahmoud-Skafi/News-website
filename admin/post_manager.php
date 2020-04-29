@@ -36,10 +36,12 @@ if (checkPermision($pagename, $role)) {
 
             <body>
                 <?php require './include/navbar.php' ?>
-                <h1>Post Manager</h1>
+                <!-- <h1>Post Manager</h1>
                 <form action="add_post.php" method="POST">
                     <button name="Add_Post">add post</button>
-                </form>
+                </form> -->
+                <br>
+
                 <div class="container">
                     <div class="row">
                         <div id="admin" class="col s12">
@@ -47,23 +49,23 @@ if (checkPermision($pagename, $role)) {
                                 <div class="table-header">
                                     <span class="table-title">Post Manager</span>
                                     <div class="actions">
-                                        <a href="#add_users" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">person_add</i></a>
-                                        <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                                        <!-- <a ><i class="material-icons"></i></a> -->
+                                        <a href="./add_post.php"><i class="fas fa-plus"></i> </a>
                                     </div>
                                 </div>
                                 <table id="datatable">
-                                    <thead>
+                                    <thead class="head-tr-costom">
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>ID</th>
+                                            <th>Post Title</th>
+                                            <th>Post Details</th>
+                                            <th>Posting Date</th>
+                                            <th>Updation Date</th>
+                                            <th style="display: flex;align-items: center;justify-content: center;">Actions</th>
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody class="custom-tr">
 
                                         <?php
                                         if ($_SESSION['roles'] == 'admin') {
@@ -72,7 +74,7 @@ if (checkPermision($pagename, $role)) {
                                             $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active='1' AND Approved='yes' OR Approved='no' ");
                                         }
 
-                                        $res_per_page = 5;
+                                        $res_per_page = 10;
                                         $number_of_res = $sql['rows'];
                                         $number_of_pages = ceil($number_of_res / $res_per_page);
                                         if (!isset($_GET['page'])) {
@@ -88,9 +90,6 @@ if (checkPermision($pagename, $role)) {
                                         } else  if ($_SESSION['roles'] == 'author') {
                                             $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='no' OR Approved='yes' LIMIT " . $this_page_first_res . ',' . $res_per_page);
                                         }
-
-
-
                                         ?>
                                         <?php
                                         if ($sql['rows'] > 0) {
@@ -101,22 +100,37 @@ if (checkPermision($pagename, $role)) {
                                                         <?php echo $row['id']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['PostTitle']; ?>
+                                                        <?php echo  htmlentities($row['PostTitle']); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['PostingDate']; ?>
+                                                        <?php echo htmlentities($row['PostDetails']);  ?>
                                                     </td>
                                                     <td data-target="isactive">
-                                                        <?php echo $row['Is_Active']; ?>
+                                                        <?php echo $row['PostingDate']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['PostUrl']; ?>
+                                                        <?php echo $row['UpdationDate']; ?>
                                                     </td>
-                                                    <td>
+                                                    <!-- <td>
                                                         <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>delete</a>
+                                                    </td> -->
+                                                    <td class="td-custom">
+                                                        <div>
+
+                                                            <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>
+                                                                <i class="fas fa-eye" style="color:#feca7a;"></i>
+                                                            </a>
+                                                            <a href="edit_post.php?pid=<?php echo $row['id']; ?>">
+                                                                <i class="fa fa-pencil" style="color: #29b6f6;"></i>
+                                                            </a>
+
+                                                            <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>
+                                                                <i class="fa fa-trash-o" style="color: #f05050">
+                                                                </i>
+                                                            </a>
+
+                                                        </div>
                                                     </td>
-                                                    <td><a href="edit_post.php?pid=<?php echo htmlentities($row['id']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
-                                                        &nbsp;<a href="post_manager.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
                                                 </tr>
                                         <?php }
                                         } ?>
@@ -125,19 +139,21 @@ if (checkPermision($pagename, $role)) {
                                 </table>
 
                                 <br>
-                                <div class="numbers_of_pages" style="display:flex; justify-content: center;">
+                                <div class="numbers_of_pages" id="myDIV" style="display:flex; justify-content: center;">
                                     <?php
                                     for ($page = 1; $page <= $number_of_pages; $page++) {
-                                        echo '<a href="post_manager.php?page=' . $page . '"> ' . $page . '  </a> ';
+                                        echo '<a  class="thisA active" href="post_manager.php?page=' . $page . '"> ' . $page . '  </a> ';
                                     }
                                     ?>
                                 </div>
+
+                                <br>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <form id="cat-edit-id">
+                    <form id="post-edit-id">
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -168,11 +184,9 @@ if (checkPermision($pagename, $role)) {
                 <script src="./include/vendor/jquery-easing/jquery.easing.min.js"></script>
                 <script src="./assets/js/dashbordCont.js"></script>
                 <script src="./assets/js/app.js"></script>
+                <script>
+                </script>
             </body>
-            <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-            <script>
-
-            </script>
 
             </html>
 

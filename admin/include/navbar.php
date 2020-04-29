@@ -37,7 +37,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Posts Cmponats:</h6>
           <a class="collapse-item" href="./post_manager.php">Post Manager</a>
-          <a class="collapse-item" href="./add_users.php">Add Post</a>
+          <a class="collapse-item" href="./add_post.php">Add Post</a>
           <a class="collapse-item" href="./approved_post.php">Approve Post</a>
           <!-- <a class="collapse-item" href="./approved_post.php">Approve Post</a> -->
         </div>

@@ -44,10 +44,6 @@ if (checkPermision($pagename, $role)) {
             </head>
 
             <body>
-
-
-
-
                 <form method="POST" action="add_users.php">
                     <button>ADD</button>
                 </form>

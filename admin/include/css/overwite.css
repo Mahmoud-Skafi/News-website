@@ -173,14 +173,11 @@ div.material-table {
     font-size: 12px !important;
     color: rgba(0, 0, 0, 0.54); }
     div.material-table .table-footer .dataTables_length {
-      display: -webkit-flex;
       display: flex; }
     div.material-table .table-footer label {
       font-size: 12px;
       color: rgba(0, 0, 0, 0.54);
-      display: -webkit-flex;
       display: flex;
-      /* works with row or column */
       flex-direction: row;
       align-items: center;
       justify-content: center; }
@@ -275,5 +272,65 @@ div.material-table {
   div.material-table table th:last-child,
   div.material-table table td:last-child {
     padding: 0 14px 0 0; }
+
+.td-custom > div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  .td-custom > div > a {
+    transition: all 0.3s ease-out; }
+    .td-custom > div > a:hover {
+      transform: scale(1.4); }
+
+.actions {
+  margin-left: 77% !important; }
+  .actions > a {
+    padding: 15px 40px;
+    background-color: #3ac47d;
+    border-radius: 5px !important;
+    width: 0px;
+    height: 0px;
+    position: relative; }
+    .actions > a:hover {
+      background-color: #34b070; }
+    .actions > a > i {
+      color: #ffffff !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+
+.custom-tr > tr > td {
+  white-space: normal !important;
+  width: 50px !important;
+  padding-left: 0px !important; }
+.custom-tr > tr > td:first-child {
+  padding-left: 20px !important;
+  width: 15px !important; }
+
+.head-tr-costom > tr th {
+  padding-left: 0px !important; }
+.head-tr-costom > tr th:first-child {
+  padding-left: 20px !important;
+  width: 15px !important; }
+
+.numbers_of_pages > .thisA {
+  vertical-align: middle;
+  all: unset;
+  cursor: pointer;
+  border-radius: 2px;
+  width: 30px;
+  padding: 5px 0px;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 0 5px;
+  color: #000000;
+  box-shadow: 0px 0px 34px -1px rgba(0, 0, 0, 0.3); }
+  .numbers_of_pages > .thisA:active {
+    background-color: #00a8e8;
+    color: #ffffff; }
+  .numbers_of_pages > .thisA:hover {
+    background-color: #00a8e8;
+    color: #ffffff; }
 
 /*# sourceMappingURL=overwite.css.map */
