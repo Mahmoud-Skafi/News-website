@@ -108,7 +108,7 @@ if (checkPermision($pagename, $role)) {
                             <div class="modal-footer">
                                 <form id="">
                                     <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button id="deletepost" type="submit" class="btn btn-primary">submit</button>
+                                    <button id="deletepost" type="submit" class="btn btn-danger">submit</button>
                                 </form>
                             </div>
                         </div>

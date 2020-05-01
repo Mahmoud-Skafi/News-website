@@ -283,7 +283,7 @@ div.material-table {
       transform: scale(1.4); }
 
 .actions {
-  margin-left: 77% !important; }
+  margin-left: 0% !important; }
   .actions > a {
     padding: 15px 40px;
     background-color: #3ac47d;
@@ -342,5 +342,8 @@ div.material-table {
   margin-right: 20px; }
   .but-layout > button {
     margin: 5px; }
+
+.table-header {
+  justify-content: space-between; }
 
 /*# sourceMappingURL=overwite.css.map */

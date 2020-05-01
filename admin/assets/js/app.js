@@ -75,7 +75,8 @@ $(document).ready(function () {
                     success: function (res) {
 
                         $('#DeleteModal').modal('toggle');
-                        window.location.reload();
+                        toastr["success"]("Category Deleted !");
+                        setInterval(function(){window.location.reload();},1500);
                     }
                 });
             }
@@ -86,7 +87,7 @@ $(document).ready(function () {
     /**
      * Add Cat
      */
-    $(document).on('click', 'button[data-role=addcat]', function () {
+    $(document).on('click', 'a[data-role=addcat]', function () {
         $('#AddModle').modal('toggle');
         $('#addcat').click(function () {
 

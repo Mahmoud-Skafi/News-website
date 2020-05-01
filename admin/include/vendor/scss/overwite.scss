@@ -419,7 +419,7 @@ div.material-table {
     }
 }
 .actions {
-    margin-left: 77% !important;
+    margin-left: 0% !important;
     > a {
         padding: 15px 40px;
         background-color: $success-clr;
@@ -492,11 +492,14 @@ div.material-table {
         color: white;
     }
 }
-.but-layout{
+.but-layout {
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
-    >button{
+    > button {
         margin: 5px;
     }
+}
+.table-header {
+    justify-content: space-between;
 }
