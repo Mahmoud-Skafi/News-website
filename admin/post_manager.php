@@ -24,14 +24,7 @@ if (checkPermision($pagename, $role)) {
             <html lang="en">
 
             <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-                <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-                <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkskg+p" crossorigin="anonymous" />
-                <link rel="stylesheet" href="./include/css/all_styles.css">
-                <link rel="stylesheet" href="./include/css/overwite.css">
+                <?php require './include/links.php' ?>
             </head>
 
             <body>
@@ -41,13 +34,17 @@ if (checkPermision($pagename, $role)) {
                     <button name="Add_Post">add post</button>
                 </form> -->
                 <br>
-
+                <?php
+                $pageurl = $_GET['page'];
+                $pageurl = intval($pageurl);
+                // echo $pageurl;
+                ?>
                 <div class="container">
                     <div class="row">
                         <div id="admin" class="col s12">
                             <div class="card material-table">
                                 <div class="table-header">
-                                    <span class="table-title">Post Manager</span>
+                                    <span class="table-title" style="white-space: nowrap;">Post Manager</span>
                                     <div class="actions">
                                         <!-- <a ><i class="material-icons"></i></a> -->
                                         <a href="./add_post.php"><i class="fas fa-plus"></i> </a>
@@ -74,7 +71,7 @@ if (checkPermision($pagename, $role)) {
                                             $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active='1' AND Approved='yes' OR Approved='no' ");
                                         }
 
-                                        $res_per_page = 10;
+                                        $res_per_page = 1;
                                         $number_of_res = $sql['rows'];
                                         $number_of_pages = ceil($number_of_res / $res_per_page);
                                         if (!isset($_GET['page'])) {
@@ -82,6 +79,7 @@ if (checkPermision($pagename, $role)) {
                                         } else {
                                             $page = $_GET['page'];
                                         }
+
                                         $this_page_first_res = ($page - 1) * $res_per_page;
                                         // $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE  Is_Active='1' LIMIT " . $this_page_first_res . ',' . $res_per_page);
 
@@ -105,11 +103,14 @@ if (checkPermision($pagename, $role)) {
                                                     <td>
                                                         <?php echo htmlentities($row['PostDetails']);  ?>
                                                     </td>
-                                                    <td data-target="isactive">
+                                                    <td>
                                                         <?php echo $row['PostingDate']; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['UpdationDate']; ?>
+                                                    </td>
+                                                    <td data-target="isactive" style="display: none">
+                                                        <?php echo $row['Is_Active']; ?>
                                                     </td>
                                                     <!-- <td>
                                                         <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>delete</a>
@@ -141,8 +142,13 @@ if (checkPermision($pagename, $role)) {
                                 <br>
                                 <div class="numbers_of_pages" id="myDIV" style="display:flex; justify-content: center;">
                                     <?php
+
                                     for ($page = 1; $page <= $number_of_pages; $page++) {
-                                        echo '<a  class="thisA active" href="post_manager.php?page=' . $page . '"> ' . $page . '  </a> ';
+
+                                        if ($page == $pageurl) {
+                                            echo '<a  class="thisA active" href="post_manager.php?page=' . $page . '"> ' . $page . '  </a> ';
+                                        } else
+                                            echo '<a  class="thisA " href="post_manager.php?page=' . $page . '"> ' . $page . '  </a> ';
                                     }
                                     ?>
                                 </div>
@@ -152,13 +158,15 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div>
                     <form id="post-edit-id">
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -171,7 +179,7 @@ if (checkPermision($pagename, $role)) {
                                     <div class="modal-footer">
                                         <form id="">
                                             <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button id="deletepost" type="submit" class="btn btn-primary">submit</button>
+                                            <button id="deletepost"  style="background-color: #f84c4c !important; color:white;" type="submit" class="btn ">Delete</button>
                                         </form>
                                     </div>
                                 </div>
@@ -179,13 +187,7 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </form>
                 </div>
-                <script src="./include/vendor/jquery/jquery.min.js"></script>
-                <script src="./include/vendor/bootstrap/js/bootstrap.js"></script>
-                <script src="./include/vendor/jquery-easing/jquery.easing.min.js"></script>
-                <script src="./assets/js/dashbordCont.js"></script>
-                <script src="./assets/js/app.js"></script>
-                <script>
-                </script>
+                <?php require './include/scripts.php' ?>
             </body>
 
             </html>

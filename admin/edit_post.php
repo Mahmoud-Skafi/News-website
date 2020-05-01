@@ -20,7 +20,8 @@ if (checkPermision($pagename, $role)) {
             $postid = intval($_GET['pid']);
             $query = $conDb->doSelectQuery($conn, "UPDATE tblposts set PostTitle='$posttitle',CategoryId='$catid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status' where id='$postid'");
             if ($query) {
-                echo "Post updated ";
+
+                header("location:./post_manager.php");
             } else {
                 echo "Something went wrong . Please try again.";
             }
@@ -37,35 +38,65 @@ if (checkPermision($pagename, $role)) {
         $row = $query['data'][0];
         if ($query['rows'] == 1) {
 ?>
+            <!DOCTYPE html>
+            <html lang="en">
 
-            <form name="addpost" method="post">
+            <head>
+                <?php require './include/links.php' ?>
+            </head>
 
-                <input type="text" class="form-control" id="posttitle" value="<?php echo htmlentities($row['title']); ?>" name="posttitle" placeholder="Enter title" required>
-                <br>
-                <select class="form-control" name="category" id="category" required>
-                    <option value="<?php echo htmlentities($row['catid']); ?>"><?php echo htmlentities($row['category']); ?></option>
-                    <?php
-                    // Feching active categories
-                    $ret = $conDb->doSelectQuery($conn, "SELECT id,CategoryName from  tblcategory where Is_Active=1");
+            <body>
+                <?php require './include/navbar.php' ?>
+                <div class="container">
+                    <form name="addpost" method="post">
+                        <br>
+                        <h1 style="font-size:1.5rem; color:#000;">Edit Post</h1>
+                        <br>
+                        <br>
 
-                    foreach ($ret['data'] as $result) {
-                    ?>
-                        <option value="<?php echo htmlentities($result['id']); ?>"><?php echo htmlentities($result['CategoryName']); ?></option>
-                    <?php } ?>
+                        <label>Post Title</label>
+                        <input type="text" class="form-control" id="posttitle" value="<?php echo htmlentities($row['title']); ?>" name="posttitle" placeholder="Enter title" required>
+                        <br>
+                        <label>Select Category</label>
+                        <select class="form-control" name="category" id="category" required>
+                            <option value="<?php echo htmlentities($row['catid']); ?>"><?php echo htmlentities($row['category']); ?></option>
+                            <?php
+                            // Feching active categories
+                            $ret = $conDb->doSelectQuery($conn, "SELECT id,CategoryName from  tblcategory where Is_Active=1");
 
-                </select>
-                <br>
+                            foreach ($ret['data'] as $result) {
+                            ?>
+                                <option value="<?php echo htmlentities($result['id']); ?>"><?php echo htmlentities($result['CategoryName']); ?></option>
+                            <?php } ?>
 
-                <br>
-                <textarea name="postdescription" required><?php echo htmlentities($row['PostDetails']); ?></textarea>
-                <br>
-                <img src="../postimages/<?php echo htmlentities($row['PostImage']); ?>" width="300" />
-                <br>
-                <a href="change_image.php?pid=<?php echo htmlentities($row['postid']); ?>">Update Image</a>
-                <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
-                <br>
+                        </select>
+                        <br>
 
-            </form>
+                        <br>
+                        <label>Post Description</label>
+                        <textarea style="width: 100%;" name="postdescription" required><?php echo htmlentities($row['PostDetails']); ?></textarea>
+                        <br>
+                        <img src="../postimages/<?php echo htmlentities($row['PostImage']); ?>" width="300" />
+                        <br>
+                        <a href="change_image.php?pid=<?php echo htmlentities($row['postid']); ?>">Update Image</a>
+                        <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
+                        <br>
+                      
+      
+                    </form>
+                </div>
+
+                <?php require './include/scripts.php' ?>
+                <script>
+
+                </script>
+            </body>
+            <script>
+
+            </script>
+
+            </html>
+
 <?php }
     }
 } ?>

@@ -116,6 +116,7 @@ $(document).ready(function () {
      * Delete Post
      */
     $(document).on('click', 'a[data-role=deletepost]', function () {
+        
         var id = $(this).data('id');
         var isactive = $('#' + id).children('td[data-target=isactive]').text().trim();
         $('#postid').val(id);
@@ -123,6 +124,7 @@ $(document).ready(function () {
         $('#exampleModal').modal('toggle');
 
         $('#deletepost').click(function () {
+    
             var postid = $('#postid').val();
             var isactive = $('#isactive').val();
             if (postid && isactive == 1) {
@@ -135,7 +137,9 @@ $(document).ready(function () {
                     },
                     success: function (res) {
                         $('#exampleModal').modal('toggle');
-                        window.location.reload();
+                        toastr["success"]("The Post Deleted !");
+                        setInterval(function(){window.location.reload();},1500);
+                        
                     }
                 });
             }
