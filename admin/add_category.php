@@ -9,7 +9,7 @@ $role = $_SESSION['roles'];
 
 $catname = $_POST['catname'];
 $catdes = $_POST['catdes'];
-$upload = date("Y/m/d");
+$upload = date("Y-m-d H:i:s");
 $status = 1;
 
 $sql = $conDb->doSelectQuery($conn, "INSERT INTO tblcategory( CategoryName, Description, PostingDate, UpdationDate, Is_Active) 

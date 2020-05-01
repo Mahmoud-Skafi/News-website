@@ -36,7 +36,7 @@
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Posts Cmponats:</h6>
-          <a class="collapse-item" href="./post_manager.php">Post Manager</a>
+          <a class="collapse-item" href="./post_manager.php?page=1">Post Manager</a>
           <a class="collapse-item" href="./add_post.php">Add Post</a>
           <a class="collapse-item" href="./approved_post.php">Approve Post</a>
           <!-- <a class="collapse-item" href="./approved_post.php">Approve Post</a> -->
@@ -53,7 +53,7 @@
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Category Utilities:</h6>
-          <a class="collapse-item" href="./category_manager.php">Category Manager</a>
+          <a class="collapse-item" href="./category_manager.php?page=1">Category Manager</a>
           <a class="collapse-item" href="./add_category.php">Add Category</a>
         </div>
       </div>

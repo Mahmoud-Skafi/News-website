@@ -22,7 +22,7 @@ if (checkPermision($pagename, $role)) {
             if ($password != $confirm_password) {
                 echo "<script>alert('password')</script>";
             } else {
-                $date = date("Y/m/d");
+                $date = date("Y-m-d H:i:s");
                 $hashpassword = password_hash($password, PASSWORD_BCRYPT);
                 $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblusers WHERE user_name='$user_name'");
                 if ($sql['rows'] >= 1) {
