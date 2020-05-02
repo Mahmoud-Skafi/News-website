@@ -20,14 +20,7 @@ if (checkPermision($pagename, $role)) {
     <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkskg+p" crossorigin="anonymous" />
-        <link rel="stylesheet" href="./include/css/all_styles.css">
-        <link rel="stylesheet" href="./include/css/overwite.css">
+        <?php require './include/links.php' ?>
     </head>
 
     <body>
@@ -38,7 +31,7 @@ if (checkPermision($pagename, $role)) {
             </div>
             <br>
             <div class="sk-main-dashboard-cards-container">
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./post_manager.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
                         <h1>Posts Manager</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -50,11 +43,12 @@ if (checkPermision($pagename, $role)) {
                                     <p></p>
                                 </div>
                                 <img src="https://image.flaticon.com/icons/svg/1814/1814100.svg" alt="">
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./add_post.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center">
                         <h1>Add Post</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -70,7 +64,7 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./approved_post.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center">
                         <h1>Approve Posts</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -97,7 +91,7 @@ if (checkPermision($pagename, $role)) {
             </div>
             <br>
             <div class="sk-main-dashboard-cards-container">
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./category_manager.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
                         <h1>Category Manager</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -113,7 +107,7 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./category_manager.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center">
                         <h1>Add Category</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -139,7 +133,7 @@ if (checkPermision($pagename, $role)) {
             </div>
             <br>
             <div class="sk-main-dashboard-cards-container">
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./manage_accounts.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
                         <h1>Accounts Manager</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -155,7 +149,7 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./add_users.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center">
                         <h1>Add Account</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -171,7 +165,7 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
-                <div class="sk-main-dashborad-card-members">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./account_activat.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center">
                         <h1>Activat Accounts</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -209,13 +203,9 @@ if (checkPermision($pagename, $role)) {
         <br>
         <br>
         <br>
-
-        <script src="./include/vendor/jquery/jquery.min.js"></script>
-        <script src="./include/vendor/bootstrap/js/bootstrap.js"></script>
-        <script src="./include/vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="./assets/js/dashbordCont.js"></script>
-        <script src="./assets/js/app.js"></script>
+        <?php require './include/scripts.php' ?>
     </body>
+
     </html>
 <?php
 

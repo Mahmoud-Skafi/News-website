@@ -69,7 +69,7 @@
           <h6 class="collapse-header">Accounts Utilities:</h6>
           <a class="collapse-item" href="./manage_accounts.php?page=1">Accounts Manager</a>
           <a class="collapse-item" href="./add_users.php">Add Accounts</a>
-          <a class="collapse-item" href="./account_activat.php">Activat Accounts</a>
+          <a class="collapse-item" href="./account_activat.php?page=1">Activat Accounts</a>
         </div>
       </div>
     </li>

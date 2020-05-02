@@ -220,19 +220,22 @@ div.material-table {
   div.material-table table tr {
     font-size: 12px; }
     div.material-table table tr td {
-      padding: 0 0 0 0px;
+      padding: 0 0 0 10px;
       height: 48px;
       font-size: 13px;
       color: rgba(0, 0, 0, 0.87);
       border-bottom: solid 1px #dddddd;
-      white-space: nowrap;
+      white-space: normal;
       overflow: hidden;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      width: 100px !important; }
       div.material-table table tr td a {
         color: inherit; }
         div.material-table table tr td a i {
           font-size: 18px;
           color: rgba(0, 0, 0, 0.54); }
+      div.material-table table tr td:first-child {
+        width: 30px !important; }
   div.material-table table th {
     font-size: 12px;
     font-weight: 500;
@@ -241,7 +244,7 @@ div.material-table {
     white-space: nowrap;
     padding: 0;
     height: 56px;
-    padding-left: 56px;
+    padding-left: 10px !important;
     vertical-align: middle;
     outline: none !important; }
     div.material-table table th.sorting_asc, div.material-table table th.sorting_desc {
@@ -303,13 +306,13 @@ div.material-table {
 .custom-tr > tr > td {
   white-space: normal !important;
   width: 50px !important;
-  padding-left: 0px !important; }
+  padding-left: 10px !important; }
 .custom-tr > tr > td:first-child {
   padding-left: 20px !important;
   width: 15px !important; }
 
 .head-tr-costom > tr th {
-  padding-left: 0px !important; }
+  padding-left: 10px !important; }
 .head-tr-costom > tr th:first-child {
   padding-left: 20px !important;
   width: 15px !important; }
@@ -348,5 +351,8 @@ div.material-table {
 
 .table-body > tr > td {
   padding-left: 0px !important; }
+
+.fix {
+  white-space: normal !important; }
 
 /*# sourceMappingURL=overwite.css.map */
