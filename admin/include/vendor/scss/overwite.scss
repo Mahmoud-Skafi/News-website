@@ -323,15 +323,16 @@ div.material-table {
     table {
         tr {
             td {
-                padding: 0 0 0 0px;
+                padding: 0 0 0 10px;
                 height: 48px;
                 font-size: 13px;
                 color: rgba(0, 0, 0, 0.87);
                 border-bottom: solid 1px #dddddd;
-                white-space: nowrap;
+                white-space: normal;
                 overflow: hidden;
                 text-overflow: ellipsis;
-
+                // text-align: center;
+                width: 100px !important;
                 a {
                     color: inherit;
 
@@ -340,7 +341,11 @@ div.material-table {
                         color: rgba(0, 0, 0, 0.54);
                     }
                 }
+                &:first-child{
+                    width: 30px !important;
+                }
             }
+            
 
             font-size: 12px;
         }
@@ -353,9 +358,10 @@ div.material-table {
             white-space: nowrap;
             padding: 0;
             height: 56px;
-            padding-left: 56px;
+            padding-left: 10px !important;
             vertical-align: middle;
             outline: none !important;
+            // text-align: center;
 
             &.sorting_asc,
             &.sorting_desc {
@@ -445,7 +451,7 @@ div.material-table {
         > td {
             white-space: normal !important;
             width: 50px !important;
-            padding-left: 0px !important;
+            padding-left: 10px !important;
         }
         > td:first-child {
             padding-left: 20px !important;
@@ -456,7 +462,7 @@ div.material-table {
 .head-tr-costom {
     > tr {
         th {
-            padding-left: 0px !important;
+            padding-left: 10px !important;
             // text-align: center;
         }
         th:first-child {
@@ -511,4 +517,7 @@ div.material-table {
             padding-left: 0px !important;
         }
     }
+}
+.fix{
+    white-space: normal !important;
 }

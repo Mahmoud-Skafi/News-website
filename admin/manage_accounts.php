@@ -70,14 +70,14 @@ if (checkPermision($pagename, $role)) {
                                             <th>Updation Date</th>
                                             <th style="display: flex;align-items: center;justify-content: center;">Actions</th>
                                         </tr>
-                                    </thead class="table-body">
-                                    <tbody>
+                                    </thead >
+                                    <tbody class="table-body custom-tr">
                                         <?php
 
 
                                         foreach ($sql['data'] as $row) {
                                         ?>
-                                            <tr id="<?php echo $row['user_id']; ?>">
+                                            <tr  class="fix" id="<?php echo $row['user_id']; ?>">
                                                 <td>
                                                     <?php echo $row['user_id']; ?>
                                                 </td>
@@ -146,7 +146,7 @@ if (checkPermision($pagename, $role)) {
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Disactivat Account?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -159,7 +159,7 @@ if (checkPermision($pagename, $role)) {
                                     <div class="modal-footer">
                                         <form id="">
                                             <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button id="Disactivate" type="submit" class="btn btn-primary">submit</button>
+                                            <button id="Disactivate" type="Activat" class="btn btn-primary">Disactivat</button>
                                         </form>
                                     </div>
                                 </div>
