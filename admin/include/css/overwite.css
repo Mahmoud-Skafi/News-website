@@ -220,7 +220,7 @@ div.material-table {
   div.material-table table tr {
     font-size: 12px; }
     div.material-table table tr td {
-      padding: 0 0 0 56px;
+      padding: 0 0 0 0px;
       height: 48px;
       font-size: 13px;
       color: rgba(0, 0, 0, 0.87);
@@ -345,5 +345,8 @@ div.material-table {
 
 .table-header {
   justify-content: space-between; }
+
+.table-body > tr > td {
+  padding-left: 0px !important; }
 
 /*# sourceMappingURL=overwite.css.map */

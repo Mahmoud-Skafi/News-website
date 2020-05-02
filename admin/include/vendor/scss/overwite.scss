@@ -323,7 +323,7 @@ div.material-table {
     table {
         tr {
             td {
-                padding: 0 0 0 56px;
+                padding: 0 0 0 0px;
                 height: 48px;
                 font-size: 13px;
                 color: rgba(0, 0, 0, 0.87);
@@ -457,6 +457,7 @@ div.material-table {
     > tr {
         th {
             padding-left: 0px !important;
+            // text-align: center;
         }
         th:first-child {
             padding-left: 20px !important;
@@ -502,4 +503,12 @@ div.material-table {
 }
 .table-header {
     justify-content: space-between;
+}
+.table-body
+{
+    >tr{
+        >td{
+            padding-left: 0px !important;
+        }
+    }
 }

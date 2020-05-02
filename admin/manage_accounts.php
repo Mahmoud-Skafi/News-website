@@ -12,11 +12,9 @@ if (checkPermision($pagename, $role)) {
     if (!isset($_SESSION['username'])) {
         header('location:login.php');
     } else {
-        /**
-         * Pageing 
-         */
+
         $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblusers WHERE Is_Active='1' ");
-        $res_per_page = 1;
+        $res_per_page = 10;
         $number_of_res = $sql['rows'];
         $number_of_pages = ceil($number_of_res / $res_per_page);
         if (!isset($_GET['page'])) {
@@ -25,101 +23,121 @@ if (checkPermision($pagename, $role)) {
             $page = $_GET['page'];
         }
         $this_page_first_res = ($page - 1) * $res_per_page;
-        $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblusers WHERE user_name != '" . $user . "' AND Is_Active='1' LIMIT " . $this_page_first_res . ',' . $res_per_page);
+        $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblusers WHERE Is_Active='1' LIMIT " . $this_page_first_res . ',' . $res_per_page);
         if ($sql['status'] == 1) {
 ?>
             <!DOCTYPE html>
             <html lang="en">
 
             <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-                <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-                <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkskg+p" crossorigin="anonymous" />
-                <link rel="stylesheet" href="./include/css/all_styles.css">
-                <link rel="stylesheet" href="./include/css/overwite.css">
-                
+                <?php require './include/links.php' ?>
             </head>
 
             <body>
-                <form method="POST" action="add_users.php">
+                <?php
+                $pageurl = $_GET['page'];
+                if ($pageurl)
+                    $pageurl = intval($pageurl);
+                // echo $pageurl;
+                ?>
+                <?php require './include/navbar.php' ?>
+                <!-- <form method="POST" action="add_users.php">
                     <button>ADD</button>
-                </form>
-                <form method="POST" action="account_activat.php">
+                </form> -->
+                <!-- <form method="POST" action="account_activat.php">
                     <button>go</button>
-                </form>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            <th scope="col">Handle</th>
-                            <th scope="col">action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                </form> -->
+                <br>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div id="admin" class="col s12">
+                            <div class="card material-table">
+                                <div class="table-header">
+                                    <span class="table-title" style="white-space: nowrap;">Accounts Manager</span>
+                                    <div class="actions" style="margin-left: 0% !important;">
+                                        <!-- <a ><i class="material-icons"></i></a> -->
+                                        <a href="./add_users.php"><i class="fas fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                                <table id="datatable">
+                                    <thead class="head-tr-costom">
+                                        <tr>
+                                            <th style="padding-right: 40px !important;">ID</th>
+                                            <th>User Name</th>
+                                            <th>Email</th>
+                                            <th>Is_Active</th>
+                                            <th>Updation Date</th>
+                                            <th style="display: flex;align-items: center;justify-content: center;">Actions</th>
+                                        </tr>
+                                    </thead class="table-body">
+                                    <tbody>
+                                        <?php
 
 
-                        <?php
+                                        foreach ($sql['data'] as $row) {
+                                        ?>
+                                            <tr id="<?php echo $row['user_id']; ?>">
+                                                <td>
+                                                    <?php echo $row['user_id']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['user_name']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['user_email']; ?>
+                                                </td>
+                                                <td data-target="isactive">
+                                                    <?php echo $row['Is_Active']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php  if($row['role_id']==1){
+                                                        echo "ADMIN";  
+                                                    } else{
+                                                        echo "AUTHOR";
+                                                    }?>
+                                                </td>
+                                                <td class="td-custom">
+                                                    <div>
 
+                                                        <?php if ($row['user_name'] == $user) {
+                                                        } else {
+                                                        ?>
+                                                            <a href="#" data-role="disactivate" data-id=<?php echo $row['user_id'] ?>>
+                                                                <i class="fas fa-user-slash" style="color: #f05050"></i>
+                                                            <?php
+                                                        }
+                                                            ?>
 
-                        foreach ($sql['data'] as $row) {
-                        ?>
-                            <tr id="<?php echo $row['user_id']; ?>">
-                                <td>
-                                    <?php echo $row['user_id']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['user_name']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['user_email']; ?>
-                                </td>
-                                <td data-target="isactive">
-                                    <?php echo $row['Is_Active']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['role_id']; ?>
-                                </td>
-                                <td>
-                                    <a href="#" data-role="disactivate" data-id=<?php echo $row['user_id'] ?>>DisActivat</a>
-                                </td>
-                            <?php
-                        }
-                            ?>
-                    </tbody>
-                </table>
+                                                            </a>
+                                                    </div>
+                                                </td>
+                                            <?php
+                                        }
+                                            ?>
+                                    </tbody>
+                                </table>
+                                <br>
 
+                                <!-- PAGING -->
+                                <div class="numbers_of_pages" id="myDIV" style="display:flex; justify-content: center;">
+                                    <?php
 
+                                    for ($page = 1; $page <= $number_of_pages; $page++) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- PAGING -->
-                <div class="numbers_of_pages" style="display:flex; justify-content: center;">
-                    <?php
-                    for ($page = 1; $page <= $number_of_pages; $page++) {
-                        echo '<a href="manage_accounts.php?page=' . $page . '"> ' . $page . '  </a> ';
-                    }
-                    ?>
+                                        if ($page == $pageurl) {
+                                            echo '<a  class="thisA active" href="manage_accounts.php?page=' . $page . '"> ' . $page . '  </a> ';
+                                        } else
+                                            echo '<a  class="thisA " href="manage_accounts.php?page=' . $page . '"> ' . $page . '  </a> ';
+                                    }
+                                    ?>
+                                </div>
+                                <!-- END -->
+                                <br>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- END -->
-
 
                 <!-- MODLE -->
                 <div>
@@ -148,17 +166,8 @@ if (checkPermision($pagename, $role)) {
                             </div>
                         </div>
                     </form>
-                </div>
-                </div>
-                </div>
-                </div>
+                    <?php require './include/scripts.php' ?>
             </body>
-            <script src="./include/vendor/jquery/jquery.min.js"></script>
-
-            <script src="./include/vendor/bootstrap/js/bootstrap.js"></script>
-            <script src="./include/vendor/jquery-easing/jquery.easing.min.js"></script>
-            <script src="./assets/js/dashbordCont.js"></script>
-            <script src="./assets/js/app.js"></script>
 
             </html>
 <?php

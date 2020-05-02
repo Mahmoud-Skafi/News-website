@@ -67,7 +67,7 @@ if (checkPermision($pagename, $role)) {
                 <br>
                 <div class="form-group">
                     <label>Post Title</label>
-                    <input type="text" name="post_title" class="form-control" placeholder="Post Title" require>
+                    <input type="text" name="post_title" class="form-control" placeholder="Post Title" required>
 
                 </div>
 
