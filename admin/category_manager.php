@@ -60,14 +60,14 @@ if (checkPermision($pagename, $role)) {
                                 <table id="datatable">
                                     <thead class="head-tr-costom">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Post Title</th>
-                                            <th>Post Details</th>
+                                            <th style="padding-right: 40px !important;">ID</th>
+                                            <th>Category Name</th>
+                                            <th>Category Details</th>
                                             <th>Posting Date</th>
                                             <th>Updation Date</th>
                                             <th style="display: flex;align-items: center;justify-content: center;">Actions</th>
                                         </tr>
-                                    </thead>
+                                    </thead class="table-body">
 
 
                                     <?php
@@ -85,10 +85,10 @@ if (checkPermision($pagename, $role)) {
                                                     <?php echo $row['Description']; ?>
                                                 </td>
                                                 <td data-target="catactive">
-                                                    <?php echo $row['Is_Active']; ?>
+                                                    <?php echo $row['PostingDate']; ?>
                                                 </td>
                                                 <td data-target="catdate">
-                                                    <?php echo $row['PostingDate']; ?>
+                                                    <?php echo $row['UpdationDate']; ?>
                                                 </td>
                                                 <td class="td-custom">
                                                     <div>
@@ -186,7 +186,7 @@ if (checkPermision($pagename, $role)) {
                                     <div class="modal-footer">
                                         <form id="">
                                             <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button  style="background-color: #f84c4c !important; color:white;" id="deletecat" type="submit" class="btn btn-primary">Delete</button>
+                                            <button style="background-color: #f84c4c !important; color:white;" id="deletecat" type="submit" class="btn btn-primary">Delete</button>
                                         </form>
                                     </div>
                                 </div>
