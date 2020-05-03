@@ -48,7 +48,6 @@ h6 {
     all: unset;
 }
 a {
-
     &:focus {
         outline: none !important;
     }
@@ -68,7 +67,6 @@ h6 {
 }
 
 p {
-
 }
 
 ul,
@@ -572,9 +570,6 @@ div.material-table {
     height: 100%;
 }
 
-
-
-
 .txt1 {
     font-size: 15px;
     line-height: 1.4;
@@ -582,7 +577,6 @@ div.material-table {
 }
 
 .txt2 {
-   
     font-size: 15px;
     line-height: 1.4;
     color: #4272d7;
@@ -622,7 +616,7 @@ div.material-table {
 
 .sk-login-form-title {
     display: block;
-   
+
     font-size: 30px;
     color: #555555;
     line-height: 1.2;
@@ -713,5 +707,64 @@ input.sk-input {
     &:hover:before {
         visibility: visible;
         opacity: 1;
+    }
+}
+.sk-nav-header {
+    > h1 {
+        font-size: 2rem !important;
+        color: $dark-clr;
+        font-family: montserratSb;
+    }
+    margin-left: 40px;
+}
+.sk-ul-elemets {
+    margin-top: 20px;
+    > ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        padding-left: 50px !important;
+        > li {
+            position: relative;
+            list-style: none;
+            margin: 0 20px;
+            > a {
+                all: unset;
+                color: $dark-clr;
+                font-family: montserratSb;
+                cursor: pointer;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0px;
+                width: 0%;
+                height: 3px;
+                background-color: $invalid-clr;
+                transition: width 0.5s ease-out;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+            &:active {
+                width: 100%;
+            }
+        }
+    }
+}
+.login-btu {
+    padding: 10px 20px;
+    background-color: $primary-clr;
+    margin-top: 15px !important;
+    border-radius: 3px;
+    cursor: pointer;
+    > a {
+        all: unset;
+        color: $white-clr;
+        font-family: montserratSb;
+    }
+    &:hover {
+        color: lighten($primary-clr, 10%);
     }
 }

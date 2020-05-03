@@ -1,14 +1,18 @@
+<?php
+require_once('./admin/config/dbcon.php');
+session_start();
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
-        <button  name="login" ><a href="./admin/login.php">login</a></button>    
-        <button  name="Logout">logout</button>    
-  
+<head>
+    <?php require './vendor/links.php' ?>
+</head>
+<?php require './vendor/navbar.php' ?>
+
+<body>
+    <?php require './vendor/scripts.php' ?>
 </body>
+
 </html>
