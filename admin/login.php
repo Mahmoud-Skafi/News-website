@@ -36,19 +36,43 @@ if (isset($_POST['login'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <?php require './include/links.php' ?>
 </head>
 
 <body>
     <form method="POST">
-        <div>
-            <input type="text" name="username">
-            <input type="password" name="password">
-            <button type="submit" name="login">Login</button>
+        <div class="limiter">
+            <div class="container-sk-login">
+                <div class="wrap-sk-login" style="padding: 30px;">
+                    <form class="sk-login-form ">
+                        <span class="sk-login-form-title ">
+                            Account Login
+                        </span>
+                        <br>
+                        <br>
+                        <div class="wrap-sk-input " data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="sk-input" type="text" name="username" placeholder="User name">
+                        </div>
+                        <br>
+
+                        <div class="wrap-sk-input" data-validate="Password is required">
+                            <input class="sk-input" type="password" name="password" placeholder="Password">
+                        </div>
+                        <br>
+
+                        <div class="container-sk-login-form-btn ">
+                            <button name="login" class="sk-login-form-btn">
+                                Login in
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </form>
+
+    <?php require './include/scripts.php' ?>
 </body>
+
 
 </html>
