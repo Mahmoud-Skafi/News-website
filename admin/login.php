@@ -65,6 +65,10 @@ if (isset($_POST['login'])) {
                                 Login in
                             </button>
                         </div>
+                        <br>
+                        <div style="display: flex; justify-content: center">
+                            <a href="../index.php">Go Back</a>
+                        </div>
                     </form>
                 </div>
             </div>
