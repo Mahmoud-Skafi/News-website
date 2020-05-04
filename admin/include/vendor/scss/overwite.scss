@@ -108,7 +108,9 @@ iframe {
 .page-traker {
     width: 100%;
 }
-
+body {
+    background: #eaeaea;
+}
 .sk-main-dashboard-cards-container {
     display: grid;
     grid-gap: 1.5em;
@@ -746,9 +748,6 @@ input.sk-input {
             &:hover::after {
                 width: 100%;
             }
-            &:active {
-                width: 100%;
-            }
         }
     }
 }
@@ -838,8 +837,9 @@ input.sk-input {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        background-color: $danger-clr;
+        background-color: $white-clr;
         box-shadow: 0px 0px 16px -1px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
         > .sk-news-header {
             margin: 10px 20px;
             > h1 {
@@ -851,45 +851,126 @@ input.sk-input {
             display: grid;
             grid-gap: 1.5em;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            margin: 0px 2.5em;
-            >.sk-elemet-card{
+            margin: 2rem 2.5em;
+            > .sk-elemet-card {
                 position: relative;
                 cursor: pointer;
-                background-color: $dark-clr;
+                background-color: $primary-clr;
                 color: white;
                 width: 100%;
                 height: 100%;
-               
-                transition: all 1s ease-out;
-                >.sk-post-image{
-                    >img{
+                box-shadow: 0px 0px 83px -42px rgba(0, 0, 0, 0.75);
+
+                transition: transform 0.31s ease-out;
+                &:hover {
+                    transform: scale(1.1);
+                }
+                > .sk-post-image {
+                    > img {
                         width: 100%;
-                        max-width: 100%;      
+                        max-width: 100%;
+                        height: 250px;
+                        max-height: 100%;
                     }
                 }
-                >.sk-post-details{
+                > .sk-post-details {
                     padding: 20px 0px;
                     margin: 0px 5px;
                     display: flex;
                     justify-content: center;
                 }
-                &::after{
+                &::after {
                     font-family: FontAwesome;
                     content: "\f0c1";
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%,-50%);
-                    color: $white-clr;
+                    transform: translate(-50%, -50%);
+                    color: $warning-clr;
                     font-size: 0;
                     opacity: 0;
-                    transition: all .31s ease-out;
+                    transition: all 0.31s ease-out;
                 }
-                &:hover::after{
+                &:hover::after {
                     font-size: 2.3rem;
                     opacity: 1;
-                }   
+                }
+                > .sk-post-details {
+                    h1 {
+                        font-size: 1.2rem;
+                        font-family: montserratSb;
+                    }
+                }
             }
         }
     }
+}
+.sk-load-more {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+    // margin-bottom: 10px;
+    > a {
+        all: unset;
+        background-color: $primary-clr;
+        padding: 20px;
+        color: $white-clr;
+        cursor: pointer;
+        &:hover {
+            background-color: darken($primary-clr, 10%);
+        }
+    }
+}
+.post-details-container {
+    display: flex;
+    flex-direction: column;
+    // margin:20px 0px;
+    background-color: $white-clr;
+    box-shadow: 0px 0px 83px -42px rgba(0, 0, 0, 0.75);
+    > .post-header {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+        font-size: 1.3rem;
+        font-family: montserratSb;
+        color: $primary-clr;
+    }
+    > .post-details {
+        display: flex;
+        justify-content: flex-start;
+        margin: 20px 10px;
+        font-size: 1rem;
+        font-family: montserrat;
+        color: $dark-clr;
+    }
+}
+.post-comments {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 20px 10px;
+    font-size: 1.3rem;
+    font-family: montserratSB;
+    color: $dark-clr;
+    > h1 {
+        margin: 20px 0px;
+    }
+    > .comments-card {
+        display: flex;
+        align-items: center;
+        margin: 10px 0px;
+        > .user-images {
+            width: 80px;
+            > img {
+                max-width: 100%;
+            }
+        }
+        > .comments-details {
+            margin: 0px 10px;
+            margin-bottom: 25px;
+        }
+    }
+}
+.comment {
+    margin: 50px 20px;
 }

@@ -51,21 +51,21 @@ error_reporting(0);
                     </ul>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://wallpaperhd.wiki/wp-content/uploads/vaporwave-background-vaporwave-background-1920x1080-beautiful-vaporwave-wallpapers-79-images-combination-of-vaporwave-background-1920x1080-1.jpg" alt="Los Angeles" width="100%" height="500">
+                            <img src="./skafi.jpg" alt="Los Angeles" width="100%" height="500">
                             <div class="carousel-caption">
                                 <h3>Los Angeles</h3>
                                 <p>We had such a great time in LA!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://images3.alphacoders.com/106/thumb-1920-1069102.jpg" alt="Chicago" width="100%" height="500">
+                            <img src="" alt="Chicago" width="100%" height="500">
                             <div class="carousel-caption">
                                 <h3>Chicago</h3>
                                 <p>Thank you, Chicago!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://wallpaperset.com/w/full/7/f/f/537807.jpg" alt="New York" width="100%" height="500">
+                            <img src="" alt="New York" width="100%" height="500">
                             <div class="carousel-caption">
                                 <h3>New York</h3>
                                 <p>We love the Big Apple!</p>
@@ -84,56 +84,92 @@ error_reporting(0);
 
             <br>
         </div>
-        <br>
-        <div class="section-2 ">
+
+        <div class="section-2 " id="LASTNEWS">
             <div class="sk-container-width-100">
                 <div class="sk-news-header">
                     <h1>LAST NEWS</h1>
                 </div>
                 <div class="sk-elemets-container">
-                    <div class="sk-elemet-card">
-                        <div class="sk-post-image">
-                            <img src="https://wallpaperset.com/w/full/7/f/f/537807.jpg"  alt="">
-                        </div>
-                        <div class="sk-post-details">
-                            <h1>post-title</h1>
-                        </div>
-                    </div>
-                    <div class="sk-elemet-card">
-                        <div class="sk-post-image">
-                            <img src="https://wallpaperset.com/w/full/7/f/f/537807.jpg"  alt="">
-                        </div>
-                        <div class="sk-post-details">
-                            <h1>post-title</h1>
-                        </div>
-                    </div>
-                    <div class="sk-elemet-card">
-                        <div class="sk-post-image">
-                            <img src="https://wallpaperset.com/w/full/7/f/f/537807.jpg"  alt="">
-                        </div>
-                        <div class="sk-post-details">
-                            <h1>post-title</h1>
-                        </div>
-                    </div>
-                    <div class="sk-elemet-card">
-                        <div class="sk-post-image">
-                            <img src="https://wallpaperset.com/w/full/7/f/f/537807.jpg"  alt="">
-                        </div>
-                        <div class="sk-post-details">
-                            <h1>post- dadadtitle</h1>
-                        </div>
-                    </div>
+                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 LIMIT 4 ");
+                    if ($sql['status'] == 1) {
+                        foreach ($sql['data'] as $row) {
+                    ?>
+                            <div class="sk-elemet-card" onclick="window.location='./post_details.php?postid=<?php echo $row['id'] ?>'">
+                                <div class="sk-post-image">
+                                    <img src="./admin/postimages/<?php echo $row['PostImage'] ?>"   alt="">
+                                </div>
+                                <div class="sk-post-details">
+                                    <h1><?php echo $row['PostTitle'] ?></h1>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="sk-elemets-container">
+                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 LIMIT 5,4 ");
+                    if ($sql['status'] == 1) {
+                        foreach ($sql['data'] as $row) {
+                    ?>
+                            <div class="sk-elemet-card" onclick="window.location='./post_details.php?postid=<?php echo $row['id'] ?>'">
+                                <div class="sk-post-image">
+                                    <img src="./admin/postimages/<?php echo $row['PostImage'] ?>"  alt="">
+                                </div>
+                                <div class="sk-post-details">
+                                    <h1><?php echo $row['PostTitle'] ?></h1>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="sk-load-more" >
+
+                    <a href=""><i class="fas fa-scroll"></i> Load More</a>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    <!-- 
+        <div class="sk-elemet-card">
+            <div class="sk-post-image">
+                <img src="thumb-1920-1069102.jpg" alt="">
+            </div>
+            <div class="sk-post-details">
+                <h1>post-title</h1>
+            </div>
+        </div>
+        <div class="sk-elemet-card">
+            <div class="sk-post-image">
+                <img src="a.png" alt="">
+            </div>
+            <div class="sk-post-details">
+                <h1>post-title</h1>
+            </div>
+        </div>
+        <div class="sk-elemet-card">
+            <div class="sk-post-image">
+                <img src="" alt="">
+            </div>
+            <div class="sk-post-details">
+                <h1>post- dadad title</h1>
+            </div>
+        </div>
+    </div> -->
+
+
+
     <br>
     <?php require './vendor/scripts.php' ?>
-    <script>
-        $(document).ready(function() {
-            $('#newsTicker1').breakingNews();
 
-        });
+    <script>
+
     </script>
 </body>
 

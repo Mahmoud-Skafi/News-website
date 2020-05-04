@@ -1,5 +1,6 @@
 
 
+
 /**
  * Edit Category
  */
@@ -76,7 +77,7 @@ $(document).ready(function () {
 
                         $('#DeleteModal').modal('toggle');
                         toastr["success"]("Category Deleted !");
-                        setInterval(function(){window.location.reload();},1500);
+                        setInterval(function () { window.location.reload(); }, 1500);
                     }
                 });
             }
@@ -94,7 +95,7 @@ $(document).ready(function () {
             var catname = $('#catnames').val();
             var catdes = $('#catdess').val();
             if (1) {
-                
+
                 $.ajax({
                     type: 'post',
                     url: 'add_category.php',
@@ -117,7 +118,7 @@ $(document).ready(function () {
      * Delete Post
      */
     $(document).on('click', 'a[data-role=deletepost]', function () {
-        
+
         var id = $(this).data('id');
         var isactive = $('#' + id).children('td[data-target=isactive]').text().trim();
         $('#postid').val(id);
@@ -125,7 +126,7 @@ $(document).ready(function () {
         $('#exampleModal').modal('toggle');
 
         $('#deletepost').click(function () {
-    
+
             var postid = $('#postid').val();
             var isactive = $('#isactive').val();
             if (postid && isactive == 1) {
@@ -139,8 +140,8 @@ $(document).ready(function () {
                     success: function (res) {
                         $('#exampleModal').modal('toggle');
                         toastr["success"]("The Post Deleted !");
-                        setInterval(function(){window.location.reload();},1500);
-                        
+                        setInterval(function () { window.location.reload(); }, 1500);
+
                     }
                 });
             }
@@ -231,5 +232,47 @@ $(document).ready(function () {
             }
         });
     });
-    
+
+    $(document).on('click', 'button[data-role=addcomment]', function () {
+        var postid = $('#postids').val().trim();
+        var comment = $('#comments').val().trim();
+        if (postid && comment) {
+            console.log(postid, comment);
+            $.ajax({
+                type: 'post',
+                url: 'add_comment.php',
+                data: {
+                    postid: postid,
+                    comment: comment
+                },
+                success: function (res) {
+                    Swal.fire({
+                        icon: 'succes',
+                        title: 'Done!...',
+                        text: 'Comment Added !',
+
+                    });
+                    setInterval(function () { window.location.reload(); }, 3000);
+                }
+            });
+
+        }
+        else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Opss!...',
+                text: 'Add Comment First !',
+
+            });
+        }
+    });
+    $("#NEWS").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#LASTNEWS").offset().top
+        }, 1000);
+    });
+    $(document).ready(function () {
+        $('#newsTicker1').breakingNews();
+
+    });
 });

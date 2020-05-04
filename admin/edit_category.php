@@ -7,7 +7,7 @@ include('./config/permissions.php');
 // }
 $catname = $_POST['catname'];
 $catdes = $_POST['catdes'];
-$update = date("Y/m/d");
+$update = date("Y-m-d H:i:s");
 $catid = $_POST['catid'];
 $catactive = $_POST['catactive'];
 $sql = $conDb->doSelectQuery($conn, "UPDATE tblcategory

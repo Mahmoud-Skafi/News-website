@@ -7,7 +7,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
-            <div class="sk-nav-header">
+            <div class="sk-nav-header" style="cursor: pointer" onclick="window.location='./index.php'">
                 <h1>SKAFI .</h1>
             </div>
 
@@ -15,28 +15,28 @@
             <img src="">
             <div class="sk-ul-elemets">
                 <ul>
-                    <li>
-                        <a href="">
+                    <li id="NEWS"> 
+                        <a>
                             NEWS
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a >
                             Most View
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a >
                             Most Commet
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a >
                             About us
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a >
 
                         </a>
                     </li>
