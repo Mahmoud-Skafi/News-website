@@ -728,4 +728,32 @@ input.sk-input {
 .comment {
   margin: 50px 20px; }
 
+.Footer {
+  height: 100%;
+  background-color: #313131; }
+
+.footer-container {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around; }
+  .footer-container > .sk-nav-header > h1 {
+    color: #ffffff; }
+  .footer-container > .elements {
+    display: flex; }
+    .footer-container > .elements > ul {
+      list-style: none; }
+      .footer-container > .elements > ul > li {
+        margin-bottom: 20px; }
+        .footer-container > .elements > ul > li > a {
+          margin: 10px 0px;
+          color: #818181;
+          font-family: montserratSB;
+          transition: color .31s ease-out; }
+          .footer-container > .elements > ul > li > a:hover {
+            color: #ffffff; }
+
+.End-footer {
+  display: flex;
+  justify-content: center; }
+
 /*# sourceMappingURL=overwite.css.map */

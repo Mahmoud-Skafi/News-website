@@ -192,37 +192,39 @@ error_reporting(0);
         </div>
     </div>
     </div>
-
-    <!-- 
-        <div class="sk-elemet-card">
-            <div class="sk-post-image">
-                <img src="thumb-1920-1069102.jpg" alt="">
-            </div>
-            <div class="sk-post-details">
-                <h1>post-title</h1>
-            </div>
-        </div>
-        <div class="sk-elemet-card">
-            <div class="sk-post-image">
-                <img src="a.png" alt="">
-            </div>
-            <div class="sk-post-details">
-                <h1>post-title</h1>
-            </div>
-        </div>
-        <div class="sk-elemet-card">
-            <div class="sk-post-image">
-                <img src="" alt="">
-            </div>
-            <div class="sk-post-details">
-                <h1>post- dadad title</h1>
-            </div>
-        </div>
-    </div> -->
-
-
-
     <br>
+    <br>
+    <div class="Footer">
+        <div class="footer container">
+            <div class="container">
+                <div class="footer-container">
+                    <div class="sk-nav-header">
+                        <h1>SKAFI .</h1>
+                    </div>
+                    <div class="elements">
+                        <ul>
+                            <li><a href="">HOME</a></li>
+                            <li><a href="">LOGIN</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">MOST COMMENT POSTS</a></li>
+                            <li><a href="">MOST VIEW POSTS</a></li>
+                            <li><a href="">ABOUT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="End-footer">
+                    <h1>© 2020 <span style="color: #fff">skafi .</span> MAHMOUD</h1>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <?php require './vendor/scripts.php' ?>
 
     <script>
