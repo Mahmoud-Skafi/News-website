@@ -980,3 +980,40 @@ input.sk-input {
 .comment {
     margin: 50px 20px;
 }
+.Footer {
+    height: 100%;
+    background-color: $primary-clr;
+}
+.footer-container {
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    > .sk-nav-header {
+        > h1 {
+            color: $white-clr;
+        }
+    }
+    >.elements{
+        display: flex;
+        >ul{
+            list-style: none;
+            >li{
+                margin-bottom: 20px ;
+                >a{
+                    margin: 10px 0px;
+                    color: $default-clr;
+                    font-family: montserratSB;
+                    transition: color .31s ease-out;
+                    &:hover{
+                        color: $white-clr;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.End-footer{
+    display: flex;
+    justify-content: center;
+}
