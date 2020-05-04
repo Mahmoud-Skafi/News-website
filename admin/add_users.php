@@ -99,7 +99,13 @@ if (checkPermision($pagename, $role)) {
                 $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblusers WHERE user_name='$user_name'");
                 if ($sql['rows'] >= 1) {
 
-                    $msa = "the user name is already taken";
+                    //$msa = "the user name is already taken";
+                    echo "<script>Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'User name is already taken !',
+                       
+                      })</script>";
                 } else {
                     $sql = $conDb->doSelectQuery($conn, "INSERT INTO tblusers  
             SET  user_name= '$user_name' , user_email='$user_email',user_password='$hashpassword',Is_Active=1,CreationDate='$date',role_id='$roleid'  
@@ -113,7 +119,7 @@ if (checkPermision($pagename, $role)) {
                             timer: 1500
                           })</script>";
                     } else {
-                        echo "alert('ERROR')";
+                        echo "<script> alert('ERROR') </script>";
                     }
                 }
             }
