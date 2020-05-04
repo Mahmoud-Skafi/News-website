@@ -51,21 +51,21 @@ error_reporting(0);
                     </ul>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="./skafi.jpg" alt="Los Angeles" width="100%" height="500">
+                            <img src="https://www.2wcom.com/wp-content/uploads/dubai-3-2103072_1920-1920x500.jpg" alt="Los Angeles" width="100%" height="500">
                             <div class="carousel-caption">
                                 <h3>Los Angeles</h3>
                                 <p>We had such a great time in LA!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="" alt="Chicago" width="100%" height="500">
+                            <img src="https://perennialgardening.com.au/wp-content/uploads/small_blue_flower-wallpaper-1920x500.jpg" alt="Chicago" width="100%" height="500">
                             <div class="carousel-caption">
                                 <h3>Chicago</h3>
                                 <p>Thank you, Chicago!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="" alt="New York" width="100%" height="500">
+                            <img src="https://www.eusmat.net/wp-content/uploads/2018/09/EUSMA-0003-Keyvisual-002-colorful-1920x500.jpg" alt="New York" width="100%" height="500">
                             <div class="carousel-caption">
                                 <h3>New York</h3>
                                 <p>We love the Big Apple!</p>
@@ -84,7 +84,10 @@ error_reporting(0);
 
             <br>
         </div>
-
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="section-2 " id="LASTNEWS">
             <div class="sk-container-width-100">
                 <div class="sk-news-header">
@@ -97,7 +100,7 @@ error_reporting(0);
                     ?>
                             <div class="sk-elemet-card" onclick="window.location='./post_details.php?postid=<?php echo $row['id'] ?>'">
                                 <div class="sk-post-image">
-                                    <img src="./admin/postimages/<?php echo $row['PostImage'] ?>"   alt="">
+                                    <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="">
                                 </div>
                                 <div class="sk-post-details">
                                     <h1><?php echo $row['PostTitle'] ?></h1>
@@ -115,7 +118,7 @@ error_reporting(0);
                     ?>
                             <div class="sk-elemet-card" onclick="window.location='./post_details.php?postid=<?php echo $row['id'] ?>'">
                                 <div class="sk-post-image">
-                                    <img src="./admin/postimages/<?php echo $row['PostImage'] ?>"  alt="">
+                                    <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="">
                                 </div>
                                 <div class="sk-post-details">
                                     <h1><?php echo $row['PostTitle'] ?></h1>
@@ -126,7 +129,7 @@ error_reporting(0);
                     }
                     ?>
                 </div>
-                <div class="sk-load-more" >
+                <div class="sk-load-more">
 
                     <a href=""><i class="fas fa-scroll"></i> Load More</a>
                 </div>
@@ -135,6 +138,60 @@ error_reporting(0);
     </div>
 
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="section-2 " id="LASTNEWS">
+        <div class="sk-container-width-100">
+            <div class="sk-news-header">
+                <h1>MOST VIEW</h1>
+            </div>
+            <div class="sk-elemets-container">
+                <?php
+                $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 ORDER BY CommentsCout DESC  LIMIT 0,4  
+                ");
+                if ($sql['status'] == 1) {
+                    foreach ($sql['data'] as $row) {
+                ?>
+                        <div class="sk-elemet-card" style="background-color: #3a76c4;" onclick="window.location='./post_details.php?postid=<?php echo $row['id'] ?>'">
+                            <div class="sk-post-image">
+                                <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="">
+                            </div>
+                            <div class="sk-post-details">
+                                <h1><?php echo $row['PostTitle'] ?></h1>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
+            <div class="sk-elemets-container">
+                <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 ORDER BY CommentsCout DESC LIMIT 5,4  ");
+                if ($sql['status'] == 1) {
+                    foreach ($sql['data'] as $row) {
+                ?>
+                        <div class="sk-elemet-card" style="background-color: #3a76c4;" onclick="window.location='./post_details.php?postid=<?php echo $row['id'] ?>'">
+                            <div class="sk-post-image">
+                                <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="">
+                            </div>
+                            <div class="sk-post-details">
+                                <h1><?php echo $row['PostTitle'] ?></h1>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
+            <div class="sk-load-more">
+
+                <a class="mostcommt" style="background-color: #3a76c4;" href=""><i class="fas fa-scroll"></i> Load More</a>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <!-- 
         <div class="sk-elemet-card">

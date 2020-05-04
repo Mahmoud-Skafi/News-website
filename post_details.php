@@ -2,7 +2,11 @@
 require_once('./admin/config/dbcon.php');
 session_start();
 $postid = intval($_GET['postid']);
-$sql = $conDb->doSelectQuery($conn, "SELECT tblposts.id as postid,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid,tblsubcategory.SubCategoryId as subcatid,tblsubcategory.Subcategory as subcategory from tblposts 
+// echo $postid;
+// $sql = $conDb->doSelectQuery($conn, "SELECT tblposts.id ,tblcomments.postid FROM tblposts  LEFT JOIN tblcomments ON '$postid'=tblcomments.postId  AND tblcomments.postId='$postid'  ");
+// $commentsNo = $sql['rows'];
+echo "     " . $commentsNo;
+$sql = $conDb->doSelectQuery($conn, "SELECT tblposts.id as postid,tblposts.PostImage,tblposts.PostingDate as postdata, tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid,tblsubcategory.SubCategoryId as subcatid,tblsubcategory.Subcategory as subcategory from tblposts 
                                         left join tblcategory 
                                         on tblcategory.id=tblposts.CategoryId 
                                         left join tblsubcategory 
@@ -26,20 +30,24 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
 
     <body>
         <?php require './vendor/navbar.php' ?>
+        <br>
+        <br>
         <div class="sk-container post-details-container">
             <div class="post-header">
                 <h1><?php echo $row['title'] ?></h1>
             </div>
-            <div class="this-post-image" style="display: flex;justify-content: center" >
+            <div class="this-post-image" style="display: flex;justify-content: center">
                 <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="" style="max-width: 100%; margin: 0px 20px;">
             </div>
 
-            <div class="post-details">
+            <div class="post-details" style="display: flex; flex-direction: column">
                 <p><?php echo $row['PostDetails'] ?></p>
-                <p></p>
+                <br>
+                <p><?php echo $row['postdata'] ?></p>
             </div>
 
             <div class="post-comments">
+
                 <h1>Comment Section</h1>
                 <?php
                 $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblcomments WHERE status=1 AND postId='" . $postid . "' ");
@@ -51,6 +59,7 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
                                 <img src="1.png" alt="">
                             </div>
                             <div class="comments-details">
+
                                 <p><?php echo $row['comment'] ?></p>
                             </div>
                         </div>
@@ -58,9 +67,7 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
                     }
                 }
                 ?>
-
             </div>
-
         </div>
 
         <div class="comment sk-container">

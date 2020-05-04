@@ -678,6 +678,10 @@ input.sk-input {
     cursor: pointer; }
     .sk-load-more > a:hover {
       background-color: #181818; }
+  .sk-load-more > .mostcommt {
+    background-color: #3a76c4; }
+    .sk-load-more > .mostcommt:hover {
+      background-color: #2e5e9d !important; }
 
 .post-details-container {
   display: flex;

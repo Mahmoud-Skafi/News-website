@@ -920,6 +920,12 @@ input.sk-input {
             background-color: darken($primary-clr, 10%);
         }
     }
+    > .mostcommt {
+        background-color: #3a76c4;
+        &:hover {
+            background-color: darken(#3a76c4, 10%) !important;
+        }
+    }
 }
 .post-details-container {
     display: flex;
