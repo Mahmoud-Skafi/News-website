@@ -1,6 +1,6 @@
 <div id="wrapper">
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" style="transition: all .5s" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./dashboard.php">
       <div class="sidebar-brand-icon rotate-n-15">
       </div>
       <div class="sidebar-brand-text mx-3">NEWS WEBSITE</sup></div>
