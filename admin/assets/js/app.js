@@ -232,6 +232,31 @@ $(document).ready(function () {
             }
         });
     });
+    /**
+     * Delete BrakingNews
+     */
+    $(document).on('click', 'a[data-role=deletenews]', function () {
+        var newsid = $(this).data('id');
+        $('#newsid').val(newsid);
+        $('#activatmodel').modal('toggle');
+        console.log(newsid);
+        $('#deletenews').click(function () {
+            var newsid = $('#newsid').val().trim();
+            if (newsid) {
+                $.ajax({
+                    type: 'post',
+                    url: 'Delete_brackingnews.php',
+                    data: {
+                        newsid: newsid
+                    },
+                    success: function (res) {
+                        window.location.reload();
+                    }
+
+                });
+            }
+        });
+    });
 
     $(document).on('click', 'button[data-role=addcomment]', function () {
         var postid = $('#postids').val().trim();
@@ -266,13 +291,13 @@ $(document).ready(function () {
             });
         }
     });
-    $("#NEWS").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#LASTNEWS").offset().top
-        }, 1000);
-    });
-    $(document).ready(function () {
-        $('#newsTicker1').breakingNews();
+    // $("#NEWS").click(function () {
+    //     $('html, body').animate({
+    //         scrollTop: $("#LASTNEWS").offset().top
+    //     }, 1000);
+    // });
+    // $(document).ready(function () {
+    //     $('#newsTicker1').breakingNews();
 
-    });
+    // });
 });

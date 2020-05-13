@@ -53,74 +53,74 @@ if (checkPermision($pagename, $role)) {
                                 </thead>
 
 
+                                <tbody>
+                                    <?php
+                                    if ($role == 'admin') {
 
-                                <?php
-                                if ($role == 'admin') {
+                                        $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Approved='no' AND Is_Active=1");
 
-                                    $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Approved='no' AND Is_Active=1");
+                                        $res_per_page = 10;
+                                        $number_of_res = $sql['rows'];
+                                        $number_of_pages = ceil($number_of_res / $res_per_page);
+                                        if (!isset($_GET['page'])) {
+                                            $page = 1;
+                                        } else {
+                                            $page = $_GET['page'];
+                                        }
 
-                                    $res_per_page = 10;
-                                    $number_of_res = $sql['rows'];
-                                    $number_of_pages = ceil($number_of_res / $res_per_page);
-                                    if (!isset($_GET['page'])) {
-                                        $page = 1;
-                                    } else {
-                                        $page = $_GET['page'];
-                                    }
+                                        $this_page_first_res = ($page - 1) * $res_per_page;
+                                        $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Approved='no' AND Is_Active=1 LIMIT " . $this_page_first_res . ',' . $res_per_page);
+                                        if ($sql['status'] == 1) {
+                                            if ($sql['rows'] > 0) {
+                                                foreach ($sql['data'] as $row) {
+                                    ?>
+                                                    <tr id="<?php echo $row['id']; ?>">
+                                                        <td>
+                                                            <?php echo $row['id']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['PostTitle']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['PostingDate']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['UpdationDate']; ?>
+                                                        </td>
+                                                        <td data-target="isactive">
+                                                            <?php echo $row['Is_Active']; ?>
+                                                        </td>
 
-                                    $this_page_first_res = ($page - 1) * $res_per_page;
-                                    $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Approved='no' AND Is_Active=1 LIMIT " . $this_page_first_res . ',' . $res_per_page);
-                                    if ($sql['status'] == 1) {
-                                        if ($sql['rows'] > 0) {
-                                            foreach ($sql['data'] as $row) {
-                                ?>
-                                                <tr id="<?php echo $row['id']; ?>">
-                                                    <td>
-                                                        <?php echo $row['id']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['PostTitle']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['PostingDate']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['UpdationDate']; ?>
-                                                    </td>
-                                                    <td data-target="isactive">
-                                                        <?php echo $row['Is_Active']; ?>
-                                                    </td>
+                                                        <td class="td-custom">
+                                                            <div>
 
-                                                    <td class="td-custom">
-                                                        <div>
+                                                                <a href="#" data-role="accepted" data-id=<?php echo $row['id'] ?>>
+                                                                    <i class="fas fa-clipboard-check" style="color: #3ac47d;"></i>
+                                                                </a>
 
-                                                            <a href="#" data-role="accepted" data-id=<?php echo $row['id'] ?>>
-                                                                <i class="fas fa-clipboard-check" style="color: #3ac47d;"></i>
-                                                            </a>
+                                                                <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>
+                                                                    <i class="fa fa-trash-o" style="color: #f05050">
+                                                                    </i>
+                                                                </a>
 
-                                                            <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>
-                                                                <i class="fa fa-trash-o" style="color: #f05050">
-                                                                </i>
-                                                            </a>
+                                                            </div>
+                                                        </td>
+                                                        <td data-target="accept" style="display: none">
+                                                            <?php echo $row['Approved'] ?>
+                                                        </td>
 
-                                                        </div>
-                                                    </td>
-                                                    <td data-target="accept" style="display: none">
-                                                        <?php echo $row['Approved'] ?>
-                                                    </td>
-
-                                                </tr>
+                                                    </tr>
 
 
 
-                                <?php
+                                    <?php
+                                                }
                                             }
                                         }
+                                    } else if ($role == 'author') {
+                                        header('location:login.php');
                                     }
-                                } else if ($role == 'author') {
-                                    header('location:login.php');
-                                }
-                                ?>
+                                    ?>
                                 </tbody>
                             </table>
                             <br>

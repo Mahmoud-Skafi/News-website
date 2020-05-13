@@ -20,7 +20,9 @@ $permissions = [
     "activat.php"=>['admin'],
     "navbar.php" =>['admin'],
     "top.php" =>['admin'],
-    "footer.php" =>['admin']
+    "footer.php" =>['admin'],
+    "bracking_news.php" =>['admin'],
+    "add_brackingnews.php" =>['admin']
 ];
 
 
