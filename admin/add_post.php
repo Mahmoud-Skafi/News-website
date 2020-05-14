@@ -32,7 +32,7 @@ if (checkPermision($pagename, $role)) {
                     $aproved = 'no';
                     $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
                 }
-                move_uploaded_file($_FILES["post_image"]["tmp_name"], "../postimages/" . $imgnewfile);
+                move_uploaded_file($_FILES["post_image"]["tmp_name"], "./postimages/" . $imgnewfile);
                 $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
                 if ($query) {
                     $msg = "Post successfully added ";

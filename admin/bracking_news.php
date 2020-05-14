@@ -33,7 +33,7 @@ if (checkPermision($pagename, $role)) {
                     <div id="admin" class="col s12">
                         <div class="card material-table">
                             <div class="table-header">
-                                <span class="table-title" style="white-space: nowrap;">Approve Posts</span>
+                                <span class="table-title" style="white-space: nowrap;">Breaking News </span>
                                 <div class="actions" style="margin-left: 0% !important;">
                                     <!-- <a ><i class="material-icons"></i></a> -->
                                     <a href="./add_brackingnews.php"><i class="fas fa-plus"></i> </a>
@@ -76,7 +76,7 @@ if (checkPermision($pagename, $role)) {
                                             <td>
                                                 <?php echo $row['id']; ?>
                                             </td>
-                                            <td>
+                                            <td data-target="brackingText">
                                                 <?php echo $row['brackingText']; ?>
                                             </td>
                                             <td>
@@ -86,7 +86,8 @@ if (checkPermision($pagename, $role)) {
                                                 <div>
 
                                                     <a href="#" data-role="editnews" data-id=<?php echo $row['id'] ?>>
-                                                        <i class="fas fa-clipboard-check" style="color: #3ac47d;"></i>
+                                                        <i class="fas fas fa-pencil-alt" style="color: #3ac47d;"></i>
+                                                       
                                                     </a>
 
                                                     <a href="#" data-role="deletenews" data-id=<?php echo $row['id'] ?>>
@@ -133,14 +134,14 @@ if (checkPermision($pagename, $role)) {
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this Braking News?</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this Breaking News?</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div>
-                                    <input type="hidden" name="" id="newsid">
-                                  
+                                    <input type="hidden" name="" id="newsids">
+
                                     <!-- <input type="time"> -->
                                 </div>
                                 <div class="modal-footer">
@@ -152,6 +153,38 @@ if (checkPermision($pagename, $role)) {
                             </div>
                         </div>
                     </div>
+                </form>
+            </div>
+            <div>
+                <form id="news-edit-id">
+                    <div class="modal fade" id="editbrackingnews" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Breaking News</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div>
+                                    <div class="container" style="margin: 20px 0px;">
+                                        <div>
+                                            <label for="">Breaking News Title</label>
+                                            <input class="form-control" type="text" id="News">
+                                        </div>
+                                        <input type="hidden" name="" id="newsid">
+
+                                        <!-- <input type="time"> -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form id="">
+                                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button id="confermedit"  type="submit" class="btn btn-primary">Edit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </form>
             </div>
             <?php require './include/scripts.php' ?>

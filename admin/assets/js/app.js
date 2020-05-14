@@ -257,6 +257,78 @@ $(document).ready(function () {
             }
         });
     });
+    /**
+     * Edit BrakingNews
+     */
+    $(document).on('click', 'a[data-role=editnews]', function () {
+        var newsids = $(this).data('id');
+        var brackingnews = $('#' + newsids).children('td[data-target=brackingText]').text().trim();
+        $('#News').val(brackingnews);
+        $('#newsids').val(newsids);
+        $('#editbrackingnews').modal('toggle');
+
+        $('#confermedit').click(function () {
+            var brackingnews = $('#News').val().trim();
+            var newsids = $('#newsids').val().trim();
+            if (newsids && brackingnews) {
+                $.ajax({
+                    type: 'post',
+                    url: 'edit_brackingnews.php',
+                    data: {
+                        brackingnews: brackingnews,
+                        newsids: newsids
+                    },
+                    success: function (res) {
+                        window.location.reload();
+                    }
+
+                });
+            }
+        });
+    });
+    /**
+     * up
+     */
+    $(document).on('click', 'i[data-role=up]', function () {
+        var postid = $('#postid').val().trim();
+        var counter = parseInt($('#counter').val().trim());
+        counter += 1;
+        if (postid && counter) {
+            $.ajax({
+                type: 'post',
+                url: 'rank.php',
+                data: {
+                    postid: postid,
+                    counter: counter
+                },
+                success: function (res) {
+                    window.location.reload();
+                }
+            });
+        }
+    });
+    /**
+     * down
+     */
+    $(document).on('click', 'i[data-role=down]', function () {
+        var postid = $('#postid').val().trim();
+        var counter = parseInt($('#counter').val().trim());
+        counter -= 1;
+        if (postid && counter) {
+            $.ajax({
+                type: 'post',
+                url: 'rank.php',
+                data: {
+                    postid: postid,
+                    counter: counter
+                },
+                success: function (res) {
+                    window.location.reload();
+                }
+            });
+        }
+
+    });
 
     $(document).on('click', 'button[data-role=addcomment]', function () {
         var postid = $('#postids').val().trim();
@@ -291,11 +363,11 @@ $(document).ready(function () {
             });
         }
     });
-    // $("#NEWS").click(function () {
-    //     $('html, body').animate({
-    //         scrollTop: $("#LASTNEWS").offset().top
-    //     }, 1000);
-    // });
+    $("#NEWS").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#LASTNEWS").offset().top
+        }, 1000);
+    });
     // $(document).ready(function () {
     //     $('#newsTicker1').breakingNews();
 

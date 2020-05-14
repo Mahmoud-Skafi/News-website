@@ -20,14 +20,14 @@
                             NEWS
                         </a>
                     </li>
-                    <li>
+                    <li id="Trending">
                         <a >
-                            Most View
+                            Most Trending
                         </a>
                     </li>
-                    <li>
+                    <li id="Comment">
                         <a >
-                            Most Commet
+                            Most Comment
                         </a>
                     </li>
                     <li>

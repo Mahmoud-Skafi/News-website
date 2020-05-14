@@ -181,10 +181,21 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
-                <!-- <div class="sk-main-dashborad-card-members">
-                    <div class="sk-card-header " style="justify-content: center">
-                        <h1>Disactivate Accounts</h1>
-                      
+
+            </div>
+
+            <!-- section4 -->
+            <br>
+            <br>
+            <div class="page-traker">
+                <h1 style="font-size: 1.5rem; color:#000;">Breaking News</h1>
+            </div>
+            <br>
+            <div class="sk-main-dashboard-cards-container">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./manage_accounts.php'" style="cursor: pointer">
+                    <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
+                        <h1>Breaking News Manager</h1>
+                        <!-- <i class="fas fa-ellipsis-h"></i> -->
                     </div>
                     <div class="sk-card-contrainer">
                         <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
@@ -192,18 +203,17 @@ if (checkPermision($pagename, $role)) {
                                 <div class="sk-card-labels">
                                     <p></p>
                                 </div>
-                                <img src="https://image.flaticon.com/icons/svg/149/149030.svg" alt="">
+                                <img src="https://image.flaticon.com/icons/svg/2450/2450877.svg" alt="">
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
-        </div>
 
-        <br>
-        <br>
-        <br>
-        <?php require './include/scripts.php' ?>
+            <br>
+            <br>
+            <br>
+            <?php require './include/scripts.php' ?>
     </body>
 
     </html>

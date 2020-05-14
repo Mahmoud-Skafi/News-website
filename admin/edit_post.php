@@ -76,7 +76,8 @@ if (checkPermision($pagename, $role)) {
                         <label>Post Description</label>
                         <textarea style="width: 100%;" name="postdescription" required><?php echo htmlentities($row['PostDetails']); ?></textarea>
                         <br>
-                        <img src="../postimages/<?php echo htmlentities($row['PostImage']); ?>" width="300" />
+                        <img src="./postimages/<?php echo htmlentities($row['PostImage']); ?>" width="300" />
+                        <br>
                         <br>
                         <a href="change_image.php?pid=<?php echo htmlentities($row['postid']); ?>">Update Image</a>
                         <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
