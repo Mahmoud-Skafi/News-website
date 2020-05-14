@@ -24,13 +24,14 @@ error_reporting(0);
             <div class="bn-label">BRAKING NEWS</div>
             <div class="bn-news">
                 <ul>
-                    <li><a href="#">1.1. There many variations of passages of Lorem Ipsum available</a></li>
-                    <li><a href="#">1.2. Ipsum is simply dummy text of the printing and typesetting industry</a></li>
-                    <li><a href="#">1.3. Lorem Ipsum is simply dummy text of the printing and typesetting industry</a></li>
-                    <li><a href="#">1.4. Lorem simply dummy text of the printing and typesetting industry</a></li>
-                    <li><a href="#">1.5. Ipsum is simply dummy of the printing and typesetting industry</a></li>
-                    <li><a href="#">1.6. Lorem Ipsum simply dummy text of the printing and typesetting industry</a></li>
-                    <li><a href="#">1.7. Ipsum is simply dummy text of the printing typesetting industry</a></li>
+                    <?php 
+                        $sql=$conDb->doSelectQuery($conn,"SELECT brackingText as Text FROM tblbrackingnews WHERE Is_Active=1");
+                        foreach ($sql['data'] as $row) { 
+                            ?>
+                            <li><a href=""><?php echo $row['Text'] ?></a></li>
+                            <?php
+                        }
+                    ?>
                 </ul>
             </div>
             <div class="bn-controls">
@@ -228,7 +229,15 @@ error_reporting(0);
     <?php require './vendor/scripts.php' ?>
 
     <script>
+        $("#NEWS").click(function() {
+            $('html, body').animate({
+                scrollTop: $("#LASTNEWS").offset().top
+            }, 1000);
+        });
+        $(document).ready(function() {
+            $('#newsTicker1').breakingNews();
 
+        });
     </script>
 </body>
 
