@@ -249,13 +249,13 @@ error_reporting(0);
                     </div>
                     <div class="elements">
                         <ul>
-                            <li><a href="">HOME</a></li>
-                            <li><a href="">LOGIN</a></li>
+                            <li><a href="./index.php">HOME</a></li>
+                            <li><a href="./admin/login.php">LOGIN</a></li>
                         </ul>
                         <ul>
-                            <li><a href="">MOST COMMENT POSTS</a></li>
-                            <li><a href="">MOST VIEW POSTS</a></li>
-                            <li><a href="">ABOUT US</a></li>
+                            <li><a href="./index.php">MOST COMMENT POSTS</a></li>
+                            <li><a href="./index.php">MOST TRENDING POSTS</a></li>
+                            <li><a href="./index.php">ABOUT US</a></li>
                         </ul>
                     </div>
                 </div>
