@@ -993,27 +993,61 @@ input.sk-input {
             color: $white-clr;
         }
     }
-    >.elements{
+    > .elements {
         display: flex;
-        >ul{
+        > ul {
             list-style: none;
-            >li{
-                margin-bottom: 20px ;
-                >a{
+            > li {
+                margin-bottom: 20px;
+                > a {
                     margin: 10px 0px;
                     color: $default-clr;
                     font-family: montserratSB;
-                    transition: color .31s ease-out;
-                    &:hover{
+                    transition: color 0.31s ease-out;
+                    &:hover {
                         color: $white-clr;
                     }
                 }
-                
             }
         }
     }
 }
-.End-footer{
+.End-footer {
     display: flex;
     justify-content: center;
+}
+.up-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > p {
+        // text-align: center;
+    }
+    > i {
+        height: 27px;
+    }
+    > .up {
+        transition: color 0.31s ease-in-out;
+        &:hover {
+            color: $view-clr;
+        }
+    }
+    > i:last-child {
+        transition: color 0.31s ease-in-out;
+        &:hover {
+            color: $danger-clr;
+        }
+    }
+    > .down {
+        transform: rotate(180deg);
+    }
+}
+.post-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > h1 {
+        font-size: 1.3rem;
+        font-family: montserratSB;
+    }
 }
