@@ -95,7 +95,7 @@ error_reporting(0);
                     <h1>LAST NEWS</h1>
                 </div>
                 <div class="sk-elemets-container">
-                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 ORDER BY PostingDate DESC LIMIT 4 ");
+                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='yes' ORDER BY PostingDate DESC LIMIT 4 ");
                     if ($sql['status'] == 1) {
                         foreach ($sql['data'] as $row) {
                     ?>
@@ -113,7 +113,7 @@ error_reporting(0);
                     ?>
                 </div>
                 <div class="sk-elemets-container">
-                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 ORDER BY PostingDate DESC LIMIT 5,4 ");
+                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='yes' ORDER BY PostingDate DESC LIMIT 5,4 ");
                     if ($sql['status'] == 1) {
                         foreach ($sql['data'] as $row) {
                     ?>
@@ -148,7 +148,7 @@ error_reporting(0);
             </div>
             <div class="sk-elemets-container">
                 <?php
-                $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 ORDER BY Rank DESC  LIMIT 0,4  
+                $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 AND Approved='yes' ORDER BY Rank DESC  LIMIT 0,4  
                 ");
                 if ($sql['status'] == 1) {
                     foreach ($sql['data'] as $row) {
@@ -167,7 +167,7 @@ error_reporting(0);
                 ?>
             </div>
             <div class="sk-elemets-container">
-                <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 ORDER BY Rank DESC LIMIT 5,4  ");
+                <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 AND Approved='yes' ORDER BY Rank DESC LIMIT 5,4  ");
                 if ($sql['status'] == 1) {
                     foreach ($sql['data'] as $row) {
                 ?>
@@ -198,7 +198,7 @@ error_reporting(0);
             </div>
             <div class="sk-elemets-container">
                 <?php
-                $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 ORDER BY CommentsCout DESC  LIMIT 0,4  
+                $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 AND Approved='yes' ORDER BY CommentsCout DESC  LIMIT 0,4  
                 ");
                 if ($sql['status'] == 1) {
                     foreach ($sql['data'] as $row) {
@@ -217,7 +217,7 @@ error_reporting(0);
                 ?>
             </div>
             <div class="sk-elemets-container">
-                <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 ORDER BY CommentsCout DESC LIMIT 5,4  ");
+                <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts  WHERE Is_Active=1 AND Approved='yes' ORDER BY CommentsCout DESC LIMIT 5,4  ");
                 if ($sql['status'] == 1) {
                     foreach ($sql['data'] as $row) {
                 ?>

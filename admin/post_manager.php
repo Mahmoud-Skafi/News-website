@@ -12,7 +12,7 @@ if (checkPermision($pagename, $role)) {
         if ($_GET['action'] = 'del') {
             $postid = intval($_GET['pid']);
             $query = $conDb->doQuery($conn, "UPDATE tblposts set Is_Active=0 where id='$postid'");
-            if ($query) {
+            if ($query['status']==1) {
                 $msg = "Post deleted ";
                 // header("location:./post_manager.php");
             } else {
@@ -58,6 +58,7 @@ if (checkPermision($pagename, $role)) {
                                             <th>Post Details</th>
                                             <th>Posting Date</th>
                                             <th>Updation Date</th>
+                                            <th>Approved</th>
                                             <th style="display: flex;align-items: center;justify-content: center;">Actions</th>
                                         </tr>
                                     </thead>
@@ -112,15 +113,18 @@ if (checkPermision($pagename, $role)) {
                                                     <td data-target="isactive" style="display: none">
                                                         <?php echo $row['Is_Active']; ?>
                                                     </td>
+                                                    <td >
+                                                        <?php echo $row['Approved']; ?>
+                                                    </td>
                                                     <!-- <td>
                                                         <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>delete</a>
                                                     </td> -->
                                                     <td class="td-custom">
                                                         <div>
-
+<!-- 
                                                             <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>
                                                                 <i class="fas fa-eye" style="color:#feca7a;"></i>
-                                                            </a>
+                                                            </a> -->
                                                             <a href="edit_post.php?pid=<?php echo $row['id']; ?>">
                                                                 <i class="fa fa-pencil" style="color: #29b6f6;"></i>
                                                             </a>

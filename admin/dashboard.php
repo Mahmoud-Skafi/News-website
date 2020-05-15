@@ -64,7 +64,7 @@ if (checkPermision($pagename, $role)) {
                         </div>
                     </div>
                 </div>
-                <div class="sk-main-dashborad-card-members" onclick="window.location='./approved_post.php'" style="cursor: pointer">
+                <div id="Approve" class="sk-main-dashborad-card-members" onclick="window.location='./approved_post.php'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center">
                         <h1>Approve Posts</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->
@@ -128,92 +128,115 @@ if (checkPermision($pagename, $role)) {
             <!-- section3 -->
             <br>
             <br>
-            <div class="page-traker">
-                <h1 style="font-size: 1.5rem; color:#000;">Accounts</h1>
-            </div>
-            <br>
-            <div class="sk-main-dashboard-cards-container">
-                <div class="sk-main-dashborad-card-members" onclick="window.location='./manage_accounts.php'" style="cursor: pointer">
-                    <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
-                        <h1>Accounts Manager</h1>
-                        <!-- <i class="fas fa-ellipsis-h"></i> -->
-                    </div>
-                    <div class="sk-card-contrainer">
-                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
-                            <div class="sk-card-section-1">
-                                <div class="sk-card-labels">
-                                    <p></p>
+            <div id="Accountsid">
+                <div class="page-traker">
+                    <h1 style="font-size: 1.5rem; color:#000;">Accounts</h1>
+                </div>
+                <br>
+                <div class="sk-main-dashboard-cards-container">
+                    <div class="sk-main-dashborad-card-members" onclick="window.location='./manage_accounts.php'" style="cursor: pointer">
+                        <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
+                            <h1>Accounts Manager</h1>
+                            <!-- <i class="fas fa-ellipsis-h"></i> -->
+                        </div>
+                        <div class="sk-card-contrainer">
+                            <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                                <div class="sk-card-section-1">
+                                    <div class="sk-card-labels">
+                                        <p></p>
+                                    </div>
+                                    <img src="https://image.flaticon.com/icons/svg/1283/1283923.svg" alt="">
                                 </div>
-                                <img src="https://image.flaticon.com/icons/svg/1283/1283923.svg" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="sk-main-dashborad-card-members" onclick="window.location='./add_users.php'" style="cursor: pointer">
-                    <div class="sk-card-header " style="justify-content: center">
-                        <h1>Add Account</h1>
-                        <!-- <i class="fas fa-ellipsis-h"></i> -->
-                    </div>
-                    <div class="sk-card-contrainer">
-                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
-                            <div class="sk-card-section-1">
-                                <div class="sk-card-labels">
-                                    <p></p>
+                    <div class="sk-main-dashborad-card-members" onclick="window.location='./add_users.php'" style="cursor: pointer">
+                        <div class="sk-card-header " style="justify-content: center">
+                            <h1>Add Account</h1>
+                            <!-- <i class="fas fa-ellipsis-h"></i> -->
+                        </div>
+                        <div class="sk-card-contrainer">
+                            <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                                <div class="sk-card-section-1">
+                                    <div class="sk-card-labels">
+                                        <p></p>
+                                    </div>
+                                    <img src="https://image.flaticon.com/icons/svg/760/760737.svg" alt="">
                                 </div>
-                                <img src="https://image.flaticon.com/icons/svg/760/760737.svg" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="sk-main-dashborad-card-members" onclick="window.location='./account_activat.php'" style="cursor: pointer">
-                    <div class="sk-card-header " style="justify-content: center">
-                        <h1>Activat Accounts</h1>
-                        <!-- <i class="fas fa-ellipsis-h"></i> -->
-                    </div>
-                    <div class="sk-card-contrainer">
-                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
-                            <div class="sk-card-section-1">
-                                <div class="sk-card-labels">
-                                    <p></p>
+                    <div class="sk-main-dashborad-card-members" onclick="window.location='./account_activat.php'" style="cursor: pointer">
+                        <div class="sk-card-header " style="justify-content: center">
+                            <h1>Activat Accounts</h1>
+                            <!-- <i class="fas fa-ellipsis-h"></i> -->
+                        </div>
+                        <div class="sk-card-contrainer">
+                            <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                                <div class="sk-card-section-1">
+                                    <div class="sk-card-labels">
+                                        <p></p>
+                                    </div>
+                                    <img src="https://image.flaticon.com/icons/svg/2654/2654564.svg" alt="">
                                 </div>
-                                <img src="https://image.flaticon.com/icons/svg/2654/2654564.svg" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-
             <!-- section4 -->
             <br>
             <br>
-            <div class="page-traker">
-                <h1 style="font-size: 1.5rem; color:#000;">Breaking News</h1>
-            </div>
-            <br>
-            <div class="sk-main-dashboard-cards-container">
-                <div class="sk-main-dashborad-card-members" onclick="window.location='./manage_accounts.php'" style="cursor: pointer">
-                    <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
-                        <h1>Breaking News Manager</h1>
-                        <!-- <i class="fas fa-ellipsis-h"></i> -->
-                    </div>
-                    <div class="sk-card-contrainer">
-                        <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
-                            <div class="sk-card-section-1">
-                                <div class="sk-card-labels">
-                                    <p></p>
+            <div id="Breaking">
+
+
+                <div class="page-traker">
+                    <h1 style="font-size: 1.5rem; color:#000;">Breaking News</h1>
+                </div>
+                <br>
+                <div class="sk-main-dashboard-cards-container">
+                    <div class="sk-main-dashborad-card-members" onclick="window.location='./bracking_news.php?page=1'" style="cursor: pointer">
+                        <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
+                            <h1>Breaking News Manager</h1>
+                            <!-- <i class="fas fa-ellipsis-h"></i> -->
+                        </div>
+                        <div class="sk-card-contrainer">
+                            <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                                <div class="sk-card-section-1">
+                                    <div class="sk-card-labels">
+                                        <p></p>
+                                    </div>
+                                    <img src="https://image.flaticon.com/icons/svg/2450/2450877.svg" alt="">
                                 </div>
-                                <img src="https://image.flaticon.com/icons/svg/2450/2450877.svg" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <br>
             <br>
             <br>
             <?php require './include/scripts.php' ?>
+            <?php
+            if ($role == 'author') {
+            ?>
+                <script>
+                    //dashboard
+                    $('#Approve').css('display', 'none');
+                    $('#Accountsid').css('display', 'none');
+                    $('#Breaking').css('display', 'none');
+                    //sidebar
+                    $('#SideApprove').css('display', 'none');
+                    $('#SideAccountsid').css('display', 'none');
+                    $('#SideBreaking').css('display', 'none');
+                </script>
+
+            <?php
+            } else {
+                //do nothing
+            }
+            ?>
     </body>
 
     </html>

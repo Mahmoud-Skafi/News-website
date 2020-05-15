@@ -12,8 +12,6 @@ if (checkPermision($pagename, $role)) {
     } else {
 
         if (isset($_POST['add'])) {
-
-            echo "<script>alert('Wrong User Name or Password');</script>";
             $postTitile = $_POST['post_title'];
             $CatId = $_POST['category'];
             $postDetails = $_POST['post_description'];
@@ -30,17 +28,18 @@ if (checkPermision($pagename, $role)) {
                 $imgnewfile = md5($imgfile) . $extension;
                 if ($role == 'author') {
                     $aproved = 'no';
-                    $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
+                    $sql = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
+                    move_uploaded_file($_FILES["post_image"]["tmp_name"], "./postimages/" . $imgnewfile);
+                } else {
+                    $sql = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
+                    move_uploaded_file($_FILES["post_image"]["tmp_name"], "./postimages/" . $imgnewfile);
                 }
-                move_uploaded_file($_FILES["post_image"]["tmp_name"], "./postimages/" . $imgnewfile);
-                $query = $conDb->doSelectQuery($conn, "INSERT INTO tblposts(PostTitle,CategoryId,PostDetails,PostUrl,Is_Active,PostImage,Approved) values('$postTitile','$CatId','$postDetails','$url','$status','$imgnewfile','$aproved')");
-                if ($query) {
-                    $msg = "Post successfully added ";
-                    echo $msg;
+
+                if ($sql['status'] == 1) {
+
                     header("location:./post_manager.php");
                 } else {
-                    $error = "Something went wrong . Please try again.";
-                    echo $error;
+                    echo "adadada";
                 }
             }
         }
@@ -101,7 +100,7 @@ if (checkPermision($pagename, $role)) {
                     <textarea name="post_description" style="width: 100%" required></textarea>
                 </div>
 
-                
+
                 <button onclick="document.location = './post_manager.php';" class="btn btn-danger">Discard</button>
                 <button class="btn btn-primary" name="add">Save and Post</button>
             </div>
