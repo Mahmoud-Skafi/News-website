@@ -74,7 +74,7 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
                 ?>
                         <div class="comments-card">
                             <div class="user-images">
-                                <img src="1.png" alt="">
+                                <img src="./images/user.png" alt="">
                             </div>
                             <div class="comments-details">
 
