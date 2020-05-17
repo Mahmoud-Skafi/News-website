@@ -27,7 +27,7 @@ if (checkPermision($pagename, $role)) {
         <?php require './include/navbar.php' ?>
         <div class="container">
             <div class="page-traker">
-                <h1 style="font-size: 1.5rem; color:#000;">POSTS</h1>
+                <h1 style="font-size: 1.5rem; color:#000;">Post</h1>
             </div>
             <br>
             <div class="sk-main-dashboard-cards-container">
@@ -188,11 +188,12 @@ if (checkPermision($pagename, $role)) {
             <!-- section4 -->
             <br>
             <br>
+
             <div id="Breaking">
 
 
                 <div class="page-traker">
-                    <h1 style="font-size: 1.5rem; color:#000;">Breaking News</h1>
+                    <h1 style="font-size: 1.5rem; color:#000;">Spicail Section</h1>
                 </div>
                 <br>
                 <div class="sk-main-dashboard-cards-container">
@@ -212,8 +213,26 @@ if (checkPermision($pagename, $role)) {
                             </div>
                         </div>
                     </div>
+                    <div class="sk-main-dashborad-card-members" onclick="window.location='./advertisement_manager.php?page=1'" style="cursor: pointer">
+                        <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
+                            <h1>Advertisement Manager</h1>
+                            <!-- <i class="fas fa-ellipsis-h"></i> -->
+                        </div>
+                        <div class="sk-card-contrainer">
+                            <div class="sk-card-conrainer-elements" style="justify-content: center !important;">
+                                <div class="sk-card-section-1">
+                                    <div class="sk-card-labels">
+                                        <p></p>
+                                    </div>
+                                    <img src="https://image.flaticon.com/icons/svg/1055/1055664.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
             <br>
             <br>
             <br>

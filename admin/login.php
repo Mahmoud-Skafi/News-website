@@ -21,9 +21,14 @@ if (isset($_POST['login'])) {
 
 
             if (password_verify($password, $sql['data'][0]['user_password'])) {
-                $_SESSION['username'] = $username;
-                echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+                $role = $sql['data'][0]['type'];
+                if ($role == 'admin' || $role == 'author') {
+                    header("location:./dashboard.php");
+                } else {
+                    header("location:../index.php");
+                }
                 $_SESSION['roles'] = $sql['data'][0]['type'];
+                $_SESSION['username'] = $username;
             } else
                 echo "<script>alert('Wrong user name or Password');</script>";
         }
@@ -37,6 +42,12 @@ if (isset($_POST['login'])) {
 
 <head>
     <?php require './include/links.php' ?>
+    <style>
+        * {
+            zoom: .98;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +62,7 @@ if (isset($_POST['login'])) {
                         <br>
                         <br>
                         <div class="wrap-sk-input " data-validate="Valid email is required: ex@abc.xyz">
-                            <input class="sk-input" type="text" name="username" placeholder="User name">
+                            <input class="sk-input" type="text" name="username" placeholder="User name" required>
                         </div>
                         <br>
 
@@ -64,6 +75,10 @@ if (isset($_POST['login'])) {
                             <button name="login" class="sk-login-form-btn">
                                 Login in
                             </button>
+                        </div>
+                        <br>
+                        <div style="display: flex; justify-content: center">
+                            <a href="./signup.php">Don't Have Account? Sign up</a>
                         </div>
                         <br>
                         <div style="display: flex; justify-content: center">

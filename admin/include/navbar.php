@@ -38,7 +38,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Category Utilities:</h6>
           <a class="collapse-item" href="./category_manager.php?page=1">Category Manager</a>
-          <a class="collapse-item" href="./add_category.php">Add Category</a>
+          <a class="collapse-item" href="./category_manager.php?page=1">Add Category</a>
         </div>
       </div>
     </li>
@@ -72,6 +72,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Special Section:</h6>
           <a class="collapse-item" href="./bracking_news.php?page=1">Breaking News</a>
+          <a class="collapse-item" href="./advertisement_manager.php?page=1">Advertisement </a>
 
         </div>
       </div>
@@ -158,6 +159,12 @@
                
                 Role: <?php echo $_SESSION['roles']
                 ?>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../index.php" >
+                <i class="fas fa-home fa-sm fa-fw mr-2 text-gray-400"></i>
+                
+                Front Page
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="./logout.php" >
