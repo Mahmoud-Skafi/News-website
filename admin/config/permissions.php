@@ -13,17 +13,19 @@ $permissions = [
     "category_manager.php" => ['admin'],
     "edit_category.php" => ['admin'],
     "add_category.php" => ['admin'],
-    "approved_post.php"=>['admin'],
-    "manage_accounts.php" =>['admin'],
-    "accounts_logic.php"=>['admin'],
-    "add_users.php"=>['admin'],
-    "account_activat.php"=>['admin'],
-    "activat.php"=>['admin'],
-    "navbar.php" =>['admin'],
-    "top.php" =>['admin'],
-    "footer.php" =>['admin'],
-    "bracking_news.php" =>['admin'],
-    "add_brackingnews.php" =>['admin']
+    "approved_post.php" => ['admin'],
+    "advertisement_manager.php" => ['admin'],
+    "add_advertisement.php" => ['admin'],
+    "manage_accounts.php" => ['admin'],
+    "accounts_logic.php" => ['admin'],
+    "add_users.php" => ['admin'],
+    "account_activat.php" => ['admin'],
+    "activat.php" => ['admin'],
+    "navbar.php" => ['admin'],
+    "top.php" => ['admin'],
+    "footer.php" => ['admin'],
+    "bracking_news.php" => ['admin'],
+    "add_brackingnews.php" => ['admin']
 ];
 
 

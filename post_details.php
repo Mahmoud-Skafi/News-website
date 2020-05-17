@@ -32,13 +32,26 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
     <body>
         <?php require './vendor/navbar.php' ?>
         <br>
+        <!-- <br> -->
+        <?php $sql = $conDb->doSelectQuery($conn, "SELECT advertisement_image FROM tbladvertisements WHERE 1  ORDER BY postingdate ASC");
+
+        ?>
+        <div class="ad-style" style="display: flex;justify-content: center">
+            <div>
+                <a href="<?php echo $sql['data'][0]['advertisement_url'] ?>"><img src="./admin/advertisement/<?php echo $sql['data'][0]['advertisement_image'] ?>" alt="ad"></a>
+            </div>
+            <div>
+                <a href="<?php echo $sql['data'][0]['advertisement_url'] ?>"><img src="./admin/advertisement/<?php echo $sql['data'][0]['advertisement_image'] ?>" alt="ad"></a>
+            </div>
+        </div>
+        <br>
         <br>
         <div class="sk-container post-details-container">
 
             <div class="post-header">
-                <div class="up-down">
+                <div class="up-down" id="updown">
                     <input id="postid" type="hidden" name="postid" value="<?php echo $postid ?>">
-                    <?php $sql=$conDb->doSelectQuery($conn,"SELECT Rank FROM tblposts WHERE id='".$postid."'"); ?>
+                    <?php $sql = $conDb->doSelectQuery($conn, "SELECT Rank FROM tblposts WHERE id='" . $postid . "'"); ?>
                     <i data-role="up" style="font-size: 50px; margin-right: 30px" class="fas fa-sort-up up"></i>
                     <input id="counter" type="text" value="<?php echo $sql['data'][0]['Rank'] ?>" style="all: unset;width: 32px;text-align: center">
                     <i data-role="down" style="font-size: 50px; margin-right: 30px" class="fas fa-sort-up down"></i>
@@ -51,13 +64,13 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
                 </div>
             </div>
             <div class="this-post-image" style="display: flex;justify-content: center">
-                <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="" style="max-width: 100%; margin: 0px 20px;">
+                <img src="./admin/postimages/<?php echo $row['PostImage'] ?>" alt="" style="max-width: 100%; width: 400px; margin: 0px 20px;">
             </div>
 
             <div class="post-details" style="display: flex; flex-direction: column">
                 <p><?php echo $row['PostDetails'] ?></p>
                 <br>
-                <p><?php echo $row['postdata'] ?></p>
+                <p><?php echo $row['postdata'] ?> / <?php echo $row['category']?></p>
             </div>
             <div style="margin: 0px 10px">
 
@@ -77,7 +90,7 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
                                 <img src="./images/user.png" alt="">
                             </div>
                             <div class="comments-details">
-
+                                <p><?php echo $row['user_name'] ?></p>
                                 <p><?php echo $row['comment'] ?></p>
                             </div>
                         </div>
@@ -88,7 +101,14 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
             </div>
         </div>
 
-        <div class="comment sk-container">
+        <div id="commenterror" class="commentfix" style="display: none;justify-content: center">
+            <br>
+            <h1 style="font-size: 1.5rem">Login or Sing Up to add comment</h1>
+            <br>
+            <br>
+        </div>
+
+        <div class="comment sk-container" id="addcomment">
             <div style="width: 100%">
 
                 <div class="form-group">
@@ -103,7 +123,37 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
             </div>
         </div>
         <?php require './vendor/scripts.php' ?>
+        <?php
+        if (isset($_SESSION['username'])) {
+            if ($_SESSION['roles'] == 'admin') {
+        ?>
+                <script>
+                    $('#admindashboard').css('display', 'block');
+                </script>
+            <?php
+            }
 
+            ?>
+            <script>
+                $('#accounts').css('display', 'none');
+                $('#user').css('display', 'block');
+            </script>
+        <?php
+
+
+
+        } ?>
+        <?php
+        if (!isset($_SESSION['username'])) {
+        ?>
+            <script>
+                $('#updown').css('display', 'none');
+                $('#addcomment').css('display', 'none');
+                $('#commenterror').css('display', 'flex');
+            </script>
+        <?php
+        }
+        ?>
     </body>
 
     </html>

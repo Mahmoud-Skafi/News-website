@@ -27,17 +27,17 @@ if (checkPermision($pagename, $role)) {
             <form name="Add News" method="POST" enctype="multipart/form-data">
                 <div class="container">
                     <br>
-                    <h1 style="font-size:1.5rem; color:#000;">Add Bracking News</h1>
+                    <h1 style="font-size:1.5rem; color:#000;">Breaking News News</h1>
                     <br>
                     <br>
                     <div class="form-group">
-                        <label>Bracking News Title</label>
-                        <input type="text" name="brackingnews" class="form-control" placeholder="Bracking News" required>
+                        <label>Breaking News Title</label>
+                        <input type="text" name="brackingnews" class="form-control" placeholder="Breaking news " required>
 
                     </div>
 
                     <button onclick="document.location = './bracking_news.php';" class="btn btn-danger">Discard</button>
-                    <button class="btn btn-primary" name="add">Save and Post</button>
+                    <button class="btn btn-primary" name="add">ADD</button>
                 </div>
             </form>
 

@@ -149,6 +149,38 @@ $(document).ready(function () {
         });
     });
     /**
+     * Delete AD
+     */
+    $(document).on('click', 'a[data-role=deletead]', function () {
+
+        var id = $(this).data('id');
+        var isactive = $('#' + id).children('td[data-target=isactive]').text().trim();
+        $('#adid').val(id);
+        $('#isactive').val(isactive);
+        $('#Admodal').modal('toggle');
+        $('#ad-delete').click(function () {
+
+            var adid = $('#adid').val();
+            var isactive = $('#isactive').val();
+            if (adid && isactive == 1) {
+                $.ajax({
+                    type: 'post',
+                    url: 'delete_ad.php',
+                    data: {
+                        adid: adid
+                    },
+                    success: function (res) {
+                        $('#exampleModal').modal('toggle');
+                        toastr["success"]("The AD Deleted !");
+                        setInterval(function () { window.location.reload(); }, 1500);
+
+                    }
+                });
+            }
+            return false;
+        });
+    });
+    /**
      * Accepted Post
      */
     $(document).on('click', 'a[data-role=accepted]', function () {

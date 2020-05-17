@@ -37,7 +37,7 @@ if (checkPermision($pagename, $role)) {
 
                 if ($sql['status'] == 1) {
 
-                    header("location:./post_manager.php");
+                    header("location:./post_manager.php?page=1");
                 } else {
                     echo "adadada";
                 }

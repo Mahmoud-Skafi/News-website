@@ -59,12 +59,26 @@ iframe {
   background-image: none; }
 
 .profile-image {
-  background: url("skafi.jpg");
+  background: url("https://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png");
   background-size: cover;
   /* background-position: center; */
   border-radius: 50%;
   width: 35px;
   height: 35px; }
+
+.v2 {
+  background: url("https://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png");
+  background-size: cover;
+  /* background-position: center; */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; }
+
+.commentfix {
+  margin: 50px 0px; }
+
+.ad-style > div {
+  margin: 0px 10px; }
 
 .page-traker {
   width: 100%; }
@@ -655,7 +669,7 @@ input.sk-input {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #ff9f1c;
+        color: #313131;
         font-size: 0;
         opacity: 0;
         transition: all 0.31s ease-out; }
@@ -723,7 +737,12 @@ input.sk-input {
         max-width: 100%; }
     .post-comments > .comments-card > .comments-details {
       margin: 0px 10px;
-      margin-bottom: 25px; }
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: column; }
+      .post-comments > .comments-card > .comments-details > p:first-child {
+        font-family: montserratSB;
+        font-size: 1.1rem; }
 
 .comment {
   margin: 50px 20px; }

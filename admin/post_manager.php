@@ -12,7 +12,7 @@ if (checkPermision($pagename, $role)) {
         if ($_GET['action'] = 'del') {
             $postid = intval($_GET['pid']);
             $query = $conDb->doQuery($conn, "UPDATE tblposts set Is_Active=0 where id='$postid'");
-            if ($query['status']==1) {
+            if ($query['status'] == 1) {
                 $msg = "Post deleted ";
                 // header("location:./post_manager.php");
             } else {
@@ -66,13 +66,22 @@ if (checkPermision($pagename, $role)) {
                                     <tbody class="custom-tr">
 
                                         <?php
+                                        function limit_text($text, $limit)
+                                        {
+                                            if (str_word_count($text, 0) > $limit) {
+                                                $words = str_word_count($text, 2);
+                                                $pos = array_keys($words);
+                                                $text = substr($text, 0, $pos[$limit]) . '...';
+                                            }
+                                            return $text;
+                                        }
                                         if ($_SESSION['roles'] == 'admin') {
                                             $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active='1' AND Approved='yes' ");
                                         } else if ($_SESSION['roles'] == 'author') {
                                             $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active='1' AND Approved='yes' OR Approved='no' ");
                                         }
 
-                                        $res_per_page = 1;
+                                        $res_per_page = 10;
                                         $number_of_res = $sql['rows'];
                                         $number_of_pages = ceil($number_of_res / $res_per_page);
                                         if (!isset($_GET['page'])) {
@@ -85,9 +94,9 @@ if (checkPermision($pagename, $role)) {
                                         // $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE  Is_Active='1' LIMIT " . $this_page_first_res . ',' . $res_per_page);
 
                                         if ($_SESSION['roles'] == 'admin') {
-                                            $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='yes'  LIMIT " . $this_page_first_res . ',' . $res_per_page);
+                                            $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='yes' ORDER BY PostingDate DESC LIMIT " . $this_page_first_res . ',' . $res_per_page);
                                         } else  if ($_SESSION['roles'] == 'author') {
-                                            $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='no' OR Approved='yes' LIMIT " . $this_page_first_res . ',' . $res_per_page);
+                                            $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='no' ORDER BY PostingDate DESC  OR Approved='yes' LIMIT " . $this_page_first_res . ',' . $res_per_page);
                                         }
                                         ?>
                                         <?php
@@ -99,10 +108,19 @@ if (checkPermision($pagename, $role)) {
                                                         <?php echo $row['id']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo  htmlentities($row['PostTitle']); ?>
+                                                        <?php
+                                                        $t = $row['PostTitle'];
+                                                        echo  limit_text($t, 5);
+
+                                                        ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo htmlentities($row['PostDetails']);  ?>
+
+                                                        <?php
+
+                                                        $t = $row['PostDetails'];
+                                                        echo  limit_text($t, 10);
+                                                        ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['PostingDate']; ?>
@@ -113,7 +131,7 @@ if (checkPermision($pagename, $role)) {
                                                     <td data-target="isactive" style="display: none">
                                                         <?php echo $row['Is_Active']; ?>
                                                     </td>
-                                                    <td >
+                                                    <td>
                                                         <?php echo $row['Approved']; ?>
                                                     </td>
                                                     <!-- <td>
@@ -121,10 +139,10 @@ if (checkPermision($pagename, $role)) {
                                                     </td> -->
                                                     <td class="td-custom">
                                                         <div>
-<!-- 
-                                                            <a href="#" data-role="deletepost" data-id=<?php echo $row['id'] ?>>
+                                                            
+                                                            <a href="./post_view.php?postid=<?php echo $row['id'] ?>">
                                                                 <i class="fas fa-eye" style="color:#feca7a;"></i>
-                                                            </a> -->
+                                                            </a>
                                                             <a href="edit_post.php?pid=<?php echo $row['id']; ?>">
                                                                 <i class="fa fa-pencil" style="color: #29b6f6;"></i>
                                                             </a>
@@ -183,7 +201,7 @@ if (checkPermision($pagename, $role)) {
                                     <div class="modal-footer">
                                         <form id="">
                                             <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button id="deletepost"  style="background-color: #f84c4c !important; color:white;" type="submit" class="btn ">Delete</button>
+                                            <button id="deletepost" style="background-color: #f84c4c !important; color:white;" type="submit" class="btn ">Delete</button>
                                         </form>
                                     </div>
                                 </div>
@@ -192,6 +210,9 @@ if (checkPermision($pagename, $role)) {
                     </form>
                 </div>
                 <?php require './include/scripts.php' ?>
+                <script>
+
+                </script>
             </body>
 
             </html>

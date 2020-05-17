@@ -21,7 +21,7 @@ error_reporting(0);
 
     <div>
         <div class="bn-breaking-news" id="newsTicker1">
-            <div class="bn-label">BRAKING NEWS</div>
+            <div class="bn-label">BREAKING NEWS</div>
             <div class="bn-news">
                 <ul>
                     <?php
@@ -85,8 +85,21 @@ error_reporting(0);
 
             <br>
         </div>
+        <?php $sql = $conDb->doSelectQuery($conn, "SELECT advertisement_image FROM tbladvertisements WHERE 1  ORDER BY postingdate ASC");
+
+        ?>
+
         <br>
         <br>
+        <div class="ad-style" style="display: flex;justify-content: center">
+            <div >
+                <a href="<?php echo $sql['data'][0]['advertisement_url'] ?>"><img src="./admin/advertisement/<?php echo $sql['data'][0]['advertisement_image'] ?>" alt="ad"></a> 
+            </div>
+            
+            <div>
+               <a href="<?php echo $sql['data'][0]['advertisement_url'] ?>"><img src="./admin/advertisement/<?php echo $sql['data'][0]['advertisement_image'] ?>" alt="ad"></a> 
+            </div>
+        </div>
         <br>
         <br>
         <div class="section-2 " id="LASTNEWS">
@@ -138,8 +151,19 @@ error_reporting(0);
         </div>
     </div>
     <br>
-    <br>
-    <br>
+
+    <?php $sql = $conDb->doSelectQuery($conn, "SELECT advertisement_image FROM tbladvertisements WHERE 1  ORDER BY postingdate ASC ");
+
+    ?>
+    <div class="ad-style" style="display: flex;justify-content: center">
+        <div>
+          <a href="<?php echo $sql['data'][1]['advertisement_url'] ?>"> <img src="./admin/advertisement/<?php echo $sql['data'][1]['advertisement_image'] ?>" alt="ad"></a>
+        </div>
+        <div>
+           <a href="<?php echo $sql['data'][2]['advertisement_url'] ?>"> <img src="./admin/advertisement/<?php echo $sql['data'][2]['advertisement_image'] ?>" alt="ad"></a>
+        </div>
+    </div>
+
     <br>
     <div class="section-2 " id="MostTrending">
         <div class="sk-container-width-100">
@@ -188,7 +212,14 @@ error_reporting(0);
     </div>
 
     <br>
-    <br>
+    <?php $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tbladvertisements WHERE 1 ORDER BY postingdate ASC ");
+
+    ?>
+    <div class="ad-style" style="display: flex;justify-content: center">
+        <div>
+           <a href="<?php echo $sql['data'][3]['advertisement_url'] ?>"> <img src="./admin/advertisement/<?php echo $sql['data'][3]['advertisement_image'] ?>" alt="ad"></a>
+        </div>
+    </div>
     <br>
     <br>
     <div class="section-2 " id="MostComment">
@@ -273,6 +304,26 @@ error_reporting(0);
 
     <?php require './vendor/scripts.php' ?>
 
+    <?php
+    if (isset($_SESSION['username'])) {
+        if ($_SESSION['roles'] == 'admin') {
+    ?>
+            <script>
+                $('#admindashboard').css('display', 'block');
+            </script>
+        <?php
+        }
+
+        ?>
+        <script>
+            $('#accounts').css('display', 'none');
+            $('#user').css('display', 'block');
+        </script>
+    <?php
+
+
+
+    } ?>
     <script>
         $("#NEWS").click(function() {
             $('html, body').animate({
