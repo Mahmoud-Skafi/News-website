@@ -93,8 +93,12 @@ if (checkPermision($pagename, $role)) {
                                                 <td>
                                                     <?php  if($row['role_id']==1){
                                                         echo "ADMIN";  
-                                                    } else{
+                                                    } else if($row['role_id']==2){
                                                         echo "AUTHOR";
+                                                    }
+                                                    else{
+                                                            echo "OTHER";
+                                                        }
                                                     }?>
                                                 </td>
                                                 <td class="td-custom">

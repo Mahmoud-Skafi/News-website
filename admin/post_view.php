@@ -46,9 +46,9 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
                 <div class="up-down" id="updown">
                     <input id="postid" type="hidden" name="postid" value="<?php echo $postid ?>">
                     <?php $sql = $conDb->doSelectQuery($conn, "SELECT Rank FROM tblposts WHERE id='" . $postid . "'"); ?>
-                    <i  style="font-size: 50px; margin-right: 30px" class="fas fa-sort-up up"></i>
+                    <i style="font-size: 50px; margin-right: 30px" class="fas fa-sort-up up"></i>
                     <input id="counter" type="text" value="<?php echo $sql['data'][0]['Rank'] ?>" style="all: unset;width: 32px;text-align: center">
-                    <i  style="font-size: 50px; margin-right: 30px" class="fas fa-sort-up down"></i>
+                    <i style="font-size: 50px; margin-right: 30px" class="fas fa-sort-up down"></i>
                 </div>
 
 
@@ -93,6 +93,23 @@ if ($sql['status'] == 1 && $sql['rows'] == 1) {
 
 
         <?php require './include/scripts.php' ?>
+        <?php
+        if ($role == 'author') {
+        ?>
+            <script>
+                //dashboard
+                $('#Approve').css('display', 'none');
+                $('#Accountsid').css('display', 'none');
+                $('#Breaking').css('display', 'none');
+                //sidebar
+                $('#SideApprove').css('display', 'none');
+                $('#SideAccountsid').css('display', 'none');
+                $('#SideBreaking').css('display', 'none');
+            </script>
+
+        <?php
+        }
+        ?>
     </body>
 
     </html>

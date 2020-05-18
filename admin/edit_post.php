@@ -82,15 +82,29 @@ if (checkPermision($pagename, $role)) {
                         <a href="change_image.php?pid=<?php echo htmlentities($row['postid']); ?>">Update Image</a>
                         <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
                         <br>
-                      
-      
+
+
                     </form>
                 </div>
 
                 <?php require './include/scripts.php' ?>
-                <script>
+                <?php
+                if ($role == 'author') {
+                ?>
+                    <script>
+                        //dashboard
+                        $('#Approve').css('display', 'none');
+                        $('#Accountsid').css('display', 'none');
+                        $('#Breaking').css('display', 'none');
+                        //sidebar
+                        $('#SideApprove').css('display', 'none');
+                        $('#SideAccountsid').css('display', 'none');
+                        $('#SideBreaking').css('display', 'none');
+                    </script>
 
-                </script>
+                <?php
+                }
+                ?>
             </body>
             <script>
 

@@ -46,7 +46,7 @@ if (checkPermision($pagename, $role)) {
                 ?>
                 <br>
                 <br>
-                
+
                 <div class="container">
                     <div class="row">
                         <div id="admin" class="col s12">
@@ -232,6 +232,23 @@ if (checkPermision($pagename, $role)) {
                 </form>
                 </div>
                 <?php require './include/scripts.php' ?>
+                <?php
+                if ($role == 'author') {
+                ?>
+                    <script>
+                        //dashboard
+                        $('#Approve').css('display', 'none');
+                        $('#Accountsid').css('display', 'none');
+                        $('#Breaking').css('display', 'none');
+                        //sidebar
+                        $('#SideApprove').css('display', 'none');
+                        $('#SideAccountsid').css('display', 'none');
+                        $('#SideBreaking').css('display', 'none');
+                    </script>
+
+                <?php
+                }
+                ?>
             <?php
         }
             ?>

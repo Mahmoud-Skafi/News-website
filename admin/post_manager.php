@@ -96,7 +96,7 @@ if (checkPermision($pagename, $role)) {
                                         if ($_SESSION['roles'] == 'admin') {
                                             $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='yes' ORDER BY PostingDate DESC LIMIT " . $this_page_first_res . ',' . $res_per_page);
                                         } else  if ($_SESSION['roles'] == 'author') {
-                                            $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='no' ORDER BY PostingDate DESC  OR Approved='yes' LIMIT " . $this_page_first_res . ',' . $res_per_page);
+                                            $sql = $conDb->doSelectQuery($conn, "SELECT * FROM tblposts WHERE Is_Active=1 AND Approved='no'   OR Approved='yes' ORDER BY PostingDate DESC LIMIT " . $this_page_first_res . ',' . $res_per_page);
                                         }
                                         ?>
                                         <?php
@@ -139,7 +139,7 @@ if (checkPermision($pagename, $role)) {
                                                     </td> -->
                                                     <td class="td-custom">
                                                         <div>
-                                                            
+
                                                             <a href="./post_view.php?postid=<?php echo $row['id'] ?>">
                                                                 <i class="fas fa-eye" style="color:#feca7a;"></i>
                                                             </a>
@@ -210,9 +210,23 @@ if (checkPermision($pagename, $role)) {
                     </form>
                 </div>
                 <?php require './include/scripts.php' ?>
-                <script>
+                <?php
+                if ($role == 'author') {
+                ?>
+                    <script>
+                        //dashboard
+                        $('#Approve').css('display', 'none');
+                        $('#Accountsid').css('display', 'none');
+                        $('#Breaking').css('display', 'none');
+                        //sidebar
+                        $('#SideApprove').css('display', 'none');
+                        $('#SideAccountsid').css('display', 'none');
+                        $('#SideBreaking').css('display', 'none');
+                    </script>
 
-                </script>
+                <?php
+                }
+                ?>
             </body>
 
             </html>

@@ -107,7 +107,23 @@ if (checkPermision($pagename, $role)) {
         </form>
         <!-- <button onclick="document.location = './post_manager.php';" class="btn btn-danger">Discard</button> -->
         <?php require './include/scripts.php' ?>
+            <?php
+            if ($role == 'author') {
+            ?>
+                <script>
+                    //dashboard
+                    $('#Approve').css('display', 'none');
+                    $('#Accountsid').css('display', 'none');
+                    $('#Breaking').css('display', 'none');
+                    //sidebar
+                    $('#SideApprove').css('display', 'none');
+                    $('#SideAccountsid').css('display', 'none');
+                    $('#SideBreaking').css('display', 'none');
+                </script>
 
+            <?php
+            }
+            ?>
     </body>
 
     </html>
