@@ -31,7 +31,7 @@ if (checkPermision($pagename, $role)) {
             </div>
             <br>
             <div class="sk-main-dashboard-cards-container">
-                <div class="sk-main-dashborad-card-members" onclick="window.location='./post_manager.php'" style="cursor: pointer">
+                <div class="sk-main-dashborad-card-members" onclick="window.location='./post_manager.php?page=1'" style="cursor: pointer">
                     <div class="sk-card-header " style="justify-content: center; color: #000;font-weight: 600">
                         <h1>Posts Manager</h1>
                         <!-- <i class="fas fa-ellipsis-h"></i> -->

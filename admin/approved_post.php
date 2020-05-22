@@ -183,7 +183,6 @@ if (checkPermision($pagename, $role)) {
                             <div>
                                 <input type="hidden" name="" id="postida">
                                 <input type="hidden" name="" id="isaccpted">
-                                <!-- <input type="time"> -->
                             </div>
                             <div class="modal-footer">
                                 <form id="">

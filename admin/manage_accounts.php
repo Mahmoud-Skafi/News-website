@@ -70,14 +70,14 @@ if (checkPermision($pagename, $role)) {
                                             <th>Updation Date</th>
                                             <th style="display: flex;align-items: center;justify-content: center;">Actions</th>
                                         </tr>
-                                    </thead >
+                                    </thead>
                                     <tbody class="table-body custom-tr">
                                         <?php
 
 
                                         foreach ($sql['data'] as $row) {
                                         ?>
-                                            <tr  class="fix" id="<?php echo $row['user_id']; ?>">
+                                            <tr class="fix" id="<?php echo $row['user_id']; ?>">
                                                 <td>
                                                     <?php echo $row['user_id']; ?>
                                                 </td>
@@ -91,15 +91,14 @@ if (checkPermision($pagename, $role)) {
                                                     <?php echo $row['Is_Active']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php  if($row['role_id']==1){
-                                                        echo "ADMIN";  
-                                                    } else if($row['role_id']==2){
-                                                        echo "AUTHOR";
-                                                    }
-                                                    else{
-                                                            echo "OTHER";
-                                                        }
-                                                    }?>
+                                                <?php if ($row['role_id'] == 1) {
+                                                    echo "ADMIN";
+                                                } else if ($row['role_id'] == 2) {
+                                                    echo "AUTHOR";
+                                                } else {
+                                                    echo "OTHER";
+                                                }
+                                            } ?>
                                                 </td>
                                                 <td class="td-custom">
                                                     <div>
@@ -174,8 +173,8 @@ if (checkPermision($pagename, $role)) {
             </body>
 
             </html>
-<?php
-        }
+    <?php
     }
 }
-?>
+
+    ?>
